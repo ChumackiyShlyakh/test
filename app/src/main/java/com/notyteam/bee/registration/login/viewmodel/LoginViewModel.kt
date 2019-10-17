@@ -10,6 +10,7 @@ import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
+import androidx.databinding.library.baseAdapters.BR
 import com.notyteam.bee.R
 import com.notyteam.bee.core.model.request.LoginModelRequest
 import com.notyteam.bee.core.arch.BaseAndroidViewModel
