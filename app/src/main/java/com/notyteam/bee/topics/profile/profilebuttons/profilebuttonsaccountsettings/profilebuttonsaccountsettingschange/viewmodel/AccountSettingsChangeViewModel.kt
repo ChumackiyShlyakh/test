@@ -1,0 +1,4 @@
+package com.notyteam.bee.topics.profile.profilebuttons.profilebuttonsaccountsettings.profilebuttonsaccountsettingschange.viewmodel
+
+class AccountSettingsChangeViewModel {
+}
