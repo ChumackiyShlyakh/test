@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "488625801035",
+    "firebase_url": "https://waterdelivery-14960.firebaseio.com",
+    "project_id": "waterdelivery-14960",
+    "storage_bucket": "waterdelivery-14960.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488625801035:android:0008959981eb77a5",
+        "android_client_info": {
+          "package_name": "sinet.startup.vodovozclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488625801035-vqq1sss6m8kcmsg1rrf2i8tip4n5pr93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc6lwdCdtQkbZOoQ8bgSPXI-ECwqqHxeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488625801035-vqq1sss6m8kcmsg1rrf2i8tip4n5pr93.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
