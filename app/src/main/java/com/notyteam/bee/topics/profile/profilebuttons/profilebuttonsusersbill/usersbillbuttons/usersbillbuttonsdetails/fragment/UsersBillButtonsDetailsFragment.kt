@@ -1,0 +1,4 @@
+package com.notyteam.bee.topics.profile.profilebuttons.profilebuttonsusersbill.usersbillbuttons.usersbillbuttonsdetails.fragment
+
+class UsersBillButtonsDetailsFragment {
+}
