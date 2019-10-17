@@ -148,7 +148,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ed_border_grey"
             android:layout_alignParentStart="true"
-            android:gravity="left|center"
+            android:gravity="start|center"
             android:paddingLeft="32dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"

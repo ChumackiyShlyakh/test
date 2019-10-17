@@ -1,24 +1,19 @@
 package com.notyteam.bee.registration.login.viewmodel
 
-import android.util.Patterns
+
 import android.text.TextUtils
 import androidx.lifecycle.MutableLiveData
 import android.text.Editable
 import android.app.Application
-import android.content.res.Resources
 import android.view.View
-import androidx.annotation.NonNull
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
-import androidx.databinding.library.baseAdapters.BR
 import com.notyteam.bee.R
 import com.notyteam.bee.core.model.request.LoginModelRequest
-import com.notyteam.bee.utils.Constants.Companion.EMPTY
 import com.notyteam.bee.core.arch.BaseAndroidViewModel
 import java.util.regex.Pattern
-
 
 class LoginViewModel(application: Application) : BaseAndroidViewModel(application) {
 

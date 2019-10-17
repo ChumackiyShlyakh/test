@@ -20,14 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".core.ui.MainActivity"></activity>
-        <activity android:name="com.notyteam.bee.registration.login.activity.LoginActivity"></activity>
-        <activity android:name=".registration.RegistrationActivity"></activity>
-        <activity android:name=".registration.newaccount.activity.NewAccountActivity"></activity>
-        <activity android:name=".activity.SMSCodeActivity"></activity>
-        <activity android:name="com.notyteam.bee.topics_beehouses.settingsbeehousestopics.activity.SettingsGadgetsGrafsActivity"></activity>
-
-
 
     </application>
 
