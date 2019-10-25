@@ -77,7 +77,7 @@
     <string name="feedback_text">Если у вас есть бизнес-запросы или другие вопросы, пожалуйста заполните
         следующую форму для связи  нами. <n>Спасибо!</n> <b>World</b>!  </string>
     <string name="ticket_number">Ticket number</string>
-<!--    ![CDATA[Foo Bar <a href="foo?id=%s">baz</a> is cool]]-->
+    <!--    ![CDATA[Foo Bar <a href="foo?id=%s">baz</a> is cool]]-->
     <string name="choose_time">Choose time</string>
     <string name="cellular_operator">Cellular operator</string>
     <string name="beehouse_online">Beehouse online</string>
