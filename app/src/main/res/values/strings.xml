@@ -1,7 +1,7 @@
 <resources>
     <string name="test">Hello bee</string>
 
-    <string name="app_name">Bdzhola</string>
+    <string name="app_name">Grand Expert</string>
     <string name="enter">Enter</string>
     <string name="registration">Registration</string>
     <string name="enter_without_registration">Enter without registration</string>
@@ -19,10 +19,7 @@
     <string name="choose_object">Choose object</string>
     <string name="choose_event">Choose event</string>
     <string name="password">Password</string>
-    <string name="sign_up">Sign up</string>
     <string name="beekeeper">Beekeeper</string>
-    <string name="agrarian">Agrarian</string>
-    <string name="beekeeper_agrarian">Beekeeper + Agrarian</string>
     <string name="profile">Profile</string>
     <string name="my_places">My places</string>
     <string name="google_map">Map</string>
@@ -33,10 +30,7 @@
     <string name="beehouses_online">Beehouses online</string>
     <string name="about_us">About us</string>
     <string name="beekeepers">Beekeepers of Ukraine</string>
-    <string name="from_application">From application</string>
-    <string name="from_account">From account</string>
     <string name="grand_expert">GRAND EXPERT</string>
-    <string name="role">Role</string>
     <string name="exit_from_application">Exit from application</string>
     <string name="exit_from_account">Exit from account</string>
     <string name="correctly_marker">Did you specify the marker correctly?</string>
@@ -69,13 +63,10 @@
     <string name="repeat_new_password">Repeat new password</string>
     <string name="payments">Payments</string>
     <string name="replenish_account">Replenish account</string>
-    <string name="replenish">Replenish</string>
-    <string name="account_details">Account details</string>
     <string name="details">details</string>
     <string name="number_of_sms_sent">Number of sms sent: </string>
     <string name="sms_number_left">1000</string>
     <string name="account">account</string>
-    <string name="refill">refill</string>
     <string name="refill_big">Refill</string>
     <string name="id">ID:</string>
     <string name="value">Value:</string>
@@ -84,7 +75,7 @@
     <string name="message">Message</string>
     <string name="send">Send</string>
     <string name="feedback_text">Если у вас есть бизнес-запросы или другие вопросы, пожалуйста заполните
-        следующую форму для связи <font color="yellow">с</font> нами. <n>Спасибо!</n> <b>World</b>!  </string>
+        следующую форму для связи  нами. <n>Спасибо!</n> <b>World</b>!  </string>
     <string name="ticket_number">Ticket number</string>
     <!--    ![CDATA[Foo Bar <a href="foo?id=%s">baz</a> is cool]]-->
     <string name="choose_time">Choose time</string>
@@ -113,8 +104,6 @@
     <string name="garden">Garden</string>
     <string name="mushrooms">Mushrooms</string>
     <string name="plants_health">Health plants</string>
-    <string name="flowering">Flowering</string>
-    <string name="chemicals">Chemicals</string>
     <string name="object_type">Object type</string>
     <string name="date">Date</string>
     <string name="from">From</string>
@@ -135,24 +124,10 @@
     <string name="empty_password">Password is empty!</string>
     <string name="password_length_error">Password is to small!</string>
 
-    <string name="checking">Check your creds!</string>
-    <string name="something_is_wrong">Something went wrong!</string>
-    <string name="check_network_connection">Check your internet connection!</string>
-
-    <string name="unexpected_default_trust_managers">Unexpected default trust managers: </string>
-
     <string name="enter_email">Enter your email</string>
     <string name="enter_password">Enter your password</string>
-    <string name="enter_name">Enter your name</string>
-
-    <string name="enter_correctly_email">Enter correctly email</string>
-    <string name="enter_correctly_password">Enter correctly password</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
 </resources>

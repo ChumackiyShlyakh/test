@@ -12,8 +12,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background_sms_code">
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:background="@drawable/background_enter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_layout_email"
@@ -34,8 +41,10 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:afterTextChanged="@{model::onEmailChanged}"
                 android:background="@null"
                 android:inputType="textEmailAddress"
@@ -46,12 +55,13 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_layout_password"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="52dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/ed_border_blue"
             android:ems="10"
             android:hint="@string/enter_password"
             app:errorEnabled="true"
+            app:passwordToggleEnabled="true"
             app:errorText="@{model.errorPasswordMessage}"
             app:hintTextAppearance="@style/MyAppearance"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
@@ -61,11 +71,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:afterTextChanged="@{model::onPasswordChanged}"
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:background="@null"
-                android:inputType="textPassword"
+                android:afterTextChanged="@{model::onPasswordChanged}"
+                 android:inputType="textPassword"
                 android:text="@={model.password}"
                 app:onFocus="@{model.getPasswordOnFocusChangeListener()}" />
 

@@ -29,7 +29,6 @@
         </ImageButton>
 
         <TextView
-            android:id="@+id/tv_fragment_profile_settings_account_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -48,7 +47,6 @@
             app:layout_constraintGuide_percent="0.13" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline29"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -160,7 +158,6 @@
             </ImageView>
 
             <TextView
-                android:id="@+id/tv_fragment_profile_settings_account_name_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/name"
@@ -234,7 +231,6 @@
             </ImageView>
 
             <TextView
-                android:id="@+id/tv_fragment_profile_settings_account_phone_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/phone"
