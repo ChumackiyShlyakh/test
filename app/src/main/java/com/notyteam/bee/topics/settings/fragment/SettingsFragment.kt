@@ -1,4 +1,52 @@
 package com.notyteam.bee.topics.settings.fragment
 
-class SettingsFragment {
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.notyteam.bee.R
+import com.notyteam.bee.profile_fragments.ProfileAccountDetailFragment
+import com.notyteam.bee.profile_fragments.ProfileRefillFragment
+import com.notyteam.bee.topics.profile.fragment.ProfileFragment
+import kotlinx.android.synthetic.main.fragment_settings.*
+
+class SettingsFragment : Fragment() {
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_settings, container, false)
+
+//        val viewModel = ViewModelProviders.of(this)[ProfileViewModel::class.java]
+//        val binding: FragmentProfileBinding = FragmentProfileBinding().inflate(inflater, container, false)
+//        binding.model
+
+//        val imgbtn_fragment_settings_back = imgbtn_fragment_settings_back
+        val ll_fragment_settings_exit_from_account = ll_fragment_settings_exit_from_account
+//        var ll_profile_payments_go_in_refill_account = ll_profile_payments_go_in_refill_account
+
+//        imgbtn_fragment_settings_back?.setOnClickListener(View.OnClickListener {
+////            fragmentManager?.beginTransaction()?.replace(
+////                R.id.fragment_container_main_activity,
+////                ProfileFragment()
+////            )?.commit()
+//        })
+        ll_fragment_settings_exit_from_account?.setOnClickListener(View.OnClickListener {
+//            fragmentManager?.beginTransaction()?.replace(
+//                R.id.fragment_container_main_activity,
+//                ProfileAccountDetailFragment()
+//            )?.commit()
+        })
+//        ll_profile_payments_go_in_refill_account.setOnClickListener(View.OnClickListener {
+//            fragmentManager?.beginTransaction()?.replace(
+//                R.id.fragment_container_main_activity,
+//                ProfileRefillFragment()
+//            )?.commit()
+//        })
+
+        return view
+//        return binding.root
+    }
 }

@@ -38,9 +38,6 @@ class SMSCodeFragment : Fragment() {
             getActivity()?.finish()
         }
 
-//        val otp_view = view.findViewById<OtpView>(R.id.otp_view)
-//        otp_view.setOtpCompletionListener {  }
-
         val otpTextView: OtpTextView
         otpTextView = view.findViewById(R.id.otp_view)
         otpTextView.otpListener = object : OTPListener {

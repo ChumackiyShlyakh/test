@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_margin="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/button_white"
+            android:paddingBottom="30dp"
+            android:paddingTop="30dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/item_logout">
+
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/exit"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <Button
+                android:id="@+id/btn_dialog_exit_application"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ed_border_orange"
+                android:text="@string/exit_from_application"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btn_dialog_exit_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ed_border_orange"
+                android:text="@string/exit_from_account"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black">
+
+            </Button>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
