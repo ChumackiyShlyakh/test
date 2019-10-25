@@ -16,6 +16,8 @@
     <string name="phone">Phone</string>
     <string name="choose_meaning">Choose meaning</string>
     <string name="choose_language">Choose language</string>
+    <string name="choose_object">Choose object</string>
+    <string name="choose_event">Choose event</string>
     <string name="password">Password</string>
     <string name="sign_up">Sign up</string>
     <string name="beekeeper">Beekeeper</string>
@@ -35,6 +37,95 @@
     <string name="from_account">From account</string>
     <string name="grand_expert">GRAND EXPERT</string>
     <string name="role">Role</string>
+    <string name="exit_from_application">Exit from application</string>
+    <string name="exit_from_account">Exit from account</string>
+    <string name="correctly_marker">Did you specify the marker correctly?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="about_us_text">Мы - некоммерческая общественная организация "Гранд Эксперт". Цель нашей деятельности - способствовать уменьшению вредного влияния химических веществ, которые используются людьми в процессе защиты растений, на окружающую среду, на людей, животных, растения, продукты животноводства и растениеводства. Не ставя перед собой задачи непосредственной борьбы с использованием химических веществ в растениеводстве, что, как мы понимаем, на сегодняшний день нереально, мы надеемся найти различные пути минимизации их вредоносного влияния на человека.
+Одна из проблем, которую мы хотим решить в рамках данного проекта заключается в следующем:
+Производители сельскохозяйственной продукции, в частности фермеры, не всегда информируют общественность о месте и времени обработки своих полей и садов средствами защиты растений - пестицидами, другими вредными химическими веществами.
+Более подробную информацию о принципах работы предоставленной на этом сайте Системы Мониторинга процесса химической обработки растений Вы сможете прочитать разделе справочника "Инструкция / правила".</string>
+    <string name="about_us_hello">Здравствуйте, уважаемые дамы и господа!</string>
+    <string name="user_name">User name</string>
+    <string name="user_id">User id</string>
+    <string name="user_email">test@gmail.com</string>
+    <string name="user_phone">+1 555 1234567</string>
+    <string name="about_self">About self</string>
+    <string name="about_self_text">+1 555 1234567</string>
+    <string name="profile_settings_settings">settings</string>
+    <string name="profile_settings_profile">Profile</string>
+    <string name="profile_settings_account">Account</string>
+    <string name="cash_user_account">Cash user account</string>
+    <string name="profile_money_left">423</string>
+    <string name="dollar">$</string>
+    <string name="hryvnya">₴</string>
+    <string name="profile_settings">Profile settings</string>
+    <string name="account_settings">Account settings</string>
+    <string name="edit">Edit</string>
+    <string name="change_password">Change password</string>
+    <string name="old_password">Old password</string>
+    <string name="new_password">New password</string>
+    <string name="repeat_new_password">Repeat new password</string>
+    <string name="payments">Payments</string>
+    <string name="replenish_account">Replenish account</string>
+    <string name="replenish">Replenish</string>
+    <string name="account_details">Account details</string>
+    <string name="details">details</string>
+    <string name="number_of_sms_sent">Number of sms sent: </string>
+    <string name="sms_number_left">1000</string>
+    <string name="account">account</string>
+    <string name="refill">refill</string>
+    <string name="refill_big">Refill</string>
+    <string name="id">ID:</string>
+    <string name="value">Value:</string>
+    <string name="rest">Rest:</string>
+    <string name="theme">Theme</string>
+    <string name="message">Message</string>
+    <string name="send">Send</string>
+    <string name="feedback_text">Если у вас есть бизнес-запросы или другие вопросы, пожалуйста заполните
+        следующую форму для связи <font color="yellow">с</font> нами. <n>Спасибо!</n> <b>World</b>!  </string>
+    <string name="ticket_number">Ticket number</string>
+<!--    ![CDATA[Foo Bar <a href="foo?id=%s">baz</a> is cool]]-->
+    <string name="choose_time">Choose time</string>
+    <string name="cellular_operator">Cellular operator</string>
+    <string name="beehouse_online">Beehouse online</string>
+    <string name="notification">Notification</string>
+    <string name="notification_sound">Notification sound</string>
+    <string name="language">Language</string>
+    <string name="sms_times_sending">SMS times sending</string>
+    <string name="one_time_per_day">1 time per day</string>
+    <string name="two_times_per_day">2 times per day</string>
+
+
+    <string name="filtr">Filtr</string>
+    <string name="clean">Clean</string>
+    <string name="objects">Objects</string>
+    <string name="events">Events</string>
+    <string name="search_for_name">Search for name</string>
+
+    <string name="beehouse">Beehouse</string>
+    <string name="people">People</string>
+    <string name="animals">Animals</string>
+    <string name="another">Another</string>
+    <string name="biohasard">Biohasard</string>
+    <string name="garden">Garden</string>
+    <string name="mushrooms">Mushrooms</string>
+    <string name="plants_health">Health plants</string>
+    <string name="flowering">Flowering</string>
+    <string name="chemicals">Chemicals</string>
+    <string name="object_type">Object type</string>
+    <string name="date">Date</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="apply">Apply</string>
+
+    <string name="new_object">New object</string>
+    <string name="delete">Delete</string>
+    <string name="description">Description</string>
+    <string name="hide">Hide</string>
+    <string name="permanent">Permanent</string>
+    <string name="save">Save</string>
 
     <!-- Login feature -->
     <string name="empty_email">Email is empty!</string>

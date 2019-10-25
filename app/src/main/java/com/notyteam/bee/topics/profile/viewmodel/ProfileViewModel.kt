@@ -1,4 +1,9 @@
 package com.notyteam.bee.topics.profile.viewmodel
 
-class ProfileViewModel {
+import android.app.Application
+import com.notyteam.bee.core.arch.BaseAndroidViewModel
+
+class ProfileViewModel (application: Application) : BaseAndroidViewModel(application) {
+
+
 }

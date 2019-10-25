@@ -1,4 +1,63 @@
 package com.notyteam.bee.topics.profile.fragment
 
-class ProfileFragment {
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.LinearLayout
+import androidx.fragment.app.Fragment
+import com.notyteam.bee.R
+import com.notyteam.bee.profile_fragments.ProfilePaymentsFragment
+import com.notyteam.bee.profile_fragments.ProfileSettingsAccountFragment
+import com.notyteam.bee.profile_fragments.ProfileSettingsProfileFragment
+import kotlinx.android.synthetic.main.fragment_profile.*
+
+class ProfileFragment : Fragment(), View.OnClickListener {
+
+//    private lateinit var imgbtn_about_us_back: ImageButton
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+//        val viewModel = ViewModelProviders.of(this)[ProfileViewModel::class.java]
+//        val binding: FragmentProfileBinding = FragmentProfileBinding().inflate(inflater, container, false)
+//        binding.model
+
+        var ll_fragment_profile_profile_settings = view.findViewById(R.id.ll_fragment_profile_profile_settings) as LinearLayout
+        var ll_profile_payments_refill_account = view.findViewById(R.id.ll_profile_payments_refill_account) as LinearLayout
+        var ll_profile_cash = view.findViewById(R.id.ll_profile_cash) as LinearLayout
+
+        ll_fragment_profile_profile_settings.setOnClickListener(this)
+        ll_profile_payments_refill_account.setOnClickListener(this)
+        ll_profile_cash.setOnClickListener(this)
+
+        return view
+//        return binding.root
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.ll_fragment_profile_profile_settings -> {
+                fragmentManager?.beginTransaction()?.replace(
+                    R.id.fragment_container_main_activity,
+                    ProfileSettingsProfileFragment()
+                )?.commit()
+            }
+            R.id.ll_profile_payments_refill_account -> {
+                fragmentManager?.beginTransaction()?.replace(
+                    R.id.fragment_container_main_activity,
+                    ProfileSettingsAccountFragment()
+                )?.commit()
+            }
+            R.id.ll_profile_cash -> {
+                fragmentManager?.beginTransaction()?.replace(
+                    R.id.fragment_container_main_activity,
+                    ProfilePaymentsFragment()
+                )?.commit()
+            }
+        }
+    }
 }
