@@ -13,18 +13,17 @@ import android.widget.RelativeLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.core.view.isGone
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProviders
 import com.notyteam.bee.R
 import com.notyteam.bee.core.ui.drawer.DrawerItemsViewModel
 import com.notyteam.bee.databinding.ActivityMainBinding
+import com.notyteam.bee.google_map_controls.GoogleMapControlsFragment
 import com.notyteam.bee.topics.aboutus.fragment.AboutUsFragment
 import com.notyteam.bee.topics.feedback.FeedbackFragment
 import com.notyteam.bee.topics.google_map.fragment.GoogleMapsFragment
+import com.notyteam.bee.topics.my_places.MyPlacesControlsFragment
 import com.notyteam.bee.topics.my_places.MyPlacesFragment
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
 import com.notyteam.bee.topics.settings.fragment.SettingsFragment
@@ -68,8 +67,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         toolbar = bindingMainActivity?.appBarLayout?.toolbarMainDrawer
         setSupportActionBar(toolbar)
-        val imgbtn_controls = bindingMainActivity?.appBarLayout?.imgbtnControls
-        val imgbtn_download = bindingMainActivity?.appBarLayout?.imgbtnDownload
+        val imgbtn_download_google_maps = bindingMainActivity?.appBarLayout?.imgbtnDownloadGoogleMaps
+        val imgbtn_controls_my_places = bindingMainActivity?.appBarLayout?.imgbtnControlsMyPlaces
+        val imgbtn_controls_google_maps = bindingMainActivity?.appBarLayout?.imgbtnControlsGoogleMaps
+
+        imgbtn_controls_my_places?.setOnClickListener({
+            supportFragmentManager.beginTransaction().replace(
+                R.id.fragment_container_main_activity,
+                MyPlacesControlsFragment()
+            ).commit()
+        })
+
+        imgbtn_controls_google_maps?.setOnClickListener({
+            supportFragmentManager.beginTransaction().replace(
+                R.id.fragment_container_main_activity,
+                GoogleMapControlsFragment()
+            ).commit()
+        })
         drawer = bindingMainActivity?.drawerLayoutMain
         val toggle = ActionBarDrawerToggle(
             this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
@@ -85,64 +99,60 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     R.id.fragment_container_main_activity,
                     ProfileFragment()
                 ).commit()
-                imgbtn_controls.visibility = View.GONE
-                imgbtn_download.visibility = View.GONE
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_my_places -> {
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     MyPlacesFragment()
                 ).commit()
-                imgbtn_controls.visibility = View.VISIBLE
-                imgbtn_download.visibility = View.GONE
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.VISIBLE
             }
             R.id.ll_grandExpert_google_maps -> {
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     GoogleMapsFragment()
                 ).commit()
-                imgbtn_controls.visibility = View.VISIBLE
-                imgbtn_download.visibility = View.VISIBLE
+                imgbtn_controls_google_maps.visibility = View.VISIBLE
+                imgbtn_download_google_maps.visibility = View.VISIBLE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_instructions -> {
-//                supportFragmentManager.beginTransaction().replace(
-//                    R.id.fragment_container_main_activity,
-//                    AboutUsFragment()
-//                ).commit()
             }
             R.id.ll_grandExpert_feedback -> {
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     FeedbackFragment()
                 ).commit()
-                imgbtn_controls.visibility = View.GONE
-                imgbtn_download.visibility = View.GONE
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_settings -> {
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     SettingsFragment()
                 ).commit()
-                imgbtn_controls.visibility = View.GONE
-                imgbtn_download.visibility = View.GONE
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_beehouse_online -> {
-//                supportFragmentManager.beginTransaction().replace(
-//                    R.id.fragment_container_main_activity,
-//                    SettingsFragment()
-//                ).commit()
             }
             R.id.ll_grandExpert_beekeepers_ukraine -> {
-//                supportFragmentManager.beginTransaction().replace(
-//                    R.id.fragment_container_main_activity,
-//                    SettingsFragment()
-//                ).commit()
             }
             R.id.ll_grandExpert_about_us -> {
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     AboutUsFragment()
                 ).commit()
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_exit -> {
                 showDialog(this)

@@ -86,7 +86,7 @@
     <string name="feedback_text">Если у вас есть бизнес-запросы или другие вопросы, пожалуйста заполните
         следующую форму для связи <font color="yellow">с</font> нами. <n>Спасибо!</n> <b>World</b>!  </string>
     <string name="ticket_number">Ticket number</string>
-<!--    ![CDATA[Foo Bar <a href="foo?id=%s">baz</a> is cool]]-->
+    <!--    ![CDATA[Foo Bar <a href="foo?id=%s">baz</a> is cool]]-->
     <string name="choose_time">Choose time</string>
     <string name="cellular_operator">Cellular operator</string>
     <string name="beehouse_online">Beehouse online</string>
@@ -96,7 +96,8 @@
     <string name="sms_times_sending">SMS times sending</string>
     <string name="one_time_per_day">1 time per day</string>
     <string name="two_times_per_day">2 times per day</string>
-
+    <string name="choose_status">Choose status</string>
+    <string name="status">Status</string>
 
     <string name="filtr">Filtr</string>
     <string name="clean">Clean</string>
