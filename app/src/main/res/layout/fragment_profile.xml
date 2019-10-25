@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -51,7 +51,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_profile_beekeeper" />
 
     <TextView
-        android:id="@+id/tv_profile_user_id"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -65,7 +64,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_profile_user_name" />
 
     <ScrollView
-        android:id="@+id/scrollView_fragment_profile"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
@@ -100,7 +98,6 @@
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/tv_profile_user_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -128,7 +125,6 @@
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/tv_profile_user_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -151,7 +147,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/ll_profile">
 
                 <TextView
-                    android:id="@+id/tv_profile_about_self"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/about_self"
@@ -160,7 +155,6 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/tv_profile_about_self_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/about_self_text"
@@ -317,7 +311,6 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tv_profile_money_left"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"

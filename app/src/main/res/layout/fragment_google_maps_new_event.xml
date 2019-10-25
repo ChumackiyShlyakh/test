@@ -21,14 +21,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imgbtn_google_maps_new_event_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/arrow_left" />
 
         <TextView
-            android:id="@+id/tv_google_maps_new_event"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -38,7 +36,6 @@
             android:textColor="@color/black" />
 
         <Button
-            android:id="@+id/btn_google_maps_new_event_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -81,7 +78,6 @@
         app:layout_constraintTop_toBottomOf="@+id/et_google_maps_new_event_name">
 
         <EditText
-            android:id="@+id/btn_google_maps_newevent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -138,7 +134,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_google_maps_new_event_description">
 
         <CheckBox
-            android:id="@+id/chbox_google_maps_new_event_hide"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -189,7 +184,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_google_maps_new_event_date">
 
         <EditText
-            android:id="@+id/et_google_maps_new_event_from"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
@@ -206,7 +200,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/et_google_maps_new_event_to"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"

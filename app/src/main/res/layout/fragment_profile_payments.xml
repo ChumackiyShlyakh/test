@@ -16,7 +16,6 @@
     <!--            type="com.notyteam.bee.topics.profile.viewmodel.ProfileViewModel" />-->
     <!--    </data>-->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -40,7 +39,6 @@
         </ImageButton>
 
         <TextView
-            android:id="@+id/tv_profile_payments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -59,7 +57,6 @@
             app:layout_constraintGuide_percent="0.13" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline29"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -94,7 +91,6 @@
         app:layout_constraintTop_toTopOf="@+id/guideline40">
 
         <TextView
-            android:id="@+id/tv_payments_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -115,7 +111,6 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_payments_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -140,7 +135,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline9">
 
         <TextView
-            android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -149,7 +143,6 @@
             android:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/tv_payments_sms_number_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -161,7 +154,6 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_profile_payments"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_drop_orange"
