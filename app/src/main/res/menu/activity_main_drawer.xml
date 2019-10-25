@@ -12,19 +12,3 @@
             android:title="@string/test" />
     </group>
 </menu>
-<!--<menu_lines xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    tools:showIn="navigation_view">-->
-
-<!--    <group android:checkableBehavior="single">-->
-<!--        <item-->
-<!--            android:id="@+id/nav_load"-->
-<!--            android:icon="@drawable/ic_menu_camera"-->
-<!--            android:title="Load" />-->
-<!--        <item-->
-<!--            android:id="@+id/nav_log_out"-->
-<!--            android:icon="@drawable/ic_menu_camera"-->
-<!--            android:title="@string/exit" />-->
-<!--    </group>-->
-
-<!--</menu_lines>-->
