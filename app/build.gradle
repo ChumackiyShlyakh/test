@@ -48,7 +48,7 @@ dependencies {
 
     implementation 'androidx.annotation:annotation:1.1.0'
 
-    implementation 'androidx.databinding:databinding-compiler:3.5.1'
+    kapt 'androidx.databinding:databinding-compiler:3.5.1'
 
     // Design
     implementation 'com.google.android.material:material:1.0.0'
