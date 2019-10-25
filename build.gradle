@@ -7,9 +7,6 @@ buildscript {
         jcenter()
         maven { url "https://jitpack.io" }
     }
-    ext {
-        compiler_version = '3.5.1'
-    }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"

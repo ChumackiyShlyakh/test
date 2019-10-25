@@ -29,7 +29,6 @@
         </ImageButton>
 
         <TextView
-            android:id="@+id/tv_fragment_profile_change_settings_account_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -48,7 +47,6 @@
             app:layout_constraintGuide_percent="0.13" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline29"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -70,7 +68,6 @@
         app:layout_constraintTop_toTopOf="@+id/guideline14">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_fragment_profile_change_settings_account_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
@@ -100,7 +97,6 @@
         app:layout_constraintTop_toBottomOf="@+id/til_fragment_profile_change_settings_account_name">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_fragment_profile_change_settings_account_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
@@ -126,14 +122,12 @@
         app:layout_constraintTop_toBottomOf="@+id/til_fragment_profile_change_settings_account_email">
 
         <com.rilixtech.widget.countrycodepicker.CountryCodePicker
-            android:id="@+id/ccp_profile_settings"
             android:layout_width="120dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
             android:layout_marginLeft="32dp" />
 
         <EditText
-            android:id="@+id/et_profile_settings_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

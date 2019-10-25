@@ -32,14 +32,12 @@
                 android:background="@drawable/google_maps_circle"/>
 
             <ImageButton
-                android:id="@+id/btn_map_rect"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/google_maps_rect" />
 
             <ImageButton
-                android:id="@+id/btn_map_form"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/google_maps_form" />

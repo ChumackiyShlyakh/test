@@ -20,14 +20,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@drawable/close" />
 
         <TextView
-            android:id="@+id/tv_google_maps_controlse_filtr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -37,7 +35,6 @@
             android:textColor="@color/black" />
 
         <Button
-            android:id="@+id/btn_google_maps_controls_clean"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -61,7 +58,6 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <EditText
-            android:id="@+id/et_fragment_google_maps_controls_search_for_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -88,7 +84,6 @@
     </RelativeLayout>
 
     <ScrollView
-        android:id="@+id/scrollView_fragment_google_maps_controls"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -136,7 +131,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_google_maps_controls_people"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -165,7 +159,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_google_maps_controls_animals"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -194,7 +187,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_google_maps_controls_garden"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -223,7 +215,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_google_maps_controls_biohasard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -252,7 +243,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_google_maps_controls_mushrooms"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -281,7 +271,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_google_maps_controls_plants_health"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -310,7 +299,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_google_maps_controls_another"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -355,7 +343,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_cl_google_maps_controls_date">
 
         <EditText
-            android:id="@+id/et_google_maps_controls_from"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -373,7 +360,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/et_google_maps_controls_to"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -410,7 +396,6 @@
         app:layout_constraintTop_toBottomOf="@+id/rl_fragment_google_maps_controls_search_for_name">
 
         <Button
-            android:id="@+id/btn_google_maps_controls_objects"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -426,7 +411,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_google_maps_controls_events"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -449,7 +433,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/tv_cl_google_maps_controls_object_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -476,7 +459,6 @@
         app:layout_constraintTop_toTopOf="@+id/guideline24" />
 
     <Button
-        android:id="@+id/btn_google_maps_controls_apply"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

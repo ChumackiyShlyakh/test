@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
     <ImageView
-        android:src="@drawable/background_newaccount"
+        android:background="@drawable/background_registration_ac"
         android:layout_width="match_parent"
-        android:scaleType="centerCrop"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
 
     </ImageView>
 
     <TextView
-        android:id="@+id/tv_newaccount_create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/create_account"
@@ -25,7 +25,6 @@
         app:layout_constraintTop_toTopOf="@+id/guideline15" />
 
     <ScrollView
-        android:id="@+id/scrollView_fragment_newaccount"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
@@ -56,11 +55,12 @@
                 app:layout_constraintTop_toTopOf="@+id/cl_profile_settings_in_scroll">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_fragment_newaccount_user_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
+                    android:maxLines="1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
-                    android:background="@null"
+                   android:background="@null"
                     android:ems="10"
                     android:hint="@string/name"
                     android:inputType="textPersonName"
@@ -86,10 +86,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/til_fragment_newaccount_user_name">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_fragment_newaccount_email"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
+                    android:maxLines="1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:background="@null"
                     android:ems="10"
                     android:hint="@string/email"
@@ -112,14 +113,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/til_newaccount_email">
 
                 <com.rilixtech.widget.countrycodepicker.CountryCodePicker
-                    android:id="@+id/ccp_profile_settings"
                     android:layout_width="120dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="32dp" />
 
                 <EditText
-                    android:id="@+id/et_profile_settings_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
@@ -150,7 +149,7 @@
                     android:layout_alignParentStart="true"
                     android:background="@drawable/ed_border_grey"
                     android:gravity="left|center"
-                    android:paddingLeft="32dp"
+                    android:paddingLeft="16dp"
                     android:text="@string/choose_meaning"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/black">
@@ -185,8 +184,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:background="@drawable/ed_border_grey"
-                    android:gravity="left|center"
-                    android:paddingLeft="32dp"
+                    android:gravity="start|center"
+                    android:paddingLeft="16dp"
                     android:text="@string/choose_language"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/black">
@@ -206,13 +205,13 @@
             </RelativeLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_fragment_newaccount_password"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="52dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/ed_border_grey"
                 android:ems="10"
                 app:errorEnabled="true"
+                app:passwordToggleEnabled="true"
                 app:hintTextAppearance="@style/MyAppearance"
                 app:layout_constraintEnd_toStartOf="@+id/guideline16"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -220,11 +219,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/rl_newaccount_language">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_fragment_newaccount_password"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="32dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
                     android:background="@null"
+                    android:maxLines="1"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     android:ems="10"
                     android:hint="@string/password"
                     android:inputType="textPassword"
