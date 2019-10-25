@@ -12,56 +12,20 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background_sms_code">
+        android:background="@color/white"
+        android:layout_height="match_parent">
 
 
-<!--        <ImageView-->
-<!--            android:id="@+id/iv_login_up_orange"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/rect_orange_up"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"></ImageView>-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/iv_login_honeycomb_up"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:background="@drawable/ic_honeycomb"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.0"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"></ImageView>-->
-
-<!--        <ImageView-->
-<!--            android:id="@+id/iv_login_polygon_white"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="88dp"-->
-<!--            android:background="@drawable/ic_polygon_white"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/iv_login_up_orange"-->
-<!--            app:layout_constraintHorizontal_bias="0.497"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/iv_login_up_orange"-->
-<!--            app:layout_constraintTop_toTopOf="parent"></ImageView>-->
-
-<!--        <ImageView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="136dp"-->
-<!--            android:background="@drawable/lock_blue"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.498"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/iv_login_up_orange"></ImageView>-->
+        <ImageView
+            android:background="@drawable/background_enter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_layout_email"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_height="52dp"
             android:background="@drawable/ed_border_blue"
             android:ems="10"
             android:hint="@string/enter_email"
@@ -70,16 +34,19 @@
             app:errorTextAppearance="@style/ErrorText"
             app:hintTextAppearance="@style/MyAppearance"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
-            app:layout_constraintTop_toBottomOf="@+id/tv_login_enter_to_you_account">
+            app:layout_constraintTop_toTopOf="@+id/guideline14">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:background="@null"
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:afterTextChanged="@{model::onEmailChanged}"
+                android:background="@null"
                 android:inputType="textEmailAddress"
                 android:text="@={model.email}"
                 app:onFocus="@{model.getEmailOnFocusChangeListener()}" />
@@ -88,12 +55,13 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_layout_password"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="52dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/ed_border_blue"
             android:ems="10"
             android:hint="@string/enter_password"
             app:errorEnabled="true"
+            app:passwordToggleEnabled="true"
             app:errorText="@{model.errorPasswordMessage}"
             app:hintTextAppearance="@style/MyAppearance"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
@@ -103,11 +71,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:afterTextChanged="@{model::onPasswordChanged}"
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:background="@null"
-                android:inputType="textPassword"
+                android:afterTextChanged="@{model::onPasswordChanged}"
+                 android:inputType="textPassword"
                 android:text="@={model.password}"
                 app:onFocus="@{model.getPasswordOnFocusChangeListener()}" />
 
@@ -117,7 +87,7 @@
             android:id="@+id/btn_fragment_login_in"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_orange"
+            android:background="@drawable/button_drop_orange"
             android:text="@string/enter"
             android:textAppearance="?android:attr/textAppearanceLarge"
             app:layout_constraintBottom_toTopOf="@+id/guideline8"
@@ -141,13 +111,12 @@
             android:id="@+id/tv_login_enter_to_you_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="272dp"
             android:text="@string/enter_to_you_account"
             android:textAppearance="?android:attr/textAppearanceLarge"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/guideline15" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline9"
@@ -183,6 +152,27 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.86374694" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.46" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.37" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -3,8 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_sms_code">
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:background="@drawable/background_code_sms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -18,7 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="164dp"
-        android:background="@drawable/button_orange"
+        android:background="@drawable/button_drop_orange"
         android:text="@string/forward"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/black"
@@ -31,7 +37,6 @@
 
 
     <TextView
-        android:id="@+id/tv_smscode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="76dp"
@@ -44,7 +49,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tv_smscode_send_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -77,14 +81,12 @@
         app:width="40dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.2" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

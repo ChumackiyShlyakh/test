@@ -1,4 +1,0 @@
-package com.notyteam.bee.topics.profile.profilebuttons.profilebuttonsusersbill.usersbillbuttons.usersbillbuttonsrefill.viewmodel
-
-class UsersBillButtonsRefillViewModel {
-}
