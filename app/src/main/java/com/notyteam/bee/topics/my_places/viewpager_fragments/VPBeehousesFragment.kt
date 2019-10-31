@@ -4,19 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.notyteam.bee.R
-import com.notyteam.bee.topics.my_places.adapter.MyPlacesRecycleViewAdapter
+import com.notyteam.bee.topics.my_places.adapter.VPBeehousesRecycleViewAdapter
 
-class VPBeehousesFragment : Fragment() {
+class VPBeehousesFragment() : Fragment() {
 
-
-    lateinit var recyclerView: RecyclerView
-    lateinit var adapter: MyPlacesRecycleViewAdapter
-    var dataList: ArrayList<String> = ArrayList();
+    private var recyclerView: RecyclerView? = null
+    lateinit var adapter: VPBeehousesRecycleViewAdapter
+    var dataList: ArrayList<String> = ArrayList()
+    private var layoutManager: RecyclerView.LayoutManager? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,36 +24,22 @@ class VPBeehousesFragment : Fragment() {
     ): View? {
         var view: View? = inflater.inflate(R.layout.fragment_vp_beehouses, container, false);
 
-        var textView: TextView = view!!.findViewById(R.id.text)
-        textView!!.text = "2"
+        recyclerView = view?.findViewById(R.id.recycler_view_vp_beehouses)
+        adapter = VPBeehousesRecycleViewAdapter(activity!!.applicationContext, dataList)
 
-        //Initializing RecyclerView
-        recyclerView = view.findViewById(R.id.recycler_view)
-        adapter = MyPlacesRecycleViewAdapter(activity!!.applicationContext, dataList)
+        layoutManager = LinearLayoutManager(activity)
 
         //Set up recyclerview with Vertical LayoutManager and the adapter
-        recyclerView.layoutManager = LinearLayoutManager(activity!!.applicationContext, LinearLayoutManager.VERTICAL, false)
+        recyclerView?.layoutManager = layoutManager
 
         addAnimals();
-
-        // Notify the adapter for data change.
+        recyclerView?.adapter = adapter
         adapter.notifyDataSetChanged()
 
         return view
     }
 
     private fun addAnimals() {
-        dataList.add("Dog")
-        dataList.add("Cat")
-        dataList.add("Monkey")
-        dataList!!.add("lion")
-        dataList!!.add("Elephent")
-        dataList!!.add("Cheetah")
-        dataList!!.add("Snake")
-        dataList!!.add("Cow")
-        dataList!!.add("Ant")
-        dataList!!.add("Tiger")
-        dataList!!.add("Lizard")
-
+        dataList.add("Мы - некоммерческая общественная организация \"Гранд Эксперт\". Цель нашей деятельности")
     }
 }

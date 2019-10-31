@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
@@ -23,10 +22,13 @@ import com.notyteam.bee.google_map_controls.GoogleMapControlsFragment
 import com.notyteam.bee.topics.aboutus.fragment.AboutUsFragment
 import com.notyteam.bee.topics.feedback.FeedbackFragment
 import com.notyteam.bee.topics.google_map.fragment.GoogleMapsFragment
-import com.notyteam.bee.topics.my_places.MyPlacesControlsFragment
+import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsApiaryFragment
 import com.notyteam.bee.topics.my_places.MyPlacesFragment
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
 import com.notyteam.bee.topics.settings.fragment.SettingsFragment
+import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
+import com.notyteam.bee.topics_beehouses_online.beehouses_online_settings.fragment.BeehousesOnlineSettingsFragment
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.dialog_exit.*
 
@@ -43,6 +45,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         viewmodelDrawerItemsViewModel =
             ViewModelProviders.of(this).get(DrawerItemsViewModel::class.java)
 
+        val scrollView_beehouses_online = bindingMainActivity?.scrollViewBeehousesOnline
+
         val ll_grandExpert_profile = bindingMainActivity?.llGrandExpertProfile
         val ll_grandExpert_my_places = bindingMainActivity?.llGrandExpertMyPlaces
         val ll_grandExpert_google_maps = bindingMainActivity?.llGrandExpertGoogleMaps
@@ -52,6 +56,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val ll_grandExpert_beehouse_online = bindingMainActivity?.llGrandExpertBeehouseOnline
         val ll_grandExpert_beekeepers_ukraine = bindingMainActivity?.llGrandExpertBeekeepersUkraine
         val ll_grandExpert_about_us = bindingMainActivity?.llGrandExpertAboutUs
+        val ll_beehouses_online_gadgets_grafs = bindingMainActivity?.llBeehousesOnlineGadgetsGrafs
+        val ll_beehouses_online_settings = bindingMainActivity?.llBeehousesOnlineSettings
         val ll_grandExpert_exit = bindingMainActivity?.llGrandExpertExit
 
         ll_grandExpert_profile?.setOnClickListener(this)
@@ -63,18 +69,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ll_grandExpert_beehouse_online?.setOnClickListener(this)
         ll_grandExpert_beekeepers_ukraine?.setOnClickListener(this)
         ll_grandExpert_about_us?.setOnClickListener(this)
+        ll_beehouses_online_gadgets_grafs?.setOnClickListener(this)
+        ll_beehouses_online_settings?.setOnClickListener(this)
         ll_grandExpert_exit?.setOnClickListener(this)
 
         toolbar = bindingMainActivity?.appBarLayout?.toolbarMainDrawer
         setSupportActionBar(toolbar)
-        val imgbtn_download_google_maps = bindingMainActivity?.appBarLayout?.imgbtnDownloadGoogleMaps
+        val imgbtn_download_google_maps =
+            bindingMainActivity?.appBarLayout?.imgbtnDownloadGoogleMaps
         val imgbtn_controls_my_places = bindingMainActivity?.appBarLayout?.imgbtnControlsMyPlaces
-        val imgbtn_controls_google_maps = bindingMainActivity?.appBarLayout?.imgbtnControlsGoogleMaps
+        val imgbtn_controls_google_maps =
+            bindingMainActivity?.appBarLayout?.imgbtnControlsGoogleMaps
 
         imgbtn_controls_my_places?.setOnClickListener({
             supportFragmentManager.beginTransaction().replace(
                 R.id.fragment_container_main_activity,
-                MyPlacesControlsFragment()
+                MyPlacesControlsApiaryFragment()
             ).commit()
         })
 
@@ -90,6 +100,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         )
         drawer!!.addDrawerListener(toggle)
         toggle.syncState()
+
+        supportFragmentManager.beginTransaction().replace(com.notyteam.bee.R.id.fragment_container_main_activity,
+            ProfileFragment()).commit()
     }
 
     override fun onClick(v: View) {
@@ -142,6 +155,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_beehouse_online -> {
+                scrollView_main.visibility = View.GONE
+                scrollView_beehouses_online.visibility = View.VISIBLE
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment_container_main_activity,
+                    GadgetsGrafsFragment()
+                ).commit()
+            }
+            R.id.ll_beehouses_online_gadgets_grafs -> {
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment_container_main_activity,
+                    GadgetsGrafsFragment()
+                ).commit()
+            }
+            R.id.ll_beehouses_online_settings -> {
+                drawer!!.isDrawerOpen(GravityCompat.START)
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment_container_main_activity,
+                    BeehousesOnlineSettingsFragment()
+                ).commit()
             }
             R.id.ll_grandExpert_beekeepers_ukraine -> {
             }

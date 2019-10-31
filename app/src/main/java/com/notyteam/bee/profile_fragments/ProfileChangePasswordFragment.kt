@@ -41,5 +41,4 @@ class ProfileChangePasswordFragment : Fragment() {
         return view
 //        return binding.root
     }
-
 }

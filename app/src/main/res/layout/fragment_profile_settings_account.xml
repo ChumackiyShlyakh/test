@@ -149,7 +149,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/user_login"
+                android:src="@drawable/item_user_login"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline33"
                 app:layout_constraintStart_toStartOf="parent"
@@ -185,7 +185,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/urgent"
+                android:src="@drawable/item_urgent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv_fragment_profile_settings_account_email_email"
                 app:layout_constraintStart_toStartOf="parent"
@@ -222,7 +222,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/phone"
+                android:src="@drawable/item_phone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline35"
                 app:layout_constraintStart_toStartOf="parent"

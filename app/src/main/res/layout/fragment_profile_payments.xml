@@ -172,6 +172,7 @@
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/ed_border_orange_8"
+        android:gravity="center|left"
         android:orientation="vertical"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
@@ -184,7 +185,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:src="@drawable/clipboard">
+            android:src="@drawable/item_clipboard">
 
         </ImageView>
 
@@ -217,6 +218,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/ed_border_orange_8"
+        android:gravity="center|left"
         android:orientation="vertical"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
@@ -229,7 +231,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:src="@drawable/time">
+            android:src="@drawable/item_time">
 
         </ImageView>
 
@@ -346,6 +348,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.67" />
+        app:layout_constraintGuide_percent="0.7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

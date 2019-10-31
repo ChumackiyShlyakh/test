@@ -28,7 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:background="@drawable/google_maps_control"
+                    android:background="@drawable/item_control"
                     android:visibility="gone">
 
                 </ImageButton>
@@ -38,19 +38,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:background="@drawable/google_maps_download"
+                    android:background="@drawable/item_download"
                     android:visibility="gone">
+                 </ImageButton>
 
-                    <ImageButton
-                        android:id="@+id/imgbtn_controls_my_places"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:background="@drawable/google_maps_control"
-                        android:visibility="gone">
-
-                    </ImageButton>
-
+                <ImageButton
+                    android:id="@+id/imgbtn_controls_my_places"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@drawable/item_control"
+                    android:visibility="gone">
                 </ImageButton>
 
             </androidx.appcompat.widget.Toolbar>

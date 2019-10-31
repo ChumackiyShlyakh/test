@@ -59,7 +59,7 @@ class NewAccountFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickLi
         })
 
         btn_newaccount_language.setOnClickListener{
-            tv_dialogcustom.setText(R.string.choose_language)
+            tv_dialogcustom?.setText(R.string.choose_language)
             showItemsLanguage(this)
         }
         return view

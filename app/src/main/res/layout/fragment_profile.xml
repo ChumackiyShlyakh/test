@@ -25,43 +25,6 @@
 <!--            type="com.notyteam.bee.topics.profile.viewmodel.ProfileViewModel" />-->
 <!--    </data>-->
 
-    <TextView
-        android:id="@+id/tv_profile_beekeeper"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/beekeeper"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/orange"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline15" />
-
-    <TextView
-        android:id="@+id/tv_profile_user_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/user_name"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profile_beekeeper" />
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:text="@string/user_id"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/guideline14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_profile_user_name" />
 
     <ScrollView
         android:layout_width="0dp"
@@ -71,14 +34,51 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline14"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="@+id/guideline15">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_profile_settings_in_scroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/guideline19">
+
+            <TextView
+                android:id="@+id/tv_profile_beekeeper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/beekeeper"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline15" />
+
+            <TextView
+                android:id="@+id/tv_profile_user_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/user_name"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_profile_beekeeper" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/user_id"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_profile_user_name" />
 
             <LinearLayout
                 android:id="@+id/ll_profile"
@@ -88,12 +88,12 @@
                 android:orientation="vertical"
                 app:layout_constraintEnd_toStartOf="@+id/guideline32"
                 app:layout_constraintStart_toStartOf="@+id/guideline17"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/user_urgent">
+                    android:src="@drawable/item_user_urgent">
 
                 </ImageView>
 
@@ -115,12 +115,12 @@
                 android:orientation="vertical"
                 app:layout_constraintEnd_toStartOf="@+id/guideline16"
                 app:layout_constraintStart_toStartOf="@+id/guideline32"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/phone">
+                    android:src="@drawable/item_phone">
 
                 </ImageView>
 
@@ -182,7 +182,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:src="@drawable/pencil">
+                    android:src="@drawable/item_pencil">
 
                 </ImageView>
 
@@ -236,7 +236,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:src="@drawable/user_settings">
+                    android:src="@drawable/item_user_settings">
 
                 </ImageView>
 
@@ -277,10 +277,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
                 android:background="@drawable/ed_border_orange_8"
                 android:orientation="vertical"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline16"
                 app:layout_constraintStart_toStartOf="@+id/guideline17"
                 app:layout_constraintTop_toBottomOf="@+id/ll_fragment_profile_profile_settings">
@@ -289,7 +289,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:src="@drawable/wallet">
+                    android:src="@drawable/item_wallet">
 
                 </ImageView>
 
@@ -323,8 +323,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
                         android:text="@string/dollar"
                         android:textAppearance="?android:attr/textAppearanceMedium">
 

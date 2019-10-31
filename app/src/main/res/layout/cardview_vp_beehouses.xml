@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview_parent="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardview_vp_beehouses"
+    android:layout_width="match_parent"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/button_white_12"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/bee"
+                android:background="@color/transparent"
+                cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                cardview_parent:layout_constraintStart_toStartOf="parent"
+                cardview_parent:layout_constraintTop_toTopOf="parent"
+                cardview_parent:layout_constraintEnd_toStartOf="@id/item_text" />
+
+            <TextView
+                android:id="@+id/item_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/name"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                cardview_parent:layout_constraintStart_toEndOf="@+id/imageButton"
+                cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/hiden"
+                cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                cardview_parent:layout_constraintEnd_toStartOf="@+id/imageView4"
+                cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@color/transparent"
+                android:src="@drawable/maps_flags"
+                cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                cardview_parent:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@color/transparent"
+                android:src="@drawable/three_dots"
+                cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                cardview_parent:layout_constraintEnd_toEndOf="parent"
+                cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/tv_cardview_vp_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:maxLines="3"
+                android:text="@string/about_us_text">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_cardview_vp_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="@string/status" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="3dp"
+                    android:src="@drawable/compass"
+                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                    cardview_parent:layout_constraintStart_toStartOf="parent"
+                    cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cardview_vp_beehpuses_latitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="start"
+                    android:text="@string/sh"
+                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                    cardview_parent:layout_constraintStart_toEndOf="@+id/imageView6"
+                    cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cardview_vp_beehpuses_latitude_numbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="start"
+                    android:text="@string/latitude"
+                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                    cardview_parent:layout_constraintStart_toEndOf="@+id/tv_cardview_vp_beehpuses_latitude"
+                    cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cardview_vp_beehpuses_longitude"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/d"
+                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                    cardview_parent:layout_constraintStart_toStartOf="@+id/guideline50"
+                    cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cardview_vp_beehpuses_longitude_numbers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="start"
+                    android:text="@string/longitude"
+                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                    cardview_parent:layout_constraintStart_toEndOf="@+id/tv_cardview_vp_beehpuses_longitude"
+                    cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    cardview_parent:layout_constraintGuide_percent="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/calendar"
+                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                    cardview_parent:layout_constraintStart_toStartOf="parent"
+                    cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cardview_vp_beehpuses_data_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="start"
+                    android:text="@string/date_number"
+                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                    cardview_parent:layout_constraintStart_toEndOf="@+id/imageView7"
+                    cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cardview_vp_beehpuses_hyphen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:gravity="left"
+                    android:text="@string/hyphen"
+                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                    cardview_parent:layout_constraintStart_toEndOf="@+id/tv_cardview_vp_beehpuses_data_start"
+                    cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cardview_vp_beehpuses_data_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:gravity="left"
+                    android:text="@string/date_number"
+                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                    cardview_parent:layout_constraintEnd_toStartOf="@+id/guideline49"
+                    cardview_parent:layout_constraintHorizontal_bias="0.0"
+                    cardview_parent:layout_constraintStart_toEndOf="@+id/tv_cardview_vp_beehpuses_hyphen"
+                    cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cardview_vp_beehpuses_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/id"
+                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                    cardview_parent:layout_constraintStart_toStartOf="@+id/guideline49"
+                    cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_cardview_vp_beehpuses_user_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:gravity="right"
+                    android:text="@string/user_id"
+                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
+                    cardview_parent:layout_constraintStart_toEndOf="@+id/tv_cardview_vp_beehpuses_id"
+                    cardview_parent:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    cardview_parent:layout_constraintGuide_percent="0.5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
