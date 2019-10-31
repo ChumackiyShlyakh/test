@@ -62,13 +62,13 @@ class ChooseMeaningFragment : Fragment() {
         return view
     }
 
-    fun radio_button_click(view: View) {
-        // Get the clicked radio button instance
-        val radio: RadioButton =
-            view.findViewById(rdgrp_fragment_choose_meaning.checkedRadioButtonId)
-        Toast.makeText(
-            context, "On click : ${radio.text}",
-            Toast.LENGTH_SHORT
-        ).show()
-    }
+//    fun radio_button_click(view: View) {
+//        // Get the clicked radio button instance
+//        val radio: RadioButton =
+//            view.findViewById(rdgrp_fragment_choose_meaning.checkedRadioButtonId)
+//        Toast.makeText(
+//            context, "On click : ${radio.text}",
+//            Toast.LENGTH_SHORT
+//        ).show()
+//    }
 }
