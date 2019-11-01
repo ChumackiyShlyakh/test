@@ -21,34 +21,29 @@ class ProfileChangeSettingsAccountFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_profile_change_settings_account, container, false)
 
-//        val viewModel = ViewModelProviders.of(this)[ProfileViewModel::class.java]
-//        val binding: FragmentProfileBinding = FragmentProfileBinding().inflate(inflater, container, false)
-//        binding.model
-
         val imgbtn_profile_change_settings_account_back =  view.findViewById<ImageButton>(R.id.imgbtn_profile_change_settings_account_back)
-        val btn_profile_settings_account_edit = view.findViewById<Button>(R.id.btn_profile_settings_account_edit)
-        val btn_profile_settings_change_password = view.findViewById<Button>(R.id.btn_profile_settings_change_password)
+        val btn_fragment_profile_change_settings_account_change_password = view.findViewById<Button>(R.id.btn_fragment_profile_change_settings_account_change_password)
+        val btn_fragment_profile_change_settings_account_save = view.findViewById<Button>(R.id.btn_fragment_profile_change_settings_account_save)
 
-        imgbtn_profile_change_settings_account_back.setOnClickListener(View.OnClickListener {
+        imgbtn_profile_change_settings_account_back?.setOnClickListener( {
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 ProfileSettingsAccountFragment()
             )?.commit()
         })
-        btn_profile_settings_account_edit.setOnClickListener(View.OnClickListener {
+        btn_fragment_profile_change_settings_account_change_password?.setOnClickListener( {
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 ProfileChangePasswordFragment()
             )?.commit()
         })
-        btn_profile_settings_change_password.setOnClickListener(View.OnClickListener {
+        btn_fragment_profile_change_settings_account_save?.setOnClickListener( {
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
-                ProfileChangePasswordFragment()
+                ProfileSettingsAccountFragment()
             )?.commit()
         })
 
         return view
-//        return binding.root
     }
 }

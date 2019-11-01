@@ -7,12 +7,10 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/ll_google_maps_new_object"
+        android:id="@+id/ll_fragment_google_maps_new_object_back"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,9 +19,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
+            android:id="@+id/imgbtn_fragment_google_maps_new_object_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.1"
+            android:layout_marginStart="24dp"
+            android:background="@color/transparent"
             app:srcCompat="@drawable/arrow_left" />
 
         <TextView
@@ -36,6 +37,7 @@
             android:textColor="@color/black" />
 
         <Button
+            android:id="@+id/btn_fragment_google_maps_new_object_back_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -62,7 +64,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_google_maps_new_object">
+        app:layout_constraintTop_toBottomOf="@+id/ll_fragment_google_maps_new_object_back">
 
     </EditText>
 
@@ -241,7 +243,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/btn_google_maps_new_object_save"
+        android:id="@+id/btn_fragment_google_maps_new_object_save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_drop_orange"

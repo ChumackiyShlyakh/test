@@ -3,6 +3,7 @@ package com.notyteam.bee.topics.my_places.adapter.utils
 import android.view.animation.Interpolator
 
 abstract class LookupTableInterpolator(private val mValues: FloatArray) : Interpolator {
+
     private val mStepSize: Float
 
     init {
@@ -29,5 +30,4 @@ abstract class LookupTableInterpolator(private val mValues: FloatArray) : Interp
         // Linearly interpolate between the table values
         return mValues[position] + weight * (mValues[position + 1] - mValues[position])
     }
-
 }

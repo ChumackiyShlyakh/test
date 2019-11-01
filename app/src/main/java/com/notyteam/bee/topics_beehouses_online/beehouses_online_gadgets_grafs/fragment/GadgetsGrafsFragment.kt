@@ -9,12 +9,14 @@ import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.gadgets_grafs.ChooseGadgetFragment
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.gadgets_grafs.ChooseMeaningFragment
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.gadgets_grafs.grafs.fragment.MeaningGrafsFragment
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.gadgets_grafs.tables.fragment.MeaningTablesFragment
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 class GadgetsGrafsFragment : Fragment() {
 
@@ -53,6 +55,7 @@ class GadgetsGrafsFragment : Fragment() {
                 R.id.fragment_container_main_activity,
                 ChooseMeaningFragment()
             )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
         })
 
         btn_gadgets_grafs_choose_gadget?.setOnClickListener({
@@ -60,11 +63,11 @@ class GadgetsGrafsFragment : Fragment() {
                 R.id.fragment_container_main_activity,
                 ChooseGadgetFragment()
             )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
         })
 
         btn_fragment_gadgets_grafs_build?.setOnClickListener({
             var id: Int = rdgrp_fragment_gadgets_grafs.checkedRadioButtonId
-
             if (id != -1) {
                 val radio: RadioButton = view.findViewById(id)
 
@@ -81,6 +84,7 @@ class GadgetsGrafsFragment : Fragment() {
                         MeaningGrafsFragment()
                     )?.commit()
                 }
+                (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
             } else {
                 Toast.makeText(
                     context, "On button click : nothing selected",

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
@@ -14,6 +15,7 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.notyteam.bee.R
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_meaning_grafs.*
 
 class MeaningGrafsFragment : Fragment() {
@@ -36,6 +38,7 @@ class MeaningGrafsFragment : Fragment() {
                 R.id.fragment_container_main_activity,
                 GadgetsGrafsFragment()
             )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
         })
         imgbtn_fragment_meaning_grafs_controls?.setOnClickListener({
             fragmentManager?.beginTransaction()?.replace(

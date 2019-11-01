@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,7 @@ import com.notyteam.bee.R
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.gadgets_grafs.tables.fragment.adapter.MeaningTablesRecycleViewAdapter
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_table.gadgets_table.tables.fragment.MeaningTableFiltrFragment
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 
 class MeaningTablesFragment : Fragment() {
@@ -38,6 +40,7 @@ class MeaningTablesFragment : Fragment() {
                 R.id.fragment_container_main_activity,
                 GadgetsGrafsFragment()
             )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
         })
 
         imgbtn_fragment_meaning_tables_controls?.setOnClickListener({

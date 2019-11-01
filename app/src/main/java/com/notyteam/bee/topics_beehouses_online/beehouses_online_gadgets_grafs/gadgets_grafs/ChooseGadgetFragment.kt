@@ -4,17 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_gadgets_grafs.*
 
 class ChooseGadgetFragment : Fragment() {
 
+    var imgbtn_fragment_choose_gadget_back: ImageButton? = null
     var btn_fragment_choose_gadget_choose: Button? = null
 
     override fun onCreateView(
@@ -23,6 +23,15 @@ class ChooseGadgetFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_choose_gadget, container, false)
+
+        imgbtn_fragment_choose_gadget_back = view.findViewById(R.id.imgbtn_fragment_choose_gadget_back)
+        imgbtn_fragment_choose_gadget_back?.setOnClickListener({
+            fragmentManager?.beginTransaction()?.replace(
+                R.id.fragment_container_main_activity,
+                GadgetsGrafsFragment()
+            )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
+        })
 
         val rdgrp_fragment_choose_gadget =
             view.findViewById(R.id.rdgrp_fragment_choose_gadget) as RadioGroup
@@ -44,6 +53,7 @@ class ChooseGadgetFragment : Fragment() {
                     R.id.fragment_container_main_activity,
                     GadgetsGrafsFragment()
                 )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
             } else {
                 Toast.makeText(
                     context, "On button click : nothing selected",

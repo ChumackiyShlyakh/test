@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
-import kotlinx.android.synthetic.main.fragment_profile_payments.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 class ProfilePaymentsFragment : Fragment() {
 
@@ -19,27 +20,24 @@ class ProfilePaymentsFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_profile_payments, container, false)
 
-//        val viewModel = ViewModelProviders.of(this)[ProfileViewModel::class.java]
-//        val binding: FragmentProfileBinding = FragmentProfileBinding().inflate(inflater, container, false)
-//        binding.model
+        val imgbtn_fragment_profile_payments_back =  view.findViewById<ImageButton>(R.id.imgbtn_fragment_profile_payments_back)
+        val ll_fragment_profile_payments_account = view.findViewById<LinearLayout>(R.id.ll_fragment_profile_payments_account_details)
+        val ll_profile_payments_refill_account =  view.findViewById<LinearLayout>(R.id.ll_profile_payments_refill_account)
 
-        val imgbtn_profile_account_detail_fragment_back =  view.findViewById<ImageButton>(R.id.imgbtn_profile_account_detail_fragment_back)
-        val ll_fragment_profile_payments_account = view.findViewById<LinearLayout>(R.id.ll_fragment_profile_payments_account)
-        val ll_profile_payments_go_in_refill_account =  view.findViewById<LinearLayout>(R.id.ll_profile_payments_go_in_refill_account)
-
-        imgbtn_profile_account_detail_fragment_back.setOnClickListener(View.OnClickListener {
+        imgbtn_fragment_profile_payments_back?.setOnClickListener(View.OnClickListener {
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 ProfileFragment()
             )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
         })
-        ll_fragment_profile_payments_account.setOnClickListener(View.OnClickListener {
+        ll_fragment_profile_payments_account?.setOnClickListener(View.OnClickListener {
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 ProfileAccountDetailFragment()
             )?.commit()
         })
-        ll_profile_payments_go_in_refill_account.setOnClickListener(View.OnClickListener {
+        ll_profile_payments_refill_account?.setOnClickListener(View.OnClickListener {
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 ProfileRefillFragment()

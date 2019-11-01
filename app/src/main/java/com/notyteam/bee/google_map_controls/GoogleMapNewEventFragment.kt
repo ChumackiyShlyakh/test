@@ -7,12 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.RelativeLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.core.arch.DialogCustomListView
 import com.notyteam.bee.core.arch.DialogDataAdapter
 import com.notyteam.bee.topics.google_map.fragment.GoogleMapsFragment
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.dialog_custom_layout.*
 import kotlinx.android.synthetic.main.fragment_google_maps_new_event.*
 import kotlinx.android.synthetic.main.fragment_google_maps_new_object.*
@@ -21,6 +24,7 @@ class GoogleMapNewEventFragment : Fragment(), DialogDataAdapter.RecyclerViewItem
 
     internal var customDialog: DialogCustomListView? = null
     var meaning: String = "meaning"
+    lateinit var imgbtn_google_maps_new_event_back: ImageButton
     lateinit var btn_fragment_google_maps_newevent: Button
     lateinit var btn_google_maps_new_event_save: Button
 
@@ -36,18 +40,32 @@ class GoogleMapNewEventFragment : Fragment(), DialogDataAdapter.RecyclerViewItem
     ): View? {
         val view = inflater.inflate(R.layout.fragment_google_maps_new_event, container, false)
 
-        btn_fragment_google_maps_newevent = view.findViewById(R.id.btn_fragment_google_maps_newevent)
+        imgbtn_google_maps_new_event_back =
+            view.findViewById(R.id.imgbtn_google_maps_new_event_back)
+        btn_fragment_google_maps_newevent =
+            view.findViewById(R.id.btn_fragment_google_maps_newevent)
         btn_google_maps_new_event_save = view.findViewById(R.id.btn_google_maps_new_event_save)
+
+        imgbtn_google_maps_new_event_back.setOnClickListener({
+            fragmentManager?.beginTransaction()?.replace(
+                R.id.fragment_container_main_activity,
+                GoogleMapsFragment()
+            )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
+        })
 
         btn_fragment_google_maps_newevent.setOnClickListener(View.OnClickListener {
             tv_dialogcustom?.setText(R.string.choose_event)
-            showItems(this) })
+            showItems(this)
+        })
 
         btn_google_maps_new_event_save.setOnClickListener {
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 GoogleMapsFragment()
-            )?.commit()}
+            )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
+        }
 
         return view
     }

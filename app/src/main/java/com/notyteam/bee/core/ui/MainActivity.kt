@@ -93,6 +93,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 R.id.fragment_container_main_activity,
                 GoogleMapControlsFragment()
             ).commit()
+            toolbar?.visibility = View.GONE
         })
         drawer = bindingMainActivity?.drawerLayoutMain
         val toggle = ActionBarDrawerToggle(
@@ -101,13 +102,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         drawer!!.addDrawerListener(toggle)
         toggle.syncState()
 
-        supportFragmentManager.beginTransaction().replace(com.notyteam.bee.R.id.fragment_container_main_activity,
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container_main_activity,
             ProfileFragment()).commit()
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.ll_grandExpert_profile -> {
+                supportActionBar?.title = getString(R.string.profile)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     ProfileFragment()
@@ -117,6 +119,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_my_places -> {
+                supportActionBar?.title = getString(R.string.my_places)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     MyPlacesFragment()
@@ -126,6 +129,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 imgbtn_controls_my_places.visibility = View.VISIBLE
             }
             R.id.ll_grandExpert_google_maps -> {
+                supportActionBar?.title = getString(R.string.google_map)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     GoogleMapsFragment()
@@ -137,6 +141,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.ll_grandExpert_instructions -> {
             }
             R.id.ll_grandExpert_feedback -> {
+                supportActionBar?.title = getString(R.string.feedback)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     FeedbackFragment()
@@ -146,6 +151,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_settings -> {
+                supportActionBar?.title = getString(R.string.settings)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     SettingsFragment()
@@ -155,6 +161,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_beehouse_online -> {
+                supportActionBar?.title = getString(R.string.my_gadgets)
                 scrollView_main.visibility = View.GONE
                 scrollView_beehouses_online.visibility = View.VISIBLE
                 supportFragmentManager.beginTransaction().replace(
@@ -163,13 +170,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 ).commit()
             }
             R.id.ll_beehouses_online_gadgets_grafs -> {
+                supportActionBar?.title = getString(R.string.my_gadgets)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     GadgetsGrafsFragment()
                 ).commit()
             }
             R.id.ll_beehouses_online_settings -> {
-                drawer!!.isDrawerOpen(GravityCompat.START)
+//                drawer!!.isDrawerOpen(GravityCompat.START)
+                supportActionBar?.title = getString(R.string.settings)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     BeehousesOnlineSettingsFragment()
@@ -178,6 +187,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.ll_grandExpert_beekeepers_ukraine -> {
             }
             R.id.ll_grandExpert_about_us -> {
+                supportActionBar?.title = getString(R.string.about_us)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     AboutUsFragment()

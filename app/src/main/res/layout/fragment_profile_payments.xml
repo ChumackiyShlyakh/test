@@ -5,33 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--    <layout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--        xmlns:tools="http://schemas.android.com/tools">-->
-
-    <!--    <data>-->
-
-    <!--        <variable-->
-    <!--            name="model"-->
-    <!--            type="com.notyteam.bee.topics.profile.viewmodel.ProfileViewModel" />-->
-    <!--    </data>-->
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_fragment_profile_payments_back"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imgbtn_profile_account_detail_fragment_back"
+            android:id="@+id/imgbtn_fragment_profile_payments_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:background="@color/transparent"
             android:src="@drawable/arrow_left"
+            android:layout_marginStart="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline28"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -41,26 +31,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
             android:text="@string/payments"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline28"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintStart_toEndOf="@+id/imgbtn_fragment_profile_payments_back"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline28"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.13" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
+        </TextView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -70,12 +49,12 @@
         android:layout_height="0dp"
         android:background="@drawable/button_white_8"
         android:gravity="center"
+        android:layout_marginTop="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toTopOf="@+id/guideline40">
-
+        app:layout_constraintTop_toBottomOf="@+id/cl_fragment_profile_payments_back">
 
     </LinearLayout>
 
@@ -83,7 +62,7 @@
         android:id="@+id/linearLayout4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
@@ -99,10 +78,11 @@
             android:textColor="@color/black" />
 
         <TextView
+            android:id="@+id/tv_fragment_profile_payments_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:text="₴"
+            android:text="@string/hryvnya"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/black">
 
@@ -138,11 +118,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/number_of_sms_sent"
+            android:text="@string/number_of_sms_send"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black" />
 
         <TextView
+            android:id="@+id/tv_fragment_profile_payments_number_sms_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -163,11 +144,12 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline14"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline31"
-        app:layout_constraintTop_toTopOf="@+id/guideline42" />
+        app:layout_constraintTop_toTopOf="@+id/guideline42"
+        app:layout_constraintVertical_bias="0.3" />
 
 
     <LinearLayout
-        android:id="@+id/ll_fragment_profile_payments_account"
+        android:id="@+id/ll_fragment_profile_payments_account_details"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
@@ -213,7 +195,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_profile_payments_go_in_refill_account"
+        android:id="@+id/ll_profile_payments_refill_account"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -270,7 +252,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.13" />
+        app:layout_constraintGuide_percent="0.11" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
@@ -312,7 +294,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.38" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline14"
@@ -334,7 +316,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.31" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline42"

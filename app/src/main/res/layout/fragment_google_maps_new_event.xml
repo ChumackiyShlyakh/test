@@ -7,12 +7,10 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/ll_google_maps_new_event"
+        android:id="@+id/ll_google_maps_new_event_back"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,21 +19,25 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
+            android:id="@+id/imgbtn_google_maps_new_event_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.01"
+            android:layout_marginStart="24dp"
+            android:background="@color/transparent"
             app:srcCompat="@drawable/arrow_left" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_weight="6"
-            android:text="@string/new_object"
+            android:text="@string/new_event"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/black" />
 
         <Button
+            android:id="@+id/btn_google_maps_new_event_back_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -62,7 +64,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_google_maps_new_event">
+        app:layout_constraintTop_toBottomOf="@+id/ll_google_maps_new_event_back">
 
     </EditText>
 

@@ -18,13 +18,9 @@ class ProfileAccountDetailFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_profile_account_detail, container, false)
 
-//        val viewModel = ViewModelProviders.of(this)[ProfileViewModel::class.java]
-//        val binding: FragmentProfileBinding = FragmentProfileBinding().inflate(inflater, container, false)
-//        binding.model
+        val imgbtn_fragment_profile_account_detail_back = view.findViewById<ImageButton>(R.id.imgbtn_fragment_profile_account_detail_back)
 
-        val imgbtn_profile_account_detail_fragment_back = view.findViewById<ImageButton>(R.id.imgbtn_profile_account_detail_fragment_back)
-
-        imgbtn_profile_account_detail_fragment_back.setOnClickListener(View.OnClickListener {
+        imgbtn_fragment_profile_account_detail_back.setOnClickListener( {
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 ProfilePaymentsFragment()
@@ -32,6 +28,5 @@ class ProfileAccountDetailFragment : Fragment() {
         })
 
         return view
-//        return binding.root
     }
 }

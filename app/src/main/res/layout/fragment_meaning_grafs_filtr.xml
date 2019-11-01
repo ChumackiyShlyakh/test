@@ -10,8 +10,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -23,8 +21,8 @@
             android:layout_width="wrap_content"
             android:background="@color/transparent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:layout_marginStart="16dp"
+            android:layout_weight="0.1"
+            android:layout_marginStart="24dp"
             android:src="@drawable/close" />
 
         <TextView
@@ -64,14 +62,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_fragment_meaning_grafs_filtr_period">
 
-        <EditText
+        <Button
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/ed_border_grey"
             android:hint="@string/twelve_hours"
-            android:inputType="date"
-            android:paddingLeft="16dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -80,15 +76,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <Button
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/ed_border_grey"
             android:hint="@string/day"
-            android:inputType="date"
-            android:paddingLeft="16dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -117,14 +110,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_fragment_meaning_grafs_filtr_period">
 
-        <EditText
+        <Button
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/ed_border_grey"
             android:hint="@string/week"
-            android:inputType="date"
-            android:paddingLeft="16dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -133,15 +124,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <Button
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/ed_border_grey"
             android:hint="@string/month"
-            android:inputType="date"
-            android:paddingLeft="16dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -186,7 +174,7 @@
         <EditText
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/ed_border_grey"
             android:hint="@string/date"
             android:inputType="date"
@@ -202,8 +190,7 @@
         <EditText
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/ed_border_grey"
             android:hint="@string/time"
             android:inputType="time"
@@ -252,11 +239,11 @@
         <EditText
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/ed_border_grey"
             android:hint="@string/date"
             android:inputType="date"
-            android:paddingLeft="16dp"
+            android:paddingStart="16dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -268,12 +255,11 @@
         <EditText
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/ed_border_grey"
             android:hint="@string/time"
             android:inputType="time"
-            android:paddingLeft="16dp"
+            android:paddingStart="16dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -300,7 +286,6 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
         app:layout_constraintStart_toStartOf="@+id/guideline23"
-        app:layout_constraintTop_toBottomOf="@+id/cl_google_maps_new_object_date"
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline

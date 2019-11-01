@@ -11,8 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,8 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/transparent"
-            android:layout_weight="0.2"
-            android:layout_marginStart="16dp"
+            android:layout_weight="0.1"
+            android:layout_marginStart="24dp"
             android:src="@drawable/arrow_left2" />
 
         <TextView
@@ -43,7 +41,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/transparent"
-            android:layout_weight="1"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="0.1"
             app:srcCompat="@drawable/item_control" />
 
     </LinearLayout>
