@@ -113,18 +113,15 @@ dependencies {
     implementation 'com.google.maps.android:android-maps-utils:0.5'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
 
-<<<<<<< HEAD
-    //Shedulle
-    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
-}
-kapt {
-    generateStubs = true
-=======
+
     // Expandablelayout
 //    implementation 'net.cachapa.expandablelayout:expandablelayout:1.6.0'
     implementation group: 'net.cachapa.expandablelayout', name: 'expandablelayout', version: '1.3'
 
     // Charts
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
->>>>>>> test-master
+
+    //Shedulle
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
 }
+kapt { generateStubs = true }

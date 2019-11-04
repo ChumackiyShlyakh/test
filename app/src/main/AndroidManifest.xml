@@ -27,16 +27,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
+
         <activity android:name=".core.ui.MainActivity" />
         <activity android:name=".registration.RegistrationActivity" />
-=======
+
         <activity android:name=".core.ui.MainActivity"/>
 
         <activity android:name=".registration.RegistrationActivity"/>
 
-
->>>>>>> test-master
     </application>
 
 </manifest>

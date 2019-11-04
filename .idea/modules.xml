@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/grandexpert-GrandExpert.iml" filepath="$PROJECT_DIR$/grandexpert-GrandExpert.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/grandexpert-app.iml" filepath="$PROJECT_DIR$/app/grandexpert-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/project-grandexpert-GrandExpert.iml" filepath="$PROJECT_DIR$/project-grandexpert-GrandExpert.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/project-grandexpert-app.iml" filepath="$PROJECT_DIR$/app/project-grandexpert-app.iml" />
     </modules>
   </component>
 </project>
