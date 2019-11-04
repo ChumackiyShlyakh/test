@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.dialog_custom_layout.*
 import kotlinx.android.synthetic.main.item_bees.*
 
 
-class NewAccountFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickListener, OnBackPressed {
+class NewAccountFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickListener {
 
     lateinit var btn_newaccount_meaning: Button
     lateinit var btn_newaccount_language: Button
@@ -113,10 +113,5 @@ class NewAccountFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickLi
         }
     }
 
-    override fun onBackPressed() {
-        fragmentManager!!.beginTransaction().replace(R.id.fragment_container_registration,
-            RegistrationFragment()
-        ).commit()
-    }
 }
 

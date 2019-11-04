@@ -12,7 +12,7 @@ import com.notyteam.bee.registration.login.fragment.LoginFragment
 import com.notyteam.bee.registration.newaccount.fragment.NewAccountFragment
 import com.notyteam.bee.utils.OnBackPressed
 
-class RegistrationFragment : Fragment(), OnBackPressed {
+class RegistrationFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,9 +27,6 @@ class RegistrationFragment : Fragment(), OnBackPressed {
 
         // Set a click listener for text view object
         btn_enter.setOnClickListener {
-            //            val intent = Intent (getActivity(), LoginActivity::class.java)
-//            getActivity()?.startActivity(intent)
-//            getActivity()?.finish()
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_registration,
                 LoginFragment()
@@ -37,9 +34,6 @@ class RegistrationFragment : Fragment(), OnBackPressed {
         }
 
         btn_registration.setOnClickListener {
-            //            val intent = Intent (getActivity(), NewAccountActivity::class.java)
-//            getActivity()?.startActivity(intent)
-//            getActivity()?.finish()
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_registration,
                 NewAccountFragment()
@@ -49,7 +43,5 @@ class RegistrationFragment : Fragment(), OnBackPressed {
         return view
     }
 
-    override fun onBackPressed() {
-        activity?.finish()
-    }
+
 }

@@ -20,7 +20,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class LoginFragment : Fragment(), Callback<LoginResponse>, OnBackPressed {
+class LoginFragment : Fragment(), Callback<LoginResponse> {
 
     private var userCallback: Callback<LoginResponse>? = null
 
@@ -75,8 +75,5 @@ class LoginFragment : Fragment(), Callback<LoginResponse>, OnBackPressed {
             SMSCodeFragment()).commit()
     }
 
-    override fun onBackPressed() {
-        fragmentManager!!.beginTransaction().replace(R.id.fragment_container_registration,
-            RegistrationFragment()).commit()
-    }
+
 }
