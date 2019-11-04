@@ -1,13 +1,15 @@
 package com.notyteam.bee.registration
 
 import android.os.Bundle
-import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
-import com.notyteam.bee.utils.AppBarCustom
 import com.notyteam.bee.R
+<<<<<<< HEAD
 
 
 
+=======
+import com.notyteam.bee.utils.AppBarCustom
+>>>>>>> test-master
 
 
 class RegistrationActivity : AppCompatActivity() {

@@ -35,17 +35,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.dialog_exit.*
 
-
-
-
-
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     var bindingMainActivity: ActivityMainBinding? = null
     var viewmodelDrawerItemsViewModel: DrawerItemsViewModel? = null
     private var drawer: DrawerLayout? = null
     private var toolbar: Toolbar? = null
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

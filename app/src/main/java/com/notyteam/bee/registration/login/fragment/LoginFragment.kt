@@ -43,7 +43,7 @@ class LoginFragment : Fragment(), Callback<LoginResponse> {
 //                        activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container_login,
 //                SMSCodeFragment())?.commit()
             fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_registration,
-                SMSCodeFragment())?.commit()
+                SMSCodeFragment())?.addToBackStack(null)?.commit()
         }
 
         viewModel.getLoginModelRequest().observe(this, Observer { it?.let {
@@ -51,7 +51,7 @@ class LoginFragment : Fragment(), Callback<LoginResponse> {
 //                SMSCodeFragment()).commit()
 
             fragmentManager!!.beginTransaction().replace(R.id.fragment_container_registration,
-                SMSCodeFragment()).commit()
+                SMSCodeFragment()).addToBackStack(null).commit()
 //            if (Utils.isNetworkConnected(getContext())) run {
 //
 //            }
@@ -66,14 +66,12 @@ class LoginFragment : Fragment(), Callback<LoginResponse> {
 //        activity!!.supportFragmentManager.beginTransaction().replace(R.id.fragment_container_login,
 //            SMSCodeFragment()).commit()
         fragmentManager!!.beginTransaction().replace(R.id.fragment_container_registration,
-            SMSCodeFragment()).commit()
+            SMSCodeFragment()).addToBackStack(null).commit()
     }
 
     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
 
         fragmentManager!!.beginTransaction().replace(R.id.fragment_container_registration,
-            SMSCodeFragment()).commit()
+            SMSCodeFragment()).addToBackStack(null).commit()
     }
-
-
 }

@@ -51,9 +51,9 @@ class NewAccountFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickLi
 
         btn_newaccount.setOnClickListener {
             fragmentManager?.beginTransaction()?.replace(
-                com.notyteam.bee.R.id.fragment_container_registration,
+                R.id.fragment_container_registration,
                 SMSCodeFragment()
-            )?.commit()
+            )?.addToBackStack(null)?.commit()
         }
 
         btn_newaccount_meaning.setOnClickListener(View.OnClickListener {

@@ -42,6 +42,4 @@ class RegistrationFragment : Fragment() {
 
         return view
     }
-
-
 }
