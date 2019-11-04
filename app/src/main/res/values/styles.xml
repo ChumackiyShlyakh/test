@@ -17,13 +17,9 @@
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">true</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
-<<<<<<< HEAD
-
         <item name="android:statusBarColor">@color/orange</item>
 
 
-=======
->>>>>>> test-master
     </style>
 
 <!--    <style name="MainTheme" parent="AppTheme">-->
