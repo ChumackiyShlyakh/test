@@ -31,9 +31,6 @@
         <activity android:name=".core.ui.MainActivity" />
         <activity android:name=".registration.RegistrationActivity" />
 
-        <activity android:name=".core.ui.MainActivity"/>
-
-        <activity android:name=".registration.RegistrationActivity"/>
 
     </application>
 

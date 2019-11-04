@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.Button
@@ -16,6 +17,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.notyteam.bee.R
 import com.notyteam.bee.core.ui.drawer.DrawerItemsViewModel
@@ -113,47 +115,34 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         toggle.syncState()
 
+
         supportActionBar?.title = getString(R.string.google_map)
+        replaceFragment(GoogleMapsFragment())
         imgbtn_controls_google_maps?.visibility = View.VISIBLE
         imgbtn_download_google_maps?.visibility = View.VISIBLE
         imgbtn_controls_my_places?.visibility = View.GONE
 
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container_main_activity,
-            GoogleMapsFragment()).commit()
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.ll_grandExpert_profile -> {
                 supportActionBar?.title = getString(R.string.profile)
-                supportFragmentManager.beginTransaction().replace(
-                    R.id.fragment_container_main_activity,
-                    ProfileFragment()
-                ).commit()
-                window.statusBarColor = getResources().getColor(R.color.orange_light_transparent)
-                toolbar?.setBackgroundColor(getResources().getColor(R.color.orange_light_transparent))
+                replaceFragment(ProfileFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
                 imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_my_places -> {
                 supportActionBar?.title = getString(R.string.my_places)
-                supportFragmentManager.beginTransaction().replace(
-                    R.id.fragment_container_main_activity,
-                    MyPlacesFragment()
-                ).commit()
-                window.statusBarColor = getResources().getColor(R.color.white)
+                replaceFragment(MyPlacesFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
                 imgbtn_controls_my_places.visibility = View.VISIBLE
             }
             R.id.ll_grandExpert_google_maps -> {
                 supportActionBar?.title = getString(R.string.google_map)
-                supportFragmentManager.beginTransaction().replace(
-                    R.id.fragment_container_main_activity,
-                    GoogleMapsFragment()
-                ).commit()
-                window.statusBarColor = getResources().getColor(R.color.orange_light_transparent)
+                replaceFragment(GoogleMapsFragment())
                 imgbtn_controls_google_maps.visibility = View.VISIBLE
                 imgbtn_download_google_maps.visibility = View.VISIBLE
                 imgbtn_controls_my_places.visibility = View.GONE
@@ -162,20 +151,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.ll_grandExpert_feedback -> {
                 supportActionBar?.title = getString(R.string.feedback)
-                supportFragmentManager.beginTransaction().replace(
-                    R.id.fragment_container_main_activity,
-                    FeedbackFragment()
-                ).commit()
+                replaceFragment(FeedbackFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
                 imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_settings -> {
                 supportActionBar?.title = getString(R.string.settings)
-                supportFragmentManager.beginTransaction().replace(
-                    R.id.fragment_container_main_activity,
-                    SettingsFragment()
-                ).commit()
+                replaceFragment(SettingsFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
                 imgbtn_controls_my_places.visibility = View.GONE
@@ -184,36 +167,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 supportActionBar?.title = getString(R.string.my_gadgets)
                 scrollView_main.visibility = View.GONE
                 scrollView_beehouses_online.visibility = View.VISIBLE
-                supportFragmentManager.beginTransaction().replace(
-                    R.id.fragment_container_main_activity,
-                    GadgetsGrafsFragment()
-                ).commit()
+                replaceFragment(GadgetsGrafsFragment())
             }
             R.id.ll_beehouses_online_gadgets_grafs -> {
                 supportActionBar?.title = getString(R.string.my_gadgets)
-                supportFragmentManager.beginTransaction().replace(
-                    R.id.fragment_container_main_activity,
-                    GadgetsGrafsFragment()
-                ).commit()
+                replaceFragment(GadgetsGrafsFragment())
             }
             R.id.ll_beehouses_online_settings -> {
 //                drawer!!.isDrawerOpen(GravityCompat.START)
                 supportActionBar?.title = getString(R.string.settings)
-                supportFragmentManager.beginTransaction().replace(
-                    R.id.fragment_container_main_activity,
-                    BeehousesOnlineSettingsFragment()
-                ).commit()
-                window.statusBarColor = getResources().getColor(R.color.white)
+                replaceFragment(BeehousesOnlineSettingsFragment())
             }
             R.id.ll_grandExpert_beekeepers_ukraine -> {
             }
             R.id.ll_grandExpert_about_us -> {
                 supportActionBar?.title = getString(R.string.about_us)
-                supportFragmentManager.beginTransaction().replace(
-                    R.id.fragment_container_main_activity,
-                    AboutUsFragment()
-                ).commit()
-                window.statusBarColor = getResources().getColor(R.color.orange)
+                replaceFragment(AboutUsFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
                 imgbtn_controls_my_places.visibility = View.GONE
@@ -223,6 +192,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
         drawer?.closeDrawer(GravityCompat.START)
+    }
+
+
+    fun replaceFragment(fragment: Fragment?) {
+
+        if (fragment != null) {
+            val fragmentManager = supportFragmentManager
+            fragmentManager.beginTransaction().replace(R.id.fragment_container_main_activity, fragment).commitAllowingStateLoss()
+        } else {
+            // error in creating fragment
+            Log.e("ActivityMain", "Error in creating fragment")
+        }
     }
 
     fun showDialog(activity: Activity) {
