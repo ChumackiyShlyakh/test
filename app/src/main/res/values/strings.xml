@@ -6,7 +6,7 @@
     <string name="registration">Registration</string>
     <string name="enter_without_registration">Enter without registration</string>
     <string name="enter_to_you_account">Sign in to your account</string>
-    <string name="forget_password">Forget password</string>
+    <string name="forget_password">Forget password?</string>
     <string name="code_from_sms">Code from sms</string>
     <string name="forward">Forward</string>
     <string name="send_again">Send again</string>
@@ -56,6 +56,7 @@
     <string name="hryvnya">₴</string>
     <string name="profile_settings">Profile settings</string>
     <string name="account_settings">Account settings</string>
+    <string name="account_detail">Account detail</string>
     <string name="edit">Edit</string>
     <string name="change_password">Change password</string>
     <string name="old_password">Old password</string>
@@ -64,11 +65,12 @@
     <string name="payments">Payments</string>
     <string name="replenish_account">Replenish account</string>
     <string name="details">details</string>
-    <string name="number_of_sms_sent">Number of sms sent: </string>
+    <string name="number_of_sms_send">Number of sms send: </string>
     <string name="sms_number_left">1000</string>
     <string name="account">account</string>
     <string name="refill_big">Refill</string>
     <string name="id">ID:</string>
+    <string name="hyphen">-</string>
     <string name="value">Value:</string>
     <string name="rest">Rest:</string>
     <string name="theme">Theme</string>
@@ -87,13 +89,53 @@
     <string name="sms_times_sending">SMS times sending</string>
     <string name="one_time_per_day">1 time per day</string>
     <string name="two_times_per_day">2 times per day</string>
-
-
+    <string name="status">Status</string>
+    <string name="event_type">Event type</string>
+    <string name="latitude">50.1234</string>
+    <string name="longitude">51.4321</string>
+    <string name="sh">Ш:</string>
+    <string name="d">Д:</string>
+    <string name="gadgets_grafs">My gadgets and grafs</string>
+    <string name="table">Table</string>
+    <string name="graf">Graf</string>
+    <string name="choose_gadget">Choose gadget</string>
+    <string name="build">Build</string>
+    <string name="gadget">Gadget</string>
+    <string name="choose">Choose</string>
+    <string name="weight_big">Weight</string>
+    <string name="temperature_big">Temperature</string>
+    <string name="humidity_big">Humidity</string>
+    <string name="weight_difference_big">Weight difference</string>
+    <string name="humidity">humidity</string>
+    <string name="setting_big">Setting:</string>
+    <string name="meaning_big">Meaning:</string>
+    <string name="number">№</string>
+    <string name="number_setting">1234567890</string>
+    <string name="period">Period</string>
+    <string name="meaning_big2">Meaning</string>
+    <string name="coma">,</string>
+    <string name="chemical_treatment">Chemical treatment</string>
     <string name="filtr">Filtr</string>
     <string name="clean">Clean</string>
     <string name="objects">Objects</string>
+    <string name="new_event">New event</string>
     <string name="events">Events</string>
     <string name="search_for_name">Search for name</string>
+    <string name="flowering_of_honey_plants">Flowering of honey plants</string>
+    <string name="apiary_type">Apiary type</string>
+    <string name="circle">Circle</string>
+    <string name="rectangle">Rectangle</string>
+    <string name="arbitrarily">Arbitrarily</string>
+    <string name="actually">Actually</string>
+    <string name="date_of_creation">Date of creation</string>
+    <string name="my_gadgets">My gadgets</string>
+
+    <string name="twelve_hours">12 hours</string>
+    <string name="day">Day</string>
+    <string name="month">Month</string>
+    <string name="week">Week</string>
+    <string name="time">Time</string>
+    <string name="time_number">19.30</string>
 
     <string name="beehouse">Beehouse</string>
     <string name="people">People</string>
@@ -108,6 +150,8 @@
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="apply">Apply</string>
+    <string name="date_number">20.09.2019</string>
+    <string name="date_day">yesterday</string>
 
     <string name="new_object">New object</string>
     <string name="delete">Delete</string>
@@ -123,10 +167,12 @@
     <string name="empty_password">Password is empty!</string>
     <string name="password_length_error">Password is to small!</string>
 
-    <string name="enter_email">Enter your email</string>
-    <string name="enter_password">Enter your password</string>
+    <string name="enter_login">+8 095 678 67 54</string>
+    <string name="enter_password">•••••••</string>
+<!--    <string name="enter_password">Enter your password</string>-->
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
 
 </resources>

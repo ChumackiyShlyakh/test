@@ -9,8 +9,7 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.notyteam.bee.R
 import com.notyteam.bee.topics.my_places.adapter.MyFragmentPagerAdapter
-import com.notyteam.bee.topics.my_places.viewpager_fragments.MyFrament
-import com.notyteam.bee.topics.my_places.viewpager_fragments.SecondFragment
+import com.notyteam.bee.topics.my_places.viewpager_fragments.*
 
 class MyPlacesFragment : Fragment() {
 
@@ -36,19 +35,20 @@ class MyPlacesFragment : Fragment() {
 
         val adapter = MyFragmentPagerAdapter(childFragmentManager)
 
-        var firstFragmet: MyFrament = MyFrament.newInstance("First Fragment")
-        var secondFragmet: SecondFragment = SecondFragment()
-        var thirdFragmet: MyFrament = MyFrament.newInstance("Third Fragment")
-        var foreFragmet: MyFrament = MyFrament.newInstance("4 Fragment")
+        var firstFragmet: VPBeehousesFragment = VPBeehousesFragment()
+        var secondFragmet: VPApiaryFragment = VPApiaryFragment()
+        var thirdFragmet: VPObjectsFragment = VPObjectsFragment()
+        var foreFragmet: VPEventsFragment = VPEventsFragment()
+        var fiveFragmet: VPArchiveFragment = VPArchiveFragment()
 
-        adapter.addFragment(firstFragmet, "Beehouses")
-        adapter.addFragment(secondFragmet,"Plots")
+        adapter.addFragment(firstFragmet, "Beehouse")
+        adapter.addFragment(secondFragmet,"Apiary")
         adapter.addFragment(thirdFragmet, "Objects")
         adapter.addFragment(foreFragmet, "Events")
+        adapter.addFragment(fiveFragmet, "Archive")
 
         viewpager.adapter = adapter
 
         tabs.setupWithViewPager(viewpager)
-
     }
 }

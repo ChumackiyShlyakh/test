@@ -15,6 +15,8 @@ import `in`.aabhasjindal.otptextview.OTPListener
 import `in`.aabhasjindal.otptextview.OtpTextView
 import com.notyteam.bee.R
 import com.notyteam.bee.core.ui.MainActivity
+import com.notyteam.bee.registration.login.fragment.LoginFragment
+import com.notyteam.bee.utils.OnBackPressed
 
 
 class SMSCodeFragment : Fragment() {

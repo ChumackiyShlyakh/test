@@ -8,7 +8,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.room.Room
 
 
-@Database(entities = [RoomPointData::class], version = 1)
+@Database(entities = [RoomPointData::class], version = 1, exportSchema = true)
 abstract class RoomDB : RoomDatabase() {
 
     abstract fun pointDao(): PointDao

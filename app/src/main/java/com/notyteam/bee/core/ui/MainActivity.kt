@@ -4,30 +4,34 @@ import android.app.Activity
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.core.view.isGone
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProviders
 import com.notyteam.bee.R
 import com.notyteam.bee.core.ui.drawer.DrawerItemsViewModel
 import com.notyteam.bee.databinding.ActivityMainBinding
+import com.notyteam.bee.google_map_controls.GoogleMapControlsFragment
 import com.notyteam.bee.topics.aboutus.fragment.AboutUsFragment
 import com.notyteam.bee.topics.feedback.FeedbackFragment
 import com.notyteam.bee.topics.google_map.fragment.GoogleMapsFragment
+import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsApiaryFragment
 import com.notyteam.bee.topics.my_places.MyPlacesFragment
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
 import com.notyteam.bee.topics.settings.fragment.SettingsFragment
+import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
+import com.notyteam.bee.topics_beehouses_online.beehouses_online_settings.fragment.BeehousesOnlineSettingsFragment
+import com.notyteam.bee.utils.AppBarCustom
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.dialog_exit.*
 
@@ -38,11 +42,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var drawer: DrawerLayout? = null
     private var toolbar: Toolbar? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+       AppBarCustom.makeStatusBarTransparent(MainActivity@this)
+
         bindingMainActivity = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewmodelDrawerItemsViewModel =
             ViewModelProviders.of(this).get(DrawerItemsViewModel::class.java)
+
+        val scrollView_beehouses_online = bindingMainActivity?.scrollViewBeehousesOnline
 
         val ll_grandExpert_profile = bindingMainActivity?.llGrandExpertProfile
         val ll_grandExpert_my_places = bindingMainActivity?.llGrandExpertMyPlaces
@@ -53,6 +63,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val ll_grandExpert_beehouse_online = bindingMainActivity?.llGrandExpertBeehouseOnline
         val ll_grandExpert_beekeepers_ukraine = bindingMainActivity?.llGrandExpertBeekeepersUkraine
         val ll_grandExpert_about_us = bindingMainActivity?.llGrandExpertAboutUs
+        val ll_beehouses_online_gadgets_grafs = bindingMainActivity?.llBeehousesOnlineGadgetsGrafs
+        val ll_beehouses_online_settings = bindingMainActivity?.llBeehousesOnlineSettings
         val ll_grandExpert_exit = bindingMainActivity?.llGrandExpertExit
 
         ll_grandExpert_profile?.setOnClickListener(this)
@@ -64,85 +76,147 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ll_grandExpert_beehouse_online?.setOnClickListener(this)
         ll_grandExpert_beekeepers_ukraine?.setOnClickListener(this)
         ll_grandExpert_about_us?.setOnClickListener(this)
+        ll_beehouses_online_gadgets_grafs?.setOnClickListener(this)
+        ll_beehouses_online_settings?.setOnClickListener(this)
         ll_grandExpert_exit?.setOnClickListener(this)
 
         toolbar = bindingMainActivity?.appBarLayout?.toolbarMainDrawer
         setSupportActionBar(toolbar)
-        val imgbtn_controls = bindingMainActivity?.appBarLayout?.imgbtnControls
-        val imgbtn_download = bindingMainActivity?.appBarLayout?.imgbtnDownload
+
+        val imgbtn_download_google_maps =
+            bindingMainActivity?.appBarLayout?.imgbtnDownloadGoogleMaps
+        val imgbtn_controls_my_places = bindingMainActivity?.appBarLayout?.imgbtnControlsMyPlaces
+        val imgbtn_controls_google_maps =
+            bindingMainActivity?.appBarLayout?.imgbtnControlsGoogleMaps
+
+        imgbtn_controls_my_places?.setOnClickListener({
+            supportFragmentManager.beginTransaction().replace(
+                R.id.fragment_container_main_activity,
+                MyPlacesControlsApiaryFragment()
+            ).commit()
+        })
+
+        imgbtn_controls_google_maps?.setOnClickListener({
+            supportFragmentManager.beginTransaction().replace(
+                R.id.fragment_container_main_activity,
+                GoogleMapControlsFragment()
+            ).commit()
+            toolbar?.visibility = View.GONE
+        })
         drawer = bindingMainActivity?.drawerLayoutMain
         val toggle = ActionBarDrawerToggle(
             this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
+
+        toggle.getDrawerArrowDrawable().setColor(Color.BLACK);
         drawer!!.addDrawerListener(toggle)
+
         toggle.syncState()
+
+        supportActionBar?.title = getString(R.string.google_map)
+        imgbtn_controls_google_maps?.visibility = View.VISIBLE
+        imgbtn_download_google_maps?.visibility = View.VISIBLE
+        imgbtn_controls_my_places?.visibility = View.GONE
+
+        supportFragmentManager.beginTransaction().replace(R.id.fragment_container_main_activity,
+            GoogleMapsFragment()).commit()
     }
 
     override fun onClick(v: View) {
         when (v.id) {
             R.id.ll_grandExpert_profile -> {
+                supportActionBar?.title = getString(R.string.profile)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     ProfileFragment()
                 ).commit()
-                imgbtn_controls.visibility = View.GONE
-                imgbtn_download.visibility = View.GONE
+                window.statusBarColor = getResources().getColor(R.color.orange_light_transparent)
+                toolbar?.setBackgroundColor(getResources().getColor(R.color.orange_light_transparent))
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_my_places -> {
+                supportActionBar?.title = getString(R.string.my_places)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     MyPlacesFragment()
                 ).commit()
-                imgbtn_controls.visibility = View.VISIBLE
-                imgbtn_download.visibility = View.GONE
+                window.statusBarColor = getResources().getColor(R.color.white)
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.VISIBLE
             }
             R.id.ll_grandExpert_google_maps -> {
+                supportActionBar?.title = getString(R.string.google_map)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     GoogleMapsFragment()
                 ).commit()
-                imgbtn_controls.visibility = View.VISIBLE
-                imgbtn_download.visibility = View.VISIBLE
+                window.statusBarColor = getResources().getColor(R.color.orange_light_transparent)
+                imgbtn_controls_google_maps.visibility = View.VISIBLE
+                imgbtn_download_google_maps.visibility = View.VISIBLE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_instructions -> {
-//                supportFragmentManager.beginTransaction().replace(
-//                    R.id.fragment_container_main_activity,
-//                    AboutUsFragment()
-//                ).commit()
             }
             R.id.ll_grandExpert_feedback -> {
+                supportActionBar?.title = getString(R.string.feedback)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     FeedbackFragment()
                 ).commit()
-                imgbtn_controls.visibility = View.GONE
-                imgbtn_download.visibility = View.GONE
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_settings -> {
+                supportActionBar?.title = getString(R.string.settings)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     SettingsFragment()
                 ).commit()
-                imgbtn_controls.visibility = View.GONE
-                imgbtn_download.visibility = View.GONE
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_beehouse_online -> {
-//                supportFragmentManager.beginTransaction().replace(
-//                    R.id.fragment_container_main_activity,
-//                    SettingsFragment()
-//                ).commit()
+                supportActionBar?.title = getString(R.string.my_gadgets)
+                scrollView_main.visibility = View.GONE
+                scrollView_beehouses_online.visibility = View.VISIBLE
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment_container_main_activity,
+                    GadgetsGrafsFragment()
+                ).commit()
+            }
+            R.id.ll_beehouses_online_gadgets_grafs -> {
+                supportActionBar?.title = getString(R.string.my_gadgets)
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment_container_main_activity,
+                    GadgetsGrafsFragment()
+                ).commit()
+            }
+            R.id.ll_beehouses_online_settings -> {
+//                drawer!!.isDrawerOpen(GravityCompat.START)
+                supportActionBar?.title = getString(R.string.settings)
+                supportFragmentManager.beginTransaction().replace(
+                    R.id.fragment_container_main_activity,
+                    BeehousesOnlineSettingsFragment()
+                ).commit()
+                window.statusBarColor = getResources().getColor(R.color.white)
             }
             R.id.ll_grandExpert_beekeepers_ukraine -> {
-//                supportFragmentManager.beginTransaction().replace(
-//                    R.id.fragment_container_main_activity,
-//                    SettingsFragment()
-//                ).commit()
             }
             R.id.ll_grandExpert_about_us -> {
+                supportActionBar?.title = getString(R.string.about_us)
                 supportFragmentManager.beginTransaction().replace(
                     R.id.fragment_container_main_activity,
                     AboutUsFragment()
                 ).commit()
+                window.statusBarColor = getResources().getColor(R.color.orange)
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_exit -> {
                 showDialog(this)

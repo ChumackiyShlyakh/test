@@ -1,45 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <ImageView
-        android:background="@drawable/background_registration_ac"
         android:layout_width="match_parent"
+        android:id="@+id/image"
         android:layout_height="wrap_content"
+        android:background="@drawable/background_registration_ac"
         tools:ignore="MissingConstraints">
-
     </ImageView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/create_account"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline15" />
+        android:id="@+id/text"
+        android:layout_gravity="center" />
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@id/guideline18"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline14"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" >
+
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_profile_settings_in_scroll"
             android:layout_width="match_parent"
-            app:layout_constraintBottom_toTopOf="@id/guideline19"
-            android:layout_height="wrap_content">
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/guideline19">
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_fragment_newaccount_user_name"
@@ -56,14 +59,14 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:maxLines="1"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
-                    android:layout_height="wrap_content"
-                   android:background="@null"
+                    android:background="@null"
                     android:ems="10"
                     android:hint="@string/name"
                     android:inputType="textPersonName"
+                    android:maxLines="1"
                     app:layout_constraintEnd_toStartOf="@+id/guideline7"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline6"
@@ -88,13 +91,13 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     android:background="@null"
                     android:ems="10"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
+                    android:maxLines="1"
                     app:layout_constraintEnd_toStartOf="@+id/guideline7"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline6"
@@ -121,10 +124,10 @@
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:ems="8"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
                     android:background="@null"
+                    android:ems="8"
                     android:hint="@string/phone"
                     android:inputType="phone"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -206,33 +209,52 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
-                android:layout_height="52dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/ed_border_grey"
                 android:ems="10"
+                android:id="@+id/edit_text_password"
                 app:errorEnabled="true"
-                app:passwordToggleEnabled="true"
                 app:hintTextAppearance="@style/MyAppearance"
                 app:layout_constraintEnd_toStartOf="@+id/guideline16"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline17"
-                app:layout_constraintTop_toBottomOf="@+id/rl_newaccount_language">
+                app:layout_constraintTop_toBottomOf="@+id/rl_newaccount_language"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:background="@null"
-                    android:maxLines="1"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
+                    android:background="@null"
                     android:ems="10"
                     android:hint="@string/password"
                     android:inputType="textPassword"
+                    android:maxLines="1"
                     app:layout_constraintEnd_toStartOf="@+id/guideline7"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="@+id/guideline6"
                     app:layout_constraintTop_toTopOf="parent" />
             </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btn_fragment_new_account_create_account"
+                android:layout_width="0dp"
+                android:layout_marginTop="40dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_drop_orange"
+                android:text="@string/create_account"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_password"
+                app:layout_constraintEnd_toStartOf="@+id/guideline16"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline17" />
+
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline16"
@@ -258,41 +280,8 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-    <Button
-        android:id="@+id/btn_fragment_new_account_create_account"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_drop_orange"
-        android:text="@string/create_account"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline6" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.14" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.86374694" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.94" />
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
@@ -347,7 +336,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.81" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

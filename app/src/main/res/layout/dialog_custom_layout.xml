@@ -16,14 +16,14 @@
             android:id="@+id/tv_dialogcustom"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/button_orange_rect"
+            android:background="@drawable/button_orange_rect_up"
             android:gravity="center"
             android:text="@string/choose_meaning"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
+            android:id="@+id/recycler_view_custom_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_dialogcustom"

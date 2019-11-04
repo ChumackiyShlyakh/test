@@ -9,15 +9,18 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.RelativeLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.core.arch.DialogCustomListView
 import com.notyteam.bee.core.arch.DialogDataAdapter
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.dialog_custom_layout.*
 import kotlinx.android.synthetic.main.fragment_profile_settings_profile.*
 
-class ProfileSettingsProfileFragment : Fragment(), View.OnClickListener, DialogDataAdapter.RecyclerViewItemClickListener {
+class ProfileSettingsProfileFragment : Fragment(), View.OnClickListener,
+    DialogDataAdapter.RecyclerViewItemClickListener {
 
     internal var customDialog: DialogCustomListView? = null
     private var meaning: String = "meaning"
@@ -28,8 +31,9 @@ class ProfileSettingsProfileFragment : Fragment(), View.OnClickListener, DialogD
         R.drawable.beekeeper_agrarian
     )
 
-    lateinit var btn_fragment_profile_settings_profile_meaning: Button
     lateinit var imgbtn_fragment_profile_settings_profile_back: ImageButton
+    lateinit var btn_fragment_profile_settings_profile_meaning: Button
+    lateinit var btn_fragment_profile_settings_profile_save: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,32 +41,28 @@ class ProfileSettingsProfileFragment : Fragment(), View.OnClickListener, DialogD
     ): View? {
         val view = inflater.inflate(R.layout.fragment_profile_settings_profile, container, false)
 
-//        val viewModel = ViewModelProviders.of(this)[ProfileViewModel::class.java]
-//        val binding: FragmentProfileBinding = FragmentProfileBinding().inflate(inflater, container, false)
-//        binding.model
+        imgbtn_fragment_profile_settings_profile_back =
+            view.findViewById<ImageButton>(R.id.imgbtn_fragment_profile_settings_profile_back)
+        btn_fragment_profile_settings_profile_meaning =
+            view.findViewById<Button>(R.id.btn_fragment_profile_settings_profile_meaning)
+       btn_fragment_profile_settings_profile_save = view.findViewById<Button>(R.id.btn_fragment_profile_settings_profile_save)
 
-        imgbtn_fragment_profile_settings_profile_back = view.findViewById<ImageButton>(R.id.imgbtn_fragment_profile_settings_profile_back)
-        btn_fragment_profile_settings_profile_meaning =  view.findViewById<Button>(R.id.btn_fragment_profile_settings_profile_meaning)
-        var btn_profile_settings_save = btn_fragment_profile_settings_save
-
-        btn_fragment_profile_settings_profile_meaning.setOnClickListener(View.OnClickListener {
+        btn_fragment_profile_settings_profile_meaning.setOnClickListener({
             tv_dialogcustom?.setText(R.string.choose_meaning)
             showItems(this)
         })
 
-        imgbtn_fragment_profile_settings_profile_back.setOnClickListener(View.OnClickListener {
+        imgbtn_fragment_profile_settings_profile_back.setOnClickListener({
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 ProfileFragment()
             )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
         })
 
-//        imgbtn_fragment_profile_settings_profile_back.setOnClickListener(this)
-//        btn_fragment_profile_settings_profile_meaning?.setOnClickListener(this)
-        btn_profile_settings_save?.setOnClickListener(this)
+        btn_fragment_profile_settings_profile_save.setOnClickListener(this)
 
         return view
-//        return binding.root
     }
 
     override fun onClick(v: View?) {
@@ -70,8 +70,12 @@ class ProfileSettingsProfileFragment : Fragment(), View.OnClickListener, DialogD
 //            R.id.btn_fragment_profile_settings_profile_meaning -> {
 //                showItems(this)
 //        }
-            R.id.btn_fragment_profile_settings_save -> {
-
+            R.id.btn_fragment_profile_settings_profile_save -> {
+                fragmentManager?.beginTransaction()?.replace(
+                    R.id.fragment_container_main_activity,
+                    ProfileFragment()
+                )?.commit()
+                (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
             }
 //            R.id.imgbtn_fragment_profile_settings_profile_back -> {
 //                fragmentManager?.beginTransaction()?.replace(

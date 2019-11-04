@@ -1,17 +1,23 @@
 package com.notyteam.bee.topics.settings.fragment
 
+import android.app.TimePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.profile_fragments.ProfileAccountDetailFragment
 import com.notyteam.bee.profile_fragments.ProfileRefillFragment
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
 import kotlinx.android.synthetic.main.fragment_settings.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class SettingsFragment : Fragment() {
+
+    var btn_fragment_settings_choose_time: Button? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,34 +25,26 @@ class SettingsFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
-//        val viewModel = ViewModelProviders.of(this)[ProfileViewModel::class.java]
-//        val binding: FragmentProfileBinding = FragmentProfileBinding().inflate(inflater, container, false)
-//        binding.model
-
-//        val imgbtn_fragment_settings_back = imgbtn_fragment_settings_back
+        btn_fragment_settings_choose_time = view.findViewById(R.id.btn_fragment_settings_choose_time)
         val ll_fragment_settings_exit_from_account = ll_fragment_settings_exit_from_account
-//        var ll_profile_payments_go_in_refill_account = ll_profile_payments_go_in_refill_account
 
-//        imgbtn_fragment_settings_back?.setOnClickListener(View.OnClickListener {
-////            fragmentManager?.beginTransaction()?.replace(
-////                R.id.fragment_container_main_activity,
-////                ProfileFragment()
-////            )?.commit()
-//        })
+        btn_fragment_settings_choose_time?.setOnClickListener( {
+            val cal = Calendar.getInstance()
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
+                cal.set(Calendar.HOUR_OF_DAY, hour)
+                cal.set(Calendar.MINUTE, minute)
+                btn_fragment_settings_choose_time?.text = SimpleDateFormat("HH:mm").format(cal.time)
+            }
+            TimePickerDialog(context, R.style.DialogTheme, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+        })
+
         ll_fragment_settings_exit_from_account?.setOnClickListener(View.OnClickListener {
 //            fragmentManager?.beginTransaction()?.replace(
-//                R.id.fragment_container_main_activity,
+//                R.id.fragment_container_main_activity,  R.style.DialogTheme,
 //                ProfileAccountDetailFragment()
 //            )?.commit()
         })
-//        ll_profile_payments_go_in_refill_account.setOnClickListener(View.OnClickListener {
-//            fragmentManager?.beginTransaction()?.replace(
-//                R.id.fragment_container_main_activity,
-//                ProfileRefillFragment()
-//            )?.commit()
-//        })
 
         return view
-//        return binding.root
     }
 }

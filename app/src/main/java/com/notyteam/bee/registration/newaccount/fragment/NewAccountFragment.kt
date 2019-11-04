@@ -11,7 +11,10 @@ import android.view.*
 import com.notyteam.bee.core.arch.DialogCustomListView
 import com.notyteam.bee.core.arch.DialogDataAdapter
 import android.widget.RelativeLayout
+import com.notyteam.bee.registration.RegistrationFragment
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.dialog_custom_layout.*
+import kotlinx.android.synthetic.main.item_bees.*
 
 
 class NewAccountFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickListener {
@@ -48,18 +51,23 @@ class NewAccountFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickLi
 
         btn_newaccount.setOnClickListener {
             fragmentManager?.beginTransaction()?.replace(
-                com.notyteam.bee.R.id.fragment_container_registration,
+                R.id.fragment_container_registration,
                 SMSCodeFragment()
-            )?.commit()
+            )?.addToBackStack(null)?.commit()
         }
 
         btn_newaccount_meaning.setOnClickListener(View.OnClickListener {
+            if (btn_newaccount_meaning.text.equals("Choose meaning")){
             tv_dialogcustom?.setText(R.string.choose_meaning)
+            } else {
+//                radiobtn_item_bees
+//                btn_newaccount_meaning.text
+            }
             showItems(this)
         })
 
         btn_newaccount_language.setOnClickListener{
-            tv_dialogcustom.setText(R.string.choose_language)
+            tv_dialogcustom?.setText(R.string.choose_language)
             showItemsLanguage(this)
         }
         return view
@@ -104,5 +112,6 @@ class NewAccountFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickLi
             customDialog?.dismiss()
         }
     }
+
 }
 
