@@ -22,6 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:layout_marginRight="8dp"
                 android:background="@drawable/google_maps_poin" />
 
             <ImageButton
@@ -29,17 +30,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:layout_marginRight="8dp"
                 android:background="@drawable/google_maps_circle"/>
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
+                android:layout_marginRight="8dp"
                 android:background="@drawable/google_maps_rect" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
                 android:background="@drawable/google_maps_form" />
 
         </LinearLayout>
