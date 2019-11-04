@@ -25,6 +25,8 @@ class GadgetsGrafsFragment : Fragment() {
     var btn_fragment_gadgets_grafs_choose_meaning: Button? = null
     var btn_gadgets_grafs_choose_gadget: Button? = null
     var btn_fragment_gadgets_grafs_build: Button? = null
+    var text_btn_gadgets_grafs_choose_gadget: String? = null
+    var text_btn_gadgets_grafs_choose_meaning: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +35,17 @@ class GadgetsGrafsFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_gadgets_grafs, container, false)
 
+        if (arguments?.getString("message_meaning") == null){
+            text_btn_gadgets_grafs_choose_meaning = getString(R.string.choose_meaning)
+        } else {
+            text_btn_gadgets_grafs_choose_meaning = arguments?.getString("message_meaning")
+        }
+
+        if (arguments?.getString("message_gadget") == null){
+            text_btn_gadgets_grafs_choose_gadget = getString(R.string.choose_gadget)
+        } else {
+            text_btn_gadgets_grafs_choose_gadget = arguments?.getString("message_gadget")
+        }
 
         val rdgrp_fragment_gadgets_grafs =
             view.findViewById(R.id.rdgrp_fragment_gadgets_grafs) as RadioGroup
@@ -40,10 +53,12 @@ class GadgetsGrafsFragment : Fragment() {
         rb_fragment_gadgets_grafs_table = view.findViewById(R.id.rb_fragment_gadgets_grafs_table)
         rb_fragment_gadgets_grafs_graf = view.findViewById(R.id.rb_fragment_gadgets_grafs_graf)
 
-        btn_fragment_gadgets_grafs_choose_meaning =
-            view.findViewById(R.id.btn_fragment_gadgets_grafs_choose_meaning)
+        btn_fragment_gadgets_grafs_choose_meaning = view.findViewById(R.id.btn_fragment_gadgets_grafs_choose_meaning)
         btn_gadgets_grafs_choose_gadget = view.findViewById(R.id.btn_gadgets_grafs_choose_gadget)
         btn_fragment_gadgets_grafs_build = view.findViewById(R.id.btn_fragment_gadgets_grafs_build)
+
+        btn_fragment_gadgets_grafs_choose_meaning?.setText(text_btn_gadgets_grafs_choose_meaning)
+        btn_gadgets_grafs_choose_gadget?.setText(text_btn_gadgets_grafs_choose_gadget)
 
         rdgrp_fragment_gadgets_grafs.setOnCheckedChangeListener({ group, checkedId ->
             val radio: RadioButton = view.findViewById(checkedId)

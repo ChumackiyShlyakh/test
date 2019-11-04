@@ -18,8 +18,7 @@ class GoogleMapControlsFragment : Fragment() {
     private var btn_fragment_google_maps_controls_objects: Button? = null
     private var btn_fragment_google_maps_controls_events: Button? = null
     private var btn_fragment_google_maps_controls_apply: Button? = null
-    private var isButtonObjectsClick: Boolean? = null
-    private var isButtonEventsClick: Boolean? = null
+    private var btnGoogleObjectsTrueEventFalseClick: Boolean? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,21 +44,13 @@ class GoogleMapControlsFragment : Fragment() {
         })
 
         btn_fragment_google_maps_controls_objects?.setOnClickListener({
-            isButtonObjectsClick = true
-            isButtonEventsClick = false
-                btn_fragment_google_maps_controls_events?.setBackgroundResource(R.drawable.ed_border_grey)
-                btn_fragment_google_maps_controls_events?.setTextColor(getResources().getColor(R.color.black))
-                btn_fragment_google_maps_controls_objects?.setBackgroundResource(R.drawable.button_orange)
-                btn_fragment_google_maps_controls_objects?.setTextColor(getResources().getColor(R.color.white))
+            btnGoogleObjectsTrueEventFalseClick = true
+            isButtonObjectsTrueEventFalsClick()
         })
 
         btn_fragment_google_maps_controls_events?.setOnClickListener({
-            isButtonEventsClick = true
-            isButtonObjectsClick = false
-            btn_fragment_google_maps_controls_events?.setBackgroundResource(R.drawable.button_orange)
-            btn_fragment_google_maps_controls_events?.setTextColor(getResources().getColor(R.color.white))
-            btn_fragment_google_maps_controls_objects?.setBackgroundResource(R.drawable.ed_border_grey)
-            btn_fragment_google_maps_controls_objects?.setTextColor(getResources().getColor(R.color.black))
+            btnGoogleObjectsTrueEventFalseClick = false
+            isButtonObjectsTrueEventFalsClick()
         })
 
         btn_fragment_google_maps_controls_apply?.setOnClickListener({
@@ -71,5 +62,19 @@ class GoogleMapControlsFragment : Fragment() {
         })
 
         return view
+    }
+
+    private fun isButtonObjectsTrueEventFalsClick(){
+        if(btnGoogleObjectsTrueEventFalseClick!!){
+            btn_fragment_google_maps_controls_events?.setBackgroundResource(R.drawable.ed_border_grey)
+            btn_fragment_google_maps_controls_events?.setTextColor(getResources().getColor(R.color.black))
+            btn_fragment_google_maps_controls_objects?.setBackgroundResource(R.drawable.button_orange)
+            btn_fragment_google_maps_controls_objects?.setTextColor(getResources().getColor(R.color.white))
+        } else {
+            btn_fragment_google_maps_controls_events?.setBackgroundResource(R.drawable.button_orange)
+            btn_fragment_google_maps_controls_events?.setTextColor(getResources().getColor(R.color.white))
+            btn_fragment_google_maps_controls_objects?.setBackgroundResource(R.drawable.ed_border_grey)
+            btn_fragment_google_maps_controls_objects?.setTextColor(getResources().getColor(R.color.black))
+        }
     }
 }

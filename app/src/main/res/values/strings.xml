@@ -6,7 +6,7 @@
     <string name="registration">Registration</string>
     <string name="enter_without_registration">Enter without registration</string>
     <string name="enter_to_you_account">Sign in to your account</string>
-    <string name="forget_password">Forget password</string>
+    <string name="forget_password">Forget password?</string>
     <string name="code_from_sms">Code from sms</string>
     <string name="forward">Forward</string>
     <string name="send_again">Send again</string>
@@ -177,8 +177,9 @@
     <string name="empty_password">Password is empty!</string>
     <string name="password_length_error">Password is to small!</string>
 
-    <string name="enter_email">Enter your email</string>
-    <string name="enter_password">Enter your password</string>
+    <string name="enter_login">+8 095 678 67 54</string>
+    <string name="enter_password">•••••••</string>
+<!--    <string name="enter_password">Enter your password</string>-->
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

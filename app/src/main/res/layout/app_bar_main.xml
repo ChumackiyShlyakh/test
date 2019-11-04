@@ -24,10 +24,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="end"
+<<<<<<< HEAD
                 android:layout_marginTop="20dp"
                 android:background="@android:color/transparent"
                 android:titleTextAppearance="@color/black"
+=======
+                app:titleTextColor="@color/black"
+                android:visibility="visible"
+>>>>>>> test-master
                 app:titleTextAppearance="@string/profile">
+<!--            android:fitsSystemWindows="false"-->
+<!--                android:theme="@style/MainTheme"-->
+<!--                android:background="@null"-->
+<!--                android:background="@color/transparent"-->
 
                 <ImageButton
                     android:id="@+id/imgbtn_controls_google_maps"

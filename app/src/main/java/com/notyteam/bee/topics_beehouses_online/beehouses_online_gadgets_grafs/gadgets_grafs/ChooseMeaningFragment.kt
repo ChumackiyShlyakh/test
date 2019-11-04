@@ -55,10 +55,14 @@ class ChooseMeaningFragment : Fragment() {
             if (id != -1) {
                 val radio: RadioButton = view.findViewById(id)
 
-                btn_fragment_gadgets_grafs_choose_meaning?.text = meanning
+                val bundle = Bundle()
+                bundle.putString("message_meaning", radio.text.toString())
+                val gadgetsGrafsFragment = GadgetsGrafsFragment()
+                gadgetsGrafsFragment.setArguments(bundle)
+
                 fragmentManager?.beginTransaction()?.replace(
                     R.id.fragment_container_main_activity,
-                    GadgetsGrafsFragment()
+                    gadgetsGrafsFragment
                 )?.commit()
                 (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
             } else {

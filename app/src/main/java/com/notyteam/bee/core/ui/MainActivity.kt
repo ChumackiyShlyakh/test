@@ -119,8 +119,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         toggle.syncState()
 
+//        toolbar?.getBackground()?.setAlpha(0);
+        toolbar?.setBackgroundColor(getResources().getColor(R.color.orange_light_transparent))
+        window.statusBarColor = getResources().getColor(R.color.orange_light_transparent)
+
+        supportActionBar?.title = getString(R.string.google_map)
+        imgbtn_controls_google_maps?.visibility = View.VISIBLE
+        imgbtn_download_google_maps?.visibility = View.VISIBLE
+        imgbtn_controls_my_places?.visibility = View.GONE
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container_main_activity,
-            ProfileFragment()).commit()
+            GoogleMapsFragment()).commit()
     }
 
     override fun onClick(v: View) {
@@ -131,6 +139,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     R.id.fragment_container_main_activity,
                     ProfileFragment()
                 ).commit()
+                window.statusBarColor = getResources().getColor(R.color.orange_light_transparent)
+                toolbar?.setBackgroundColor(getResources().getColor(R.color.orange_light_transparent))
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
                 imgbtn_controls_my_places.visibility = View.GONE
@@ -141,6 +151,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     R.id.fragment_container_main_activity,
                     MyPlacesFragment()
                 ).commit()
+                window.statusBarColor = getResources().getColor(R.color.white)
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
                 imgbtn_controls_my_places.visibility = View.VISIBLE
@@ -151,6 +162,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     R.id.fragment_container_main_activity,
                     GoogleMapsFragment()
                 ).commit()
+                window.statusBarColor = getResources().getColor(R.color.orange_light_transparent)
                 imgbtn_controls_google_maps.visibility = View.VISIBLE
                 imgbtn_download_google_maps.visibility = View.VISIBLE
                 imgbtn_controls_my_places.visibility = View.GONE
@@ -200,6 +212,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     R.id.fragment_container_main_activity,
                     BeehousesOnlineSettingsFragment()
                 ).commit()
+                window.statusBarColor = getResources().getColor(R.color.white)
             }
             R.id.ll_grandExpert_beekeepers_ukraine -> {
             }
@@ -209,6 +222,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     R.id.fragment_container_main_activity,
                     AboutUsFragment()
                 ).commit()
+                window.statusBarColor = getResources().getColor(R.color.orange)
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
                 imgbtn_controls_my_places.visibility = View.GONE

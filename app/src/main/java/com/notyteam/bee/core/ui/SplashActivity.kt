@@ -17,8 +17,12 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+<<<<<<< HEAD
         AppBarCustom.makeStatusBarTransparent(SplashActivity@this)
 
+=======
+        window.statusBarColor = getResources().getColor(R.color.white)
+>>>>>>> test-master
         Handler().postDelayed({
 //            if (!ApiGrantExpertApplication.getSharedPrefInstance().isAuth()) {
 //                startActivity(Intent(this@SplashActivity, RegistrationActivity::class.java))

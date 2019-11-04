@@ -83,6 +83,9 @@ class GoogleMapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickL
 //            drawCircle(coordinates)
         }
 
+//        window.statusBarColor = getResources().getColor(R.color.orange_light_transparent)
+//        (activity as AppCompatActivity).setSupportActionBar(toolbar_main_drawer)
+
         Log.d(LOG_TAG, "onCreate latitude longitude: " + latitude + ", " + longitude);
 
         return view

@@ -1,22 +1,49 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
 <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
-<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--        <item name="colorPrimaryDark">@color/white</item>-->
         <item name="colorAccent">@color/colorAccent</item>
-
+        <item name="android:statusBarColor">@android:color/transparent</item>
+<!--        <item name="colorPrimary">@android:color/transparent</item>-->
+<!--        <item name="colorPrimaryDark">@android:color/transparent</item>-->
         <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
 
-        <item name="windowActionBar">false</item>
+<!--                <item name="android:windowTranslucentStatus">true</item>-->
+<!--                <item name="android:windowTranslucentNavigation">true</item>-->
+
+        <item name="windowActionBar">true</item>
         <item name="windowNoTitle">true</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+<<<<<<< HEAD
 
         <item name="android:statusBarColor">@color/orange</item>
 
 
+=======
+>>>>>>> test-master
     </style>
+
+<!--    <style name="MainTheme" parent="AppTheme">-->
+<!--        <item name="actionBarStyle">@style/MyTheme.ActionBar</item>-->
+<!--        <item name="windowActionBar">true</item>-->
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
+<!--        <item name="android:windowTranslucentNavigation">true</item>-->
+<!--    </style>-->
+
+<!--    <style name="MyTheme.ActionBar" parent="Widget.AppCompat.ActionBar">-->
+<!--        <item name="background">@color/semi_transparent</item>-->
+<!--    </style>-->
+
+
+
+<!--    <style name="CustomActionBar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
+<!--        <item name="android:windowActionBarOverlay">true</item>-->
+<!--        &lt;!&ndash; Support library compatibility &ndash;&gt;-->
+<!--        <item name="windowActionBarOverlay">true</item>-->
+<!--    </style>-->
 
     <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
@@ -36,5 +63,8 @@
         <item name="colorAccent">@color/orange</item>
     </style>
 
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">22sp</item>
+    </style>
 
 </resources>
