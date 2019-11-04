@@ -16,6 +16,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        window.statusBarColor = getResources().getColor(R.color.white)
         Handler().postDelayed({
 //            if (!ApiGrantExpertApplication.getSharedPrefInstance().isAuth()) {
 //                startActivity(Intent(this@SplashActivity, RegistrationActivity::class.java))

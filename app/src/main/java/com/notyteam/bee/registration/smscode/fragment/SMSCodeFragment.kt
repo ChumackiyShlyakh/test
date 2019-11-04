@@ -15,9 +15,11 @@ import `in`.aabhasjindal.otptextview.OTPListener
 import `in`.aabhasjindal.otptextview.OtpTextView
 import com.notyteam.bee.R
 import com.notyteam.bee.core.ui.MainActivity
+import com.notyteam.bee.registration.login.fragment.LoginFragment
+import com.notyteam.bee.utils.OnBackPressed
 
 
-class SMSCodeFragment : Fragment() {
+class SMSCodeFragment : Fragment(), OnBackPressed {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,5 +55,10 @@ class SMSCodeFragment : Fragment() {
 
 //        return binding.root
         return view
+    }
+
+    override fun onBackPressed() {
+        fragmentManager!!.beginTransaction().replace(R.id.fragment_container_registration,
+            LoginFragment()).commit()
     }
 }

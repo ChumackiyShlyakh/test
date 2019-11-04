@@ -20,8 +20,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="end"
+                app:titleTextColor="@color/black"
                 android:visibility="visible"
                 app:titleTextAppearance="@string/profile">
+<!--            android:fitsSystemWindows="false"-->
+<!--                android:theme="@style/MainTheme"-->
+<!--                android:background="@null"-->
+<!--                android:background="@color/transparent"-->
 
                 <ImageButton
                     android:id="@+id/imgbtn_controls_google_maps"

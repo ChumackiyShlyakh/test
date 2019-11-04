@@ -11,14 +11,16 @@ import androidx.lifecycle.ViewModelProviders
 import com.notyteam.bee.R
 import com.notyteam.bee.core.model.response.LoginResponse
 import com.notyteam.bee.databinding.FragmentLoginBinding
+import com.notyteam.bee.registration.RegistrationFragment
 import com.notyteam.bee.registration.login.viewmodel.LoginViewModel
 import com.notyteam.bee.registration.smscode.fragment.SMSCodeFragment
+import com.notyteam.bee.utils.OnBackPressed
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 
-class LoginFragment : Fragment(), Callback<LoginResponse> {
+class LoginFragment : Fragment(), Callback<LoginResponse>, OnBackPressed {
 
     private var userCallback: Callback<LoginResponse>? = null
 
@@ -73,4 +75,8 @@ class LoginFragment : Fragment(), Callback<LoginResponse> {
             SMSCodeFragment()).commit()
     }
 
+    override fun onBackPressed() {
+        fragmentManager!!.beginTransaction().replace(R.id.fragment_container_registration,
+            RegistrationFragment()).commit()
+    }
 }

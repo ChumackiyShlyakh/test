@@ -3,6 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorAccent">#D81B60</color>
 
+    <color name="color_primary">#212121</color>
+    <color name="color_primary_dark">@android:color/black</color>
+    <color name="color_accent">#4285F4</color>
+    <color name="semi_transparent">#66000000</color>
 
     <color name="orange">#FFBC1C</color>
     <color name="blue">#0E67CC</color>
@@ -11,6 +15,9 @@
     <color name="black">#000000</color>
     <color name="red">#ff0000</color>
     <color name="green">#137B00</color>
+    <color name="orange_light">#FFCC2E</color>
+    <color name="orange_light_transparent">#20FFCC2E</color>
+<!--    <color name="transparent">#00000000</color>-->
 
     <color name="colorFocused">#bbdefb</color>
 

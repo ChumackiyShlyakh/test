@@ -1,6 +1,7 @@
 package com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.gadgets_grafs
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +25,8 @@ class ChooseGadgetFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_choose_gadget, container, false)
 
-        imgbtn_fragment_choose_gadget_back = view.findViewById(R.id.imgbtn_fragment_choose_gadget_back)
+        imgbtn_fragment_choose_gadget_back =
+            view.findViewById(R.id.imgbtn_fragment_choose_gadget_back)
         imgbtn_fragment_choose_gadget_back?.setOnClickListener({
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
@@ -48,12 +50,19 @@ class ChooseGadgetFragment : Fragment() {
             if (id != -1) {
                 val radio: RadioButton = view.findViewById(id)
 
-                btn_fragment_gadgets_grafs_choose_meaning?.text = radio.text
+                activity?.btn_gadgets_grafs_choose_gadget?.setText(radio.text)
+
+                val bundle = Bundle()
+                bundle.putString("message_gadget", radio.text.toString())
+                //set Fragmentclass Arguments
+                val gadgetsGrafsFragment = GadgetsGrafsFragment()
+                gadgetsGrafsFragment.setArguments(bundle)
+
                 fragmentManager?.beginTransaction()?.replace(
                     R.id.fragment_container_main_activity,
-                    GadgetsGrafsFragment()
+                    gadgetsGrafsFragment
                 )?.commit()
-            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
+                (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
             } else {
                 Toast.makeText(
                     context, "On button click : nothing selected",

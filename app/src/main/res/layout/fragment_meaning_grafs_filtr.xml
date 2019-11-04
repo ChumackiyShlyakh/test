@@ -63,11 +63,12 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_fragment_meaning_grafs_filtr_period">
 
         <Button
+            android:id="@+id/btn_fragment_meaning_grafs_filtr_hours"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/ed_border_grey"
-            android:hint="@string/twelve_hours"
+            android:text="@string/twelve_hours"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -77,11 +78,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:id="@+id/btn_fragment_meaning_grafs_filtr_day"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/ed_border_grey"
-            android:hint="@string/day"
+            android:text="@string/day"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -111,11 +113,12 @@
         app:layout_constraintTop_toBottomOf="@+id/cl_fragment_meaning_grafs_filtr_period">
 
         <Button
+            android:id="@+id/btn_fragment_meaning_grafs_filtr_weak"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/ed_border_grey"
-            android:hint="@string/week"
+            android:text="@string/week"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -125,11 +128,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            android:id="@+id/btn_fragment_meaning_grafs_filtr_month"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
             android:background="@drawable/ed_border_grey"
-            android:hint="@string/month"
+            android:text="@string/month"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
