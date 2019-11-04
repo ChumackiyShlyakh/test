@@ -110,10 +110,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_profile" />
 
                             <TextView
@@ -131,14 +132,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_my_places" />
 
                             <TextView
@@ -156,14 +158,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_map" />
 
                             <TextView
@@ -181,14 +184,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_instructions" />
 
                             <TextView
@@ -206,14 +210,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_feedback" />
 
                             <TextView
@@ -231,14 +236,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_settings" />
 
                             <TextView
@@ -339,14 +345,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_gadgets_grafs" />
 
                             <TextView
@@ -364,14 +371,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_gadgets_grafs_setting" />
 
                             <TextView
@@ -400,18 +408,18 @@
             <LinearLayout
                 android:id="@+id/ll_grandExpert_exit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="center_horizontal"
                 android:onClick="clickExit"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/item_logout" />
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_logout" />
 
                 <TextView
                     android:layout_width="wrap_content"

@@ -3,24 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <RelativeLayout
+        android:orientation="vertical"
         android:id="@+id/coordinator"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.notyteam.bee.core.ui.MainActivity">
 
+        <include layout="@layout/content_main" />
+
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
+            app:elevation="0dp"
+            android:background="@android:color/transparent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible">
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar_main_drawer"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="end"
-                android:visibility="visible"
+                android:layout_marginTop="20dp"
+                android:background="@android:color/transparent"
+                android:titleTextAppearance="@color/black"
                 app:titleTextAppearance="@string/profile">
 
                 <ImageButton
@@ -55,8 +61,8 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <include layout="@layout/content_main" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </RelativeLayout>
 
 </layout>

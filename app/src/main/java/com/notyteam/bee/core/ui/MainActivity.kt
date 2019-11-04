@@ -4,9 +4,11 @@ import android.app.Activity
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.RelativeLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -28,9 +30,14 @@ import com.notyteam.bee.topics.profile.fragment.ProfileFragment
 import com.notyteam.bee.topics.settings.fragment.SettingsFragment
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_settings.fragment.BeehousesOnlineSettingsFragment
+import com.notyteam.bee.utils.AppBarCustom
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.dialog_exit.*
+
+
+
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -39,8 +46,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var drawer: DrawerLayout? = null
     private var toolbar: Toolbar? = null
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+       AppBarCustom.makeStatusBarTransparent(MainActivity@this)
+
         bindingMainActivity = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewmodelDrawerItemsViewModel =
             ViewModelProviders.of(this).get(DrawerItemsViewModel::class.java)
@@ -75,6 +87,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         toolbar = bindingMainActivity?.appBarLayout?.toolbarMainDrawer
         setSupportActionBar(toolbar)
+
         val imgbtn_download_google_maps =
             bindingMainActivity?.appBarLayout?.imgbtnDownloadGoogleMaps
         val imgbtn_controls_my_places = bindingMainActivity?.appBarLayout?.imgbtnControlsMyPlaces
@@ -99,7 +112,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val toggle = ActionBarDrawerToggle(
             this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
+
+        toolbar!!.setTitleTextColor(getResources().getColor(android.R.color.black));
+        toggle.getDrawerArrowDrawable().setColor(Color.BLACK);
         drawer!!.addDrawerListener(toggle)
+
         toggle.syncState()
 
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container_main_activity,
