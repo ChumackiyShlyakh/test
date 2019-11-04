@@ -19,7 +19,7 @@ import com.notyteam.bee.registration.login.fragment.LoginFragment
 import com.notyteam.bee.utils.OnBackPressed
 
 
-class SMSCodeFragment : Fragment(), OnBackPressed {
+class SMSCodeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,10 +55,5 @@ class SMSCodeFragment : Fragment(), OnBackPressed {
 
 //        return binding.root
         return view
-    }
-
-    override fun onBackPressed() {
-        fragmentManager!!.beginTransaction().replace(R.id.fragment_container_registration,
-            LoginFragment()).commit()
     }
 }

@@ -1,16 +1,9 @@
 package com.notyteam.bee.registration
 
 import android.os.Bundle
-import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
-import com.notyteam.bee.utils.AppBarCustom
 import com.notyteam.bee.R
-import com.notyteam.bee.utils.OnBackPressed
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
-
+import com.notyteam.bee.utils.AppBarCustom
 
 
 class RegistrationActivity : AppCompatActivity() {
