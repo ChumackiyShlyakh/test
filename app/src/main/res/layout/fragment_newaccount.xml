@@ -9,7 +9,6 @@
     android:background="@color/white">
 
     <ImageView
-        android:id="@+id/imageView8"
         android:layout_width="match_parent"
         android:id="@+id/image"
         android:layout_height="wrap_content"
@@ -18,14 +17,12 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/create_account"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/black"
-<<<<<<< HEAD
         android:id="@+id/text"
         android:layout_gravity="center" />
 
@@ -33,34 +30,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp">
-=======
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" >
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@+id/guideline18"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
->>>>>>> test-master
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_profile_settings_in_scroll"
             android:layout_width="match_parent"
-<<<<<<< HEAD
             android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toTopOf="@id/guideline19"
-            android:layout_height="wrap_content">
-=======
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/guideline19">
->>>>>>> test-master
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/til_fragment_newaccount_user_name"
@@ -300,8 +282,7 @@
 
     </androidx.core.widget.NestedScrollView>
 
-<<<<<<< HEAD
-=======
+
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -356,7 +337,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.81" />
->>>>>>> test-master
 
 
 </LinearLayout>
