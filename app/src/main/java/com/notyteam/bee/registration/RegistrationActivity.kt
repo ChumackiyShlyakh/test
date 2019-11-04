@@ -5,10 +5,7 @@ import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import com.notyteam.bee.utils.AppBarCustom
 import com.notyteam.bee.R
-import com.notyteam.bee.utils.OnBackPressed
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
 
 
 
@@ -19,21 +16,18 @@ class RegistrationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-        AppBarCustom.makeStatusBarTransparent(RegistrationActivity@this)
+        AppBarCustom.makeStatusBarTransparent(RegistrationActivity@ this)
 
-        supportFragmentManager.beginTransaction().replace(R.id.fragment_container_registration,
-            RegistrationFragment()).addToBackStack(null).commit()
+
+        val fragmentManager = supportFragmentManager
+        fragmentManager.beginTransaction()
+            .replace(R.id.fragment_container_registration, RegistrationFragment())
+            .commitAllowingStateLoss()
 
     }
 
     override fun onBackPressed() {
-        val count = supportFragmentManager.backStackEntryCount
 
-        if (count == 0) {
-            super.onBackPressed()
-            //additional code
-        } else {
-            supportFragmentManager.popBackStack()
-        }
+        if (supportFragmentManager.backStackEntryCount > 0) run { supportFragmentManager.popBackStack() } else { super.onBackPressed() }
     }
 }

@@ -89,20 +89,13 @@
     <string name="sms_times_sending">SMS times sending</string>
     <string name="one_time_per_day">1 time per day</string>
     <string name="two_times_per_day">2 times per day</string>
-    <string name="choose_status">Choose status</string>
     <string name="status">Status</string>
-    <string name="apiary">Apiary</string>
     <string name="event_type">Event type</string>
-    <string name="archive">Archive</string>
-    <string name="title">Title</string>
     <string name="latitude">50.1234</string>
     <string name="longitude">51.4321</string>
-    <string name="lat">lat:</string>
-    <string name="lon">lon:</string>
     <string name="sh">Ш:</string>
     <string name="d">Д:</string>
     <string name="gadgets_grafs">My gadgets and grafs</string>
-    <string name="beehouses_online_settings">Settings</string>
     <string name="table">Table</string>
     <string name="graf">Graf</string>
     <string name="choose_gadget">Choose gadget</string>
@@ -113,10 +106,7 @@
     <string name="temperature_big">Temperature</string>
     <string name="humidity_big">Humidity</string>
     <string name="weight_difference_big">Weight difference</string>
-    <string name="weight">weight</string>
-    <string name="temperature">temperature</string>
     <string name="humidity">humidity</string>
-    <string name="weight_difference">weight difference</string>
     <string name="setting_big">Setting:</string>
     <string name="meaning_big">Meaning:</string>
     <string name="number">№</string>
@@ -184,21 +174,5 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-
-    <string name="budget_empty_title">You don\'t have any budget yet.</string>
-    <string name="budget_empty_subtitle">To add new one use + button.</string>
-    <string name="budget_loading">Loading Budgets…</string>
-
-    <string name="budget_time_title">Time Passed</string>
-    <string name="budget_money_title">Money Spent</string>
-    <string name="budget_header_left">Money Left</string>
-    <string name="budget_spending_recommended">Recommended daily spending</string>
-    <string name="budget_spending_actual">Actual daily spending</string>
-
-
-    <string name="linear_sectioned_recyclerview_vertical">Linear Sectioned RecyclerView (Vertical)</string>
-    <string name="linear_sectioned_recyclerview_horizontal">Linear Sectioned RecyclerView (Horizontal)</string>
-    <string name="grid_sectioned_recyclerview">Grid Sectioned RecyclerView</string>
-    <string name="show_all">Show All</string>
 
 </resources>

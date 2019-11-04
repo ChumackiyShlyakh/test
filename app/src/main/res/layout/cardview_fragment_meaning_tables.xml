@@ -2,7 +2,6 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview_child="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardview_fragment_meaning_tables"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -13,7 +12,6 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/linearLayout7"
             android:layout_width="2dp"
             android:layout_height="0dp"
             android:background="@color/grey"

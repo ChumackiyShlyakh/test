@@ -2,7 +2,6 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview_parent="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardview_vp_beehouses"
     android:layout_width="match_parent"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
@@ -48,7 +47,6 @@
                 cardview_parent:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -102,7 +100,6 @@
             </TextView>
 
             <TextView
-                android:id="@+id/tv_cardview_vp_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -151,7 +148,6 @@
                     cardview_parent:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_cardview_vp_beehpuses_latitude_numbers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -174,7 +170,6 @@
                     cardview_parent:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_cardview_vp_beehpuses_longitude_numbers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -230,7 +225,6 @@
                     cardview_parent:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_cardview_vp_beehpuses_data_end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
@@ -255,7 +249,6 @@
                     cardview_parent:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_cardview_vp_beehpuses_user_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"

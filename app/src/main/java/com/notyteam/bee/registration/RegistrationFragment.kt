@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.registration.login.fragment.LoginFragment
 import com.notyteam.bee.registration.newaccount.fragment.NewAccountFragment
-import com.notyteam.bee.utils.OnBackPressed
+
 
 class RegistrationFragment : Fragment() {
 
@@ -30,14 +30,14 @@ class RegistrationFragment : Fragment() {
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_registration,
                 LoginFragment()
-            )?.commit()
+            )?.addToBackStack(null)?.commit()
         }
 
         btn_registration.setOnClickListener {
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_registration,
                 NewAccountFragment()
-            )?.commit()
+            )?.addToBackStack(null)?.commit()
         }
 
         return view

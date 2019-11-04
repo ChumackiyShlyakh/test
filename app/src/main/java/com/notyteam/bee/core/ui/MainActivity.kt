@@ -113,20 +113,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
 
-        toolbar!!.setTitleTextColor(getResources().getColor(android.R.color.black));
         toggle.getDrawerArrowDrawable().setColor(Color.BLACK);
         drawer!!.addDrawerListener(toggle)
 
         toggle.syncState()
 
-//        toolbar?.getBackground()?.setAlpha(0);
-        toolbar?.setBackgroundColor(getResources().getColor(R.color.orange_light_transparent))
-        window.statusBarColor = getResources().getColor(R.color.orange_light_transparent)
-
         supportActionBar?.title = getString(R.string.google_map)
         imgbtn_controls_google_maps?.visibility = View.VISIBLE
         imgbtn_download_google_maps?.visibility = View.VISIBLE
         imgbtn_controls_my_places?.visibility = View.GONE
+
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container_main_activity,
             GoogleMapsFragment()).commit()
     }

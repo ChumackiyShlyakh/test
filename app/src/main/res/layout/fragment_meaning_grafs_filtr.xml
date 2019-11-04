@@ -229,7 +229,6 @@
         app:layout_constraintTop_toBottomOf="@+id/cl_fragment_meaning_grafs_filtr_from" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_fragment_meaning_grafs_filtr_to"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"

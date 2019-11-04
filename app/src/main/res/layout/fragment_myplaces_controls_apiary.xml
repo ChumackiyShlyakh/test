@@ -29,7 +29,6 @@
             android:layout_weight="0.2" />
 
         <TextView
-            android:id="@+id/tv_fragment_myplaces_controls_back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -39,7 +38,6 @@
             android:textColor="@color/black" />
 
         <Button
-            android:id="@+id/btn_fragment_myplaces_controls_clean"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -63,7 +61,6 @@
         app:layout_constraintTop_toBottomOf="@+id/ll_fragment_myplaces_controls">
 
         <EditText
-            android:id="@+id/et_fragment_myplaces_controls_search_for_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -108,7 +105,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_fragment_myplaces_controls_date">
 
         <EditText
-            android:id="@+id/et_fragment_myplaces_controls_from"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginLeft="8dp"
@@ -126,7 +122,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/et_fragment_myplaces_controls_to"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginLeft="8dp"
@@ -163,7 +158,6 @@
         app:layout_constraintTop_toBottomOf="@+id/rl_fragment_myplaces_controls_search_for_name">
 
         <CheckBox
-            android:id="@+id/chb_fragment_myplaces_controls_hide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -189,7 +183,6 @@
         app:layout_constraintTop_toBottomOf="@+id/cl_fragment_myplaces_controls_chb">
 
         <Button
-            android:id="@+id/btn_fragment_myplaces_controls_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -207,7 +200,6 @@
         </Button>
 
         <ImageView
-            android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -238,7 +230,6 @@
         app:layout_constraintTop_toBottomOf="@+id/cl_fragment_myplaces_controls_status">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_fragment_myplaces_controls_made_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
@@ -303,7 +294,6 @@
         app:layout_constraintGuide_percent="0.74" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

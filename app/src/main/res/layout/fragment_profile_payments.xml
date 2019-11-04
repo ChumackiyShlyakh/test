@@ -79,7 +79,6 @@
             android:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/tv_fragment_profile_payments_money"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -124,7 +123,6 @@
             android:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/tv_fragment_profile_payments_number_sms_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"

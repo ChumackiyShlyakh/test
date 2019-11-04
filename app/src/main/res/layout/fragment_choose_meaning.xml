@@ -27,7 +27,6 @@
             android:layout_weight="0.2" />
 
         <TextView
-            android:id="@+id/tv_fragment_choose_meaning_back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -116,7 +115,6 @@
             android:layout_height="match_parent">
 
             <RadioButton
-                android:id="@+id/rb_fragment_choose_meaning_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/weight_big"
@@ -124,7 +122,6 @@
                 android:textColor="@color/black" />
 
             <RadioButton
-                android:id="@+id/rb_fragment_choose_meaning_temperature"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -133,7 +130,6 @@
                 android:textColor="@color/black" />
 
             <RadioButton
-                android:id="@+id/rb_fragment_choose_meaning_humidity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -142,7 +138,6 @@
                 android:textColor="@color/black" />
 
             <RadioButton
-                android:id="@+id/rb_fragment_choose_meaning_weight_difference"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

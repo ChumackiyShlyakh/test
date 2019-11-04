@@ -63,7 +63,6 @@
         app:layout_constraintTop_toBottomOf="@+id/ll_fragment_my_places_controls_objects_back">
 
         <EditText
-            android:id="@+id/et_fragment_google_maps_controls_search_for_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -547,7 +546,6 @@
         app:layout_constraintGuide_percent="0.56" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
