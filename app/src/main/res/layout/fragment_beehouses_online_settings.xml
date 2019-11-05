@@ -23,25 +23,25 @@
     <RelativeLayout
         android:id="@+id/rl_fragment_beehouses_online_settings_choose_time"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/ed_border_grey"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/cl_fragment_gadgets_grafs_settings_times_per_day">
 
-        <Button
+        <TextView
             android:id="@+id/btn_fragment_beehouses_online_settings_choose_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:background="@drawable/ed_border_grey"
             android:gravity="left|center"
             android:paddingLeft="32dp"
+            android:layout_centerVertical="true"
             android:text="@string/choose_time"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/black">
+            android:textColor="@color/black"/>
 
-        </Button>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -49,9 +49,8 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/arrow_down">
+            android:src="@drawable/arrow_down"/>
 
-        </ImageView>
 
     </RelativeLayout>
 
@@ -71,18 +70,15 @@
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/tv_fragment_gadgets_grafs_settings_payments">
 
-        <Button
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:background="@drawable/ed_border_grey"
             android:gravity="left|center"
-            android:paddingLeft="32dp"
             android:text="@string/cellular_operator"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/black">
+            android:textColor="@color/black"/>
 
-        </Button>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -90,9 +86,8 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/arrow_right">
+            android:src="@drawable/arrow_right"/>
 
-        </ImageView>
 
     </RelativeLayout>
 
@@ -105,18 +100,15 @@
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/rl_fragment_gadgets_grafs_settings_cellular_operator">
 
-        <Button
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:background="@drawable/ed_border_grey"
             android:gravity="left|center"
-            android:paddingLeft="32dp"
             android:text="@string/beehouse_online"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/black">
+            android:textColor="@color/black"/>
 
-        </Button>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -124,9 +116,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/arrow_right">
-
-        </ImageView>
+            android:src="@drawable/arrow_right"/>
 
     </RelativeLayout>
 
@@ -192,7 +182,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="110dp"
         tools:layout_editor_absoluteY="95dp">
 
         <TextView
@@ -227,6 +217,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:checked="true"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -327,7 +318,7 @@
         android:id="@+id/tv_fragment_gadgets_grafs_settings_sms_times_sending"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:text="@string/sms_times_sending"
         android:textAppearance="?android:attr/textAppearanceSmall"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
@@ -338,7 +329,7 @@
         android:id="@+id/tv_fragment_gadgets_grafs_settings_payments"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:text="@string/payments"
         android:textAppearance="?android:attr/textAppearanceSmall"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
@@ -349,7 +340,7 @@
         android:id="@+id/ll_fragment_gadgets_grafs_settings_exit_from_account"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline9"

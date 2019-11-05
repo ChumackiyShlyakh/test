@@ -95,7 +95,7 @@
                 android:ellipsize="end"
                 android:gravity="start"
                 android:maxLines="3"
-                android:text="@string/about_us_text">
+                android:text="@string/about_us">
 
             </TextView>
 

@@ -181,7 +181,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.ll_grandExpert_beekeepers_ukraine -> {
             }
             R.id.ll_grandExpert_about_us -> {
-                supportActionBar?.title = getString(R.string.about_us)
+                supportActionBar?.title = getString(R.string.about_us_drawer)
                 replaceFragment(AboutUsFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
