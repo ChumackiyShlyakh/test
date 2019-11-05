@@ -5,10 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
@@ -22,8 +19,12 @@ class GadgetsGrafsFragment : Fragment() {
 
     var rb_fragment_gadgets_grafs_table: RadioButton? = null
     var rb_fragment_gadgets_grafs_graf: RadioButton? = null
-    var btn_fragment_gadgets_grafs_choose_meaning: Button? = null
-    var btn_gadgets_grafs_choose_gadget: Button? = null
+    var btn_fragment_gadgets_grafs_choose_meaning: RelativeLayout? = null
+    var btn_gadgets_grafs_choose_gadget: RelativeLayout? = null
+
+    var txt_fragment_gadgets_grafs_choose_meaning: TextView? = null
+    var txt_gadgets_grafs_choose_gadget: TextView? = null
+
     var btn_fragment_gadgets_grafs_build: Button? = null
     var text_btn_gadgets_grafs_choose_gadget: String? = null
     var text_btn_gadgets_grafs_choose_meaning: String? = null
@@ -53,12 +54,13 @@ class GadgetsGrafsFragment : Fragment() {
         rb_fragment_gadgets_grafs_table = view.findViewById(R.id.rb_fragment_gadgets_grafs_table)
         rb_fragment_gadgets_grafs_graf = view.findViewById(R.id.rb_fragment_gadgets_grafs_graf)
 
-        btn_fragment_gadgets_grafs_choose_meaning = view.findViewById(R.id.btn_fragment_gadgets_grafs_choose_meaning)
-        btn_gadgets_grafs_choose_gadget = view.findViewById(R.id.btn_gadgets_grafs_choose_gadget)
+        btn_fragment_gadgets_grafs_choose_meaning = view.findViewById(R.id.rl_fragment_gadgets_grafs_choose_meaning)
+        btn_gadgets_grafs_choose_gadget = view.findViewById(R.id.rl_gadgets_grafs_choose_gadget)
+
         btn_fragment_gadgets_grafs_build = view.findViewById(R.id.btn_fragment_gadgets_grafs_build)
 
-        btn_fragment_gadgets_grafs_choose_meaning?.setText(text_btn_gadgets_grafs_choose_meaning)
-        btn_gadgets_grafs_choose_gadget?.setText(text_btn_gadgets_grafs_choose_gadget)
+        txt_fragment_gadgets_grafs_choose_meaning?.setText(text_btn_gadgets_grafs_choose_meaning)
+        txt_gadgets_grafs_choose_gadget?.setText(text_btn_gadgets_grafs_choose_gadget)
 
         rdgrp_fragment_gadgets_grafs.setOnCheckedChangeListener({ group, checkedId ->
             val radio: RadioButton = view.findViewById(checkedId)
@@ -99,6 +101,7 @@ class GadgetsGrafsFragment : Fragment() {
                         MeaningGrafsFragment()
                     )?.commit()
                 }
+
                 (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
             } else {
                 Toast.makeText(

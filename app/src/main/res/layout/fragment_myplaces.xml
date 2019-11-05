@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/white_background"
     android:orientation="vertical">
 
 <!--    <ImageButton-->
@@ -17,7 +18,8 @@
 <!--        app:srcCompat="@drawable/item_control" />-->
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs_fragment_myplaces"
+        android:id="@+id/tabs"
+        android:layout_marginTop="80dp"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="80dp"

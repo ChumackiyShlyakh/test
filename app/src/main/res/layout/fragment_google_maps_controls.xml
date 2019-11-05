@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/white_background"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -12,7 +12,7 @@
         android:id="@+id/ll_fragment_google_maps_controls_back"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,8 @@
             android:id="@+id/imgbtn_fragment_google_maps_controls_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:padding="15dp"
+            android:layout_marginStart="10dp"
             android:layout_weight="0.1"
             android:background="@color/transparent"
             app:srcCompat="@drawable/close" />

@@ -50,7 +50,7 @@ class ChooseGadgetFragment : Fragment() {
             if (id != -1) {
                 val radio: RadioButton = view.findViewById(id)
 
-                activity?.btn_gadgets_grafs_choose_gadget?.setText(radio.text)
+                activity?.txt_gadgets_grafs_choose_gadget?.setText(radio.text)
 
                 val bundle = Bundle()
                 bundle.putString("message_gadget", radio.text.toString())

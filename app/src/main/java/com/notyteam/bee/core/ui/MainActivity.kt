@@ -22,10 +22,9 @@ import com.notyteam.bee.R
 import com.notyteam.bee.core.ui.drawer.DrawerItemsViewModel
 import com.notyteam.bee.databinding.ActivityMainBinding
 import com.notyteam.bee.google_map_controls.GoogleMapControlsFragment
-import com.notyteam.bee.topics.aboutus.fragment.AboutUsFragment
+import com.notyteam.bee.topics.aboutus.fragment.InstructionFragment
 import com.notyteam.bee.topics.feedback.FeedbackFragment
 import com.notyteam.bee.topics.google_map.fragment.GoogleMapsFragment
-import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsApiaryFragment
 import com.notyteam.bee.topics.my_places.MyPlacesFragment
 import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsBeehousesFragment
 import com.notyteam.bee.topics.my_places.viewpager_fragments.VPBeehousesFragment
@@ -100,6 +99,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val imgbtn_controls_google_maps =
             bindingMainActivity?.appBarLayout?.imgbtnControlsGoogleMaps
 
+        imgbtn_controls_my_places_beehouses?.setOnClickListener({
+            supportFragmentManager.beginTransaction().replace(
+                R.id.fragment_container_main_activity,
+                MyPlacesControlsBeehousesFragment()
+            ).commit()
+            toolbar?.visibility = View.GONE
+        })
 
 //        imgbtn_controls_my_places_beehouses?.setOnClickListener({
 ////            if(MyPlacesFragment().adapter?.equals(VPBeehousesFragment())!!) {
@@ -160,6 +166,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_instructions -> {
+                supportActionBar?.title = getString(R.string.instructions)
+                replaceFragment(InstructionFragment())
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_feedback -> {
                 supportActionBar?.title = getString(R.string.feedback)
@@ -184,14 +195,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 scrollView_beehouses_online.visibility = View.VISIBLE
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
-//                imgbtn_controls_my_places.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
                 replaceFragment(GadgetsGrafsFragment())
             }
             R.id.ll_grandExpert_beekeepers_ukraine -> {
             }
             R.id.ll_grandExpert_about_us -> {
-                supportActionBar?.title = getString(R.string.about_us)
-                replaceFragment(AboutUsFragment())
+                supportActionBar?.title = getString(R.string.about_us_drawer)
+                replaceFragment(InstructionFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
 //                imgbtn_controls_my_places.visibility = View.GONE
