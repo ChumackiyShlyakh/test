@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/white_background"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginTop="35dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +24,7 @@
             android:id="@+id/imgbtn_fragment_myplaces_controls_apiary_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:padding="15dp"
             android:background="@color/transparent"
             android:src="@drawable/close"
             android:layout_weight="0.2" />

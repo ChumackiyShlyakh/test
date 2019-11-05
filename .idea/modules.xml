@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/Desktop-grandexpert-app.iml" filepath="$PROJECT_DIR$/app/Desktop-grandexpert-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/Downloads-grandexpert-app.iml" filepath="$PROJECT_DIR$/app/Downloads-grandexpert-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/Downloads-project-grandexpert-GrandExpert.iml" filepath="$PROJECT_DIR$/Downloads-project-grandexpert-GrandExpert.iml" />
       <module fileurl="file://$PROJECT_DIR$/GrandExpert.iml" filepath="$PROJECT_DIR$/GrandExpert.iml" />

@@ -96,6 +96,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 R.id.fragment_container_main_activity,
                 MyPlacesControlsApiaryFragment()
             ).commit()
+            toolbar?.visibility = View.GONE
         })
 
         imgbtn_controls_google_maps?.setOnClickListener({
@@ -114,7 +115,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         drawer!!.addDrawerListener(toggle)
 
         toggle.syncState()
-
 
         supportActionBar?.title = getString(R.string.google_map)
         replaceFragment(GoogleMapsFragment())

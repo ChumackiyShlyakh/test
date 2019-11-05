@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/white_background"
     android:layout_height="match_parent">
-
     <TextView
         android:id="@+id/tv_feedback_fragment_head_text"
         android:layout_width="0dp"
@@ -13,7 +12,7 @@
         android:text="@string/feedback_text"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/black"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="90dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
@@ -22,7 +21,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@id/guideline18"
         app:layout_constraintEnd_toEndOf="parent"
@@ -248,7 +247,7 @@
         android:id="@+id/constraintLayout5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline9"

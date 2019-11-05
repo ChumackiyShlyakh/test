@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/white_background"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_fragment_profile_change_settings_account_back"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,7 +19,8 @@
             android:id="@+id/imgbtn_profile_change_settings_account_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:padding="15dp"
+            android:layout_marginStart="15dp"
             android:background="@color/transparent"
             android:src="@drawable/arrow_left"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +51,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/ed_border_grey"
         android:ems="10"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         app:errorEnabled="true"
         app:hintTextAppearance="@style/MyAppearance"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
