@@ -1,9 +1,7 @@
 package com.notyteam.bee.topics.my_places.viewpager_fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -37,6 +35,11 @@ class VPBeehousesFragment() : Fragment() {
         adapter.notifyDataSetChanged()
 
         return view
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.fragment_b, menu)
+        super.onCreateOptionsMenu(menu, inflater)
     }
 
     private fun addAnimals() {
