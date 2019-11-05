@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.FragmentStatePagerAdapter
 
-class MyFragmentPagerAdapter(manager: FragmentManager) : FragmentStatePagerAdapter(manager) {
+class MyFragmentPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
 
     private val fragmentList: ArrayList<Fragment> = ArrayList()
     private val fragmentTitleList: ArrayList<String> = ArrayList()
