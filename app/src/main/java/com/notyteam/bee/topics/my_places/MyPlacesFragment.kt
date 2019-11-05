@@ -28,11 +28,11 @@ class MyPlacesFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_myplaces, container, false)
 
         val fragments = arrayOf(
-            Fragment.instantiate(context!!, VPBeehousesFragment::class.java.getName()),
-            Fragment.instantiate(context!!, VPApiaryFragment::class.java.getName()),
-            Fragment.instantiate(context!!, VPObjectsFragment::class.java.getName()),
-            Fragment.instantiate(context!!, VPEventsFragment::class.java.getName()),
-            Fragment.instantiate(context!!, VPArchiveFragment::class.java.getName())
+            instantiate(context!!, VPBeehousesFragment::class.java.getName()),
+            instantiate(context!!, VPApiaryFragment::class.java.getName()),
+            instantiate(context!!, VPObjectsFragment::class.java.getName()),
+            instantiate(context!!, VPEventsFragment::class.java.getName()),
+            instantiate(context!!, VPArchiveFragment::class.java.getName())
         )
 
         tabs = view.findViewById(R.id.tabs)
