@@ -72,6 +72,7 @@ class GadgetsGrafsFragment : Fragment() {
                 R.id.fragment_container_main_activity,
                 ChooseMeaningFragment()
             )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
         })
 
         btn_gadgets_grafs_choose_gadget?.setOnClickListener({
@@ -79,6 +80,7 @@ class GadgetsGrafsFragment : Fragment() {
                 R.id.fragment_container_main_activity,
                 ChooseGadgetFragment()
             )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
         })
 
         btn_fragment_gadgets_grafs_build?.setOnClickListener({
@@ -99,6 +101,8 @@ class GadgetsGrafsFragment : Fragment() {
                         MeaningGrafsFragment()
                     )?.commit()
                 }
+
+                (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
             } else {
                 Toast.makeText(
                     context, "On button click : nothing selected",

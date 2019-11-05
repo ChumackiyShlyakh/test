@@ -23,25 +23,26 @@
     <RelativeLayout
         android:id="@+id/rl_fragment_settings_choose_time"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ed_border_grey"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/cl_fragment_settings_times_per_day">
 
-        <Button
+        <TextView
             android:id="@+id/btn_fragment_settings_choose_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:background="@drawable/ed_border_grey"
-            android:gravity="left|center"
+                android:gravity="left|center"
+            android:layout_centerVertical="true"
             android:paddingLeft="32dp"
             android:text="@string/choose_time"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black">
 
-        </Button>
+        </TextView>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -78,9 +79,7 @@
             android:gravity="left|center"
             android:text="@string/cellular_operator"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/black">
-
-        </TextView>
+            android:textColor="@color/black"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -88,9 +87,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/arrow_right">
-
-        </ImageView>
+            android:src="@drawable/arrow_right"/>
 
     </RelativeLayout>
 
@@ -110,9 +107,8 @@
              android:gravity="left|center"
             android:text="@string/beehouse_online"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/black">
+            android:textColor="@color/black"/>
 
-        </TextView>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -120,10 +116,8 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/arrow_right">
-
-        </ImageView>
-
+            android:src="@drawable/arrow_right"/>
+/
     </RelativeLayout>
 
     <androidx.constraintlayout.widget.Guideline
@@ -340,7 +334,7 @@
         android:id="@+id/tv_fragment_settings_payments"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:text="@string/payments"
         android:textAppearance="?android:attr/textAppearanceSmall"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
