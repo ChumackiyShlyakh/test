@@ -38,7 +38,7 @@ class MeaningGrafsFragment : Fragment() {
                 R.id.fragment_container_main_activity,
                 GadgetsGrafsFragment()
             )?.commit()
-            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
+
         })
         imgbtn_fragment_meaning_grafs_controls?.setOnClickListener({
             fragmentManager?.beginTransaction()?.replace(

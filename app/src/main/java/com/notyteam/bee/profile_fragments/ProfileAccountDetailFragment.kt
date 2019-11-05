@@ -18,7 +18,7 @@ class ProfileAccountDetailFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_profile_account_detail, container, false)
 
-        val imgbtn_fragment_profile_account_detail_back = view.findViewById<ImageButton>(R.id.cl_fragment_profile_account_detail_back)
+        val imgbtn_fragment_profile_account_detail_back = view.findViewById<ImageButton>(R.id.imgbtn_fragment_profile_account_detail_back)
 
         imgbtn_fragment_profile_account_detail_back.setOnClickListener( {
             fragmentManager?.beginTransaction()?.replace(

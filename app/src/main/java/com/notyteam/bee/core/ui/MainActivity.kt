@@ -167,6 +167,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 supportActionBar?.title = getString(R.string.my_gadgets)
                 scrollView_main.visibility = View.GONE
                 scrollView_beehouses_online.visibility = View.VISIBLE
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
                 replaceFragment(GadgetsGrafsFragment())
             }
             R.id.ll_beehouses_online_gadgets_grafs -> {
