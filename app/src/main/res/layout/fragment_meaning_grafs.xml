@@ -4,14 +4,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/white_background"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/ll_fragment_meaning_grafs_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:layout_marginTop="35dp"
+=======
         android:layout_marginTop="24dp"
+>>>>>>> test-master
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +28,8 @@
             android:layout_height="wrap_content"
             android:background="@color/transparent"
             android:layout_weight="0.1"
-            android:layout_marginStart="24dp"
+            android:padding="15dp"
+            android:layout_marginStart="10dp"
             android:src="@drawable/arrow_left2" />
 
         <TextView

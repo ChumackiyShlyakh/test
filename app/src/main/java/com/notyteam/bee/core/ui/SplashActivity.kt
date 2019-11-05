@@ -20,13 +20,7 @@ class SplashActivity : AppCompatActivity() {
         AppBarCustom.makeStatusBarTransparent(SplashActivity@ this)
 
         Handler().postDelayed({
-            //            if (!ApiGrantExpertApplication.getSharedPrefInstance().isAuth()) {
-//                startActivity(Intent(this@SplashActivity, RegistrationActivity::class.java))
-//                finish()
-//            } else {
-//                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
             startActivity(Intent(this@SplashActivity, RegistrationActivity::class.java))
-//            }
         this.finish()
         }, SPLASH_TIME_OUT)
     }

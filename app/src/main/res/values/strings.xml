@@ -29,7 +29,7 @@
     <string name="back_to_main">Back to main</string>
     <string name="exit">Exit</string>
     <string name="beehouses_online">Beehouses online</string>
-    <string name="about_us">About us</string>
+    <string name="about_us">Lorem ipsum dolor sit ameconsectetur adipisicing elit, sed do eiusmod tempor </string>
     <string name="beekeepers">Beekeepers of Ukraine</string>
     <string name="grand_expert">GRAND EXPERT</string>
     <string name="exit_from_application">Exit from application</string>
@@ -96,7 +96,7 @@
     <string name="longitude">51.4321</string>
     <string name="sh">Ш:</string>
     <string name="d">Д:</string>
-    <string name="gadgets_grafs">My gadgets and grafs</string>
+    <string name="gadgets_grafs">My gadgets</string>
     <string name="table">Table</string>
     <string name="graf">Graf</string>
     <string name="choose_gadget">Choose gadget</string>

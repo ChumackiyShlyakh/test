@@ -33,7 +33,6 @@ class ChooseMeaningFragment : Fragment() {
                 R.id.fragment_container_main_activity,
                 GadgetsGrafsFragment()
             )?.commit()
-            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
         })
 
         val rdgrp_fragment_choose_meaning =
@@ -64,7 +63,6 @@ class ChooseMeaningFragment : Fragment() {
                     R.id.fragment_container_main_activity,
                     gadgetsGrafsFragment
                 )?.commit()
-                (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
             } else {
                 Toast.makeText(
                     context, "On button click : nothing selected",

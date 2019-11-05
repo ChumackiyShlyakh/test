@@ -99,6 +99,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 R.id.fragment_container_main_activity,
                 MyPlacesControlsBeehousesFragment()
             ).commit()
+            toolbar?.visibility = View.GONE
         })
 
         imgbtn_controls_google_maps?.setOnClickListener({
@@ -172,6 +173,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 imgbtn_download_google_maps.visibility = View.GONE
                 imgbtn_controls_my_places.visibility = View.GONE
                 scrollView_beehouses_online.visibility = View.VISIBLE
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
                 replaceFragment(GadgetsGrafsFragment())
             }
             R.id.ll_grandExpert_beekeepers_ukraine -> {
