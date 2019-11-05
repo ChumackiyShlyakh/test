@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.components.XAxis
@@ -17,11 +18,39 @@ import com.notyteam.bee.R
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_meaning_grafs.*
+import lecho.lib.hellocharts.animation.ChartAnimationListener
+import lecho.lib.hellocharts.gesture.ContainerScrollType
+import lecho.lib.hellocharts.listener.LineChartOnValueSelectListener
+import lecho.lib.hellocharts.model.*
+import lecho.lib.hellocharts.util.ChartUtils
+import lecho.lib.hellocharts.view.Chart
+import lecho.lib.hellocharts.view.LineChartView
+import java.util.ArrayList
 
 class MeaningGrafsFragment : Fragment() {
 
     var imgbtn_fragment_meaning_grafs_back: ImageButton? = null
     var imgbtn_fragment_meaning_grafs_controls: ImageButton? = null
+
+    private var chart: LineChartView? = null
+    private var data: LineChartData? = null
+
+    private var numberOfLines = 1
+    private val maxNumberOfLines = 4
+
+    var time = arrayListOf("08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00")
+
+    internal var randomNumbersTab = Array(maxNumberOfLines) { FloatArray(time.size) }
+
+
+    private var hasLines = true
+    private var hasPoints = true
+    private var shape = ValueShape.CIRCLE
+    private var isFilled = false
+    private var hasLabels = false
+    private var isCubic = false
+    private var hasLabelForSelected = false
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,61 +76,94 @@ class MeaningGrafsFragment : Fragment() {
             )?.commit()
         })
 
+        chart = view.findViewById<View>(R.id.chart) as LineChartView
+        chart!!.onValueTouchListener = ValueTouchListener()
+
+        // Generate some random values.
+        generateValues()
+
+        generateData()
+
+        // Disable viewport recalculations, see toggleCubic() method for more info.
+        chart!!.isViewportCalculationEnabled = true
+        chart!!.setContainerScrollEnabled(true,ContainerScrollType.HORIZONTAL)
+        resetViewport()
+
         return view
     }
 
-    override fun onStart() {
-        super.onStart()
-
-        setupLineChartData()
+    private fun generateValues() {
+        for (i in 0 until maxNumberOfLines) {
+            for (j in 0 until time.size) {
+                randomNumbersTab[i][j] = Math.random().toFloat() * 100f
+            }
+        }
     }
 
-    private fun setupLineChartData() {
-        val yVals = ArrayList<Entry>()
-        yVals.add(Entry(0f, 30f, "0"))
-        yVals.add(Entry(1f, 2f, "1"))
-        yVals.add(Entry(2f, 4f, "2"))
-        yVals.add(Entry(3f, 6f, "3"))
-        yVals.add(Entry(4f, 8f, "4"))
-        yVals.add(Entry(5f, 10f, "5"))
-        yVals.add(Entry(6f, 22f, "6"))
-        yVals.add(Entry(7f, 12.5f, "7"))
-        yVals.add(Entry(8f, 22f, "8"))
-        yVals.add(Entry(9f, 32f, "9"))
-        yVals.add(Entry(10f, 54f, "10"))
-        yVals.add(Entry(11f, 28f, "11"))
 
-        val set1: LineDataSet
-        set1 = LineDataSet(yVals, "DataSet 1")
+    private fun resetViewport() {
+        // Reset viewport height range to (0,100)
+        val v = Viewport(chart!!.maximumViewport)
+        v.bottom = 0f
+        v.top = 100f
+        v.left = 0f
+        v.right = time.size.toFloat()
+        chart!!.maximumViewport = v
+        chart!!.currentViewport = v
+    }
 
-        // set1.fillAlpha = 110
-        // set1.setFillColor(Color.RED);
+    private fun generateData() {
 
-        // set the line to be drawn like this "- - - - - -"
-        // set1.enableDashedLine(5f, 5f, 0f);
-        // set1.enableDashedHighlightLine(10f, 5f, 0f);
-        set1.color = Color.BLUE
-        set1.setCircleColor(Color.BLUE)
-        set1.lineWidth = 1f
-        set1.circleRadius = 3f
-        set1.setDrawCircleHole(false)
-        set1.valueTextSize = 0f
-        set1.setDrawFilled(false)
+        val lines = ArrayList<Line>()
+        val axisValues = ArrayList<AxisValue>()
 
-        val dataSets = ArrayList<ILineDataSet>()
-        dataSets.add(set1)
-        val data = LineData(dataSets)
+        for (i in 0 until numberOfLines) {
 
-        // set data
-        lineChart?.setData(data)
-        lineChart?.description?.isEnabled = false
-        lineChart?.legend?.isEnabled = false
-        lineChart?.setPinchZoom(true)
-        lineChart?.xAxis?.enableGridDashedLine(5f, 5f, 0f)
-        lineChart?.axisRight?.enableGridDashedLine(5f, 5f, 0f)
-        lineChart?.axisLeft?.enableGridDashedLine(5f, 5f, 0f)
-        //lineChart.setDrawGridBackground()
-        lineChart?.xAxis?.labelCount = 11
-        lineChart?.xAxis?.position = XAxis.XAxisPosition.BOTTOM
+            val values = ArrayList<PointValue>()
+            for (j in 0 until time.size) {
+                values.add(PointValue(j.toFloat(), randomNumbersTab[i][j]))
+                axisValues.add(AxisValue(j.toFloat()).setLabel(time[j]))
+            }
+
+
+            val line = Line(values)
+            line.color = ChartUtils.COLORS[3]
+            line.shape = shape
+            line.isCubic = isCubic
+            line.isFilled = isFilled
+            line.setHasLabels(hasLabels)
+            line.setHasLabelsOnlyForSelected(hasLabelForSelected)
+            line.setHasLines(hasLines)
+            line.setHasPoints(hasPoints)
+            lines.add(line)
+
+
+        }
+
+        data = LineChartData(lines)
+
+
+        data!!.axisXBottom = Axis(axisValues).setHasLines(false).setHasTiltedLabels(true)
+            .setTextColor(R.color.black).setTextSize(10).setName("Time")
+        data!!.axisYLeft = Axis().setHasLines(false).setHasTiltedLabels(true).setName("%").setTextColor(R.color.black)
+
+        data!!.baseValue = java.lang.Float.NEGATIVE_INFINITY
+        chart!!.lineChartData = data
+
+    }
+
+
+
+    private inner class ValueTouchListener : LineChartOnValueSelectListener {
+
+        override fun onValueSelected(lineIndex: Int, pointIndex: Int, value: PointValue) {
+            Toast.makeText(activity, "Selected: $value", Toast.LENGTH_SHORT).show()
+        }
+
+        override fun onValueDeselected() {
+            // TODO Auto-generated method stub
+
+        }
+
     }
 }
