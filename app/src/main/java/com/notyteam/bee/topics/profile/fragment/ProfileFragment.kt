@@ -18,8 +18,6 @@ import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment : Fragment(), View.OnClickListener {
 
-//    private lateinit var imgbtn_about_us_back: ImageButton
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,7 +46,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
             R.id.ll_profile_payments_refill_account -> {
                 fragmentManager?.beginTransaction()?.replace(
                     R.id.fragment_container_main_activity,
-                    ProfileSettingsAccountFragment()
+                    ProfileSettingsAccountFragment(), "ProfileSettingsAccountFragment"
                 )?.commit()
             }
             R.id.ll_profile_cash -> {

@@ -13,7 +13,7 @@
         android:text="@string/feedback_text"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/black"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/guideline9"

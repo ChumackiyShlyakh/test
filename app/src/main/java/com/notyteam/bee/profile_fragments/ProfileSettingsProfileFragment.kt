@@ -15,12 +15,13 @@ import com.notyteam.bee.R
 import com.notyteam.bee.core.arch.DialogCustomListView
 import com.notyteam.bee.core.arch.DialogDataAdapter
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.dialog_custom_layout.*
 import kotlinx.android.synthetic.main.fragment_profile_settings_profile.*
 
 class ProfileSettingsProfileFragment : Fragment(), View.OnClickListener,
-    DialogDataAdapter.RecyclerViewItemClickListener {
+    DialogDataAdapter.RecyclerViewItemClickListener, OnBackPressed {
 
     internal var customDialog: DialogCustomListView? = null
     private var meaning: String = "meaning"
@@ -108,5 +109,13 @@ class ProfileSettingsProfileFragment : Fragment(), View.OnClickListener,
 
     override fun clickOnItemLanguage(data: String) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            ProfileFragment()
+        )?.commit()
+        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
     }
 }

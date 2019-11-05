@@ -275,7 +275,7 @@
             android:background="@drawable/button_drop_orange"
             android:text="@string/save"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/guideline8"
             app:layout_constraintEnd_toStartOf="@+id/guideline7"
             app:layout_constraintHorizontal_bias="1.0"

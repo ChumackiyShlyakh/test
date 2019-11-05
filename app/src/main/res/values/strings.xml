@@ -26,6 +26,7 @@
     <string name="instructions">Instructions</string>
     <string name="feedback">Feedback</string>
     <string name="settings">Settings</string>
+    <string name="back_to_main">Back to main</string>
     <string name="exit">Exit</string>
     <string name="beehouses_online">Beehouses online</string>
     <string name="about_us">About us</string>
@@ -77,7 +78,7 @@
     <string name="message">Message</string>
     <string name="send">Send</string>
     <string name="feedback_text">Если у вас есть бизнес-запросы или другие вопросы, пожалуйста заполните
-        следующую форму для связи  нами. <n>Спасибо!</n> <b>World</b>!  </string>
+        следующую форму для связи  нами. <n>Спасибо!</n></string>
     <string name="ticket_number">Ticket number</string>
     <!--    ![CDATA[Foo Bar <a href="foo?id=%s">baz</a> is cool]]-->
     <string name="choose_time">Choose time</string>

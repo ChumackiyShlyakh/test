@@ -19,8 +19,6 @@ import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import com.notyteam.bee.room.PointsRepository
-import com.notyteam.bee.room.RoomPointData
 import com.google.android.gms.maps.model.CircleOptions
 import com.notyteam.bee.R
 import com.notyteam.bee.google_map_controls.GoogleMapNewEventFragment

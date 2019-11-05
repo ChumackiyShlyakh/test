@@ -10,9 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-class ProfileSettingsAccountFragment : Fragment() {
+class ProfileSettingsAccountFragment : Fragment(), OnBackPressed {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,14 +26,15 @@ class ProfileSettingsAccountFragment : Fragment() {
         val btn_profile_settings_account_edit =
             view.findViewById<Button>(R.id.btn_profile_settings_account_edit)
 
-        imgbtn_fragment_profile_settings_account_back?.setOnClickListener(View.OnClickListener {
+        imgbtn_fragment_profile_settings_account_back?.setOnClickListener({
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 ProfileFragment()
             )?.commit()
             (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
         })
-        btn_profile_settings_account_edit?.setOnClickListener(View.OnClickListener {
+
+        btn_profile_settings_account_edit?.setOnClickListener({
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 ProfileChangeSettingsAccountFragment()
@@ -40,5 +42,13 @@ class ProfileSettingsAccountFragment : Fragment() {
         })
 
         return view
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            ProfileFragment()
+        )?.commit()
+        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
     }
 }
