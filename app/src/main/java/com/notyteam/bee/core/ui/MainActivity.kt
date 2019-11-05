@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.RelativeLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
@@ -27,6 +28,7 @@ import com.notyteam.bee.topics.google_map.fragment.GoogleMapsFragment
 import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsApiaryFragment
 import com.notyteam.bee.topics.my_places.MyPlacesFragment
 import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsBeehousesFragment
+import com.notyteam.bee.topics.my_places.viewpager_fragments.VPBeehousesFragment
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
 import com.notyteam.bee.topics.settings.fragment.SettingsFragment
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
@@ -44,7 +46,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     var viewmodelDrawerItemsViewModel: DrawerItemsViewModel? = null
     private var drawer: DrawerLayout? = null
     private var toolbar: Toolbar? = null
+    companion object {
+        @JvmStatic
+        var imgbtn_controls_my_places_beehouses: ImageButton? = null
 
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,16 +96,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val imgbtn_download_google_maps =
             bindingMainActivity?.appBarLayout?.imgbtnDownloadGoogleMaps
-        val imgbtn_controls_my_places_beehouses = bindingMainActivity?.appBarLayout?.imgbtnControlsMyPlaces
+        imgbtn_controls_my_places_beehouses = bindingMainActivity?.appBarLayout?.imgbtnControlsMyPlaces
         val imgbtn_controls_google_maps =
             bindingMainActivity?.appBarLayout?.imgbtnControlsGoogleMaps
 
-        imgbtn_controls_my_places_beehouses?.setOnClickListener({
-            supportFragmentManager.beginTransaction().replace(
-                R.id.fragment_container_main_activity,
-                MyPlacesControlsBeehousesFragment()
-            ).commit()
-        })
+
+//        imgbtn_controls_my_places_beehouses?.setOnClickListener({
+////            if(MyPlacesFragment().adapter?.equals(VPBeehousesFragment())!!) {
+//            supportFragmentManager.beginTransaction().replace(
+//                R.id.fragment_container_main_activity,
+//                MyPlacesControlsBeehousesFragment()
+//            ).commit()
+//            toolbar?.visibility = View.GONE
+////            }
+//        })
 
         imgbtn_controls_google_maps?.setOnClickListener({
             supportFragmentManager.beginTransaction().replace(
@@ -133,7 +143,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 replaceFragment(ProfileFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
-                imgbtn_controls_my_places.visibility = View.GONE
+//                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_my_places -> {
                 supportActionBar?.title = getString(R.string.my_places)
@@ -147,7 +157,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 replaceFragment(GoogleMapsFragment())
                 imgbtn_controls_google_maps.visibility = View.VISIBLE
                 imgbtn_download_google_maps.visibility = View.VISIBLE
-                imgbtn_controls_my_places.visibility = View.GONE
+//                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_instructions -> {
             }
@@ -156,22 +166,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 replaceFragment(FeedbackFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
-                imgbtn_controls_my_places.visibility = View.GONE
+//                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_settings -> {
                 supportActionBar?.title = getString(R.string.settings)
                 replaceFragment(SettingsFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
-                imgbtn_controls_my_places.visibility = View.GONE
+//                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_grandExpert_beehouse_online -> {
                 supportActionBar?.title = getString(R.string.my_gadgets)
                 scrollView_main.visibility = View.GONE
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
-                imgbtn_controls_my_places.visibility = View.GONE
+//                imgbtn_controls_my_places.visibility = View.GONE
                 scrollView_beehouses_online.visibility = View.VISIBLE
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+//                imgbtn_controls_my_places.visibility = View.GONE
                 replaceFragment(GadgetsGrafsFragment())
             }
             R.id.ll_grandExpert_beekeepers_ukraine -> {
@@ -181,7 +194,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 replaceFragment(AboutUsFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
-                imgbtn_controls_my_places.visibility = View.GONE
+//                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_beehouses_online_gadgets_grafs -> {
                 supportActionBar?.title = getString(R.string.my_gadgets)
@@ -196,7 +209,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 supportActionBar?.title = getString(R.string.google_map)
                 imgbtn_controls_google_maps.visibility = View.VISIBLE
                 imgbtn_download_google_maps.visibility = View.VISIBLE
-                imgbtn_controls_my_places.visibility = View.GONE
+//                imgbtn_controls_my_places.visibility = View.GONE
                 scrollView_main.visibility = View.VISIBLE
                 scrollView_beehouses_online.visibility = View.GONE
                 replaceFragment(GoogleMapsFragment())
