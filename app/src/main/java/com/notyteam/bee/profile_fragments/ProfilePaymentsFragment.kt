@@ -10,9 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-class ProfilePaymentsFragment : Fragment() {
+class ProfilePaymentsFragment : Fragment(), OnBackPressed {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +46,13 @@ class ProfilePaymentsFragment : Fragment() {
         })
 
         return view
-//        return binding.root
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            ProfileFragment()
+        )?.commit()
+        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
     }
 }

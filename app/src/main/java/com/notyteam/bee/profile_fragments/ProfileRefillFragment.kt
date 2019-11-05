@@ -1,5 +1,7 @@
 package com.notyteam.bee.profile_fragments
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,16 +9,17 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.RelativeLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.notyteam.bee.R
 import com.notyteam.bee.profile_fragments.adapter.model.SectionModel
 import com.notyteam.bee.profile_fragments.adapter.SectionRecyclerViewAdapter
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.fragment_profile_refill.*
 import java.util.*
 
-class ProfileRefillFragment : Fragment() {
-
+class ProfileRefillFragment : Fragment(), OnBackPressed {
 
     val LOG_TAG: String = "myLogs";
 
@@ -61,7 +64,7 @@ class ProfileRefillFragment : Fragment() {
         for (i in 1..5) {
             val itemArrayList = ArrayList<String>()
             //for loop for items
-            for (j in 1..10) {
+            for (j in 1..5) {
                 itemArrayList.add("Item $j")
             }
             Log.d(LOG_TAG, "ProfileRefillFragment for (i in 1..5): " + " " + i);
@@ -73,16 +76,13 @@ class ProfileRefillFragment : Fragment() {
                 )
             )
         }
+
         context?.let {
             adapter = SectionRecyclerViewAdapter(it, sectionModelArrayList)
-            Log.d(LOG_TAG, "ProfileRefillFragment for (i in 1..5): " + " " )
         }
 
-        Log.d(LOG_TAG, "ProfileRefillFragment populateRecyclerView: " + " " + adapter);
         sectioned_recycler_view.adapter = adapter
     }
-
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -99,5 +99,12 @@ class ProfileRefillFragment : Fragment() {
 //            LINEAR_VERTICAL -> getSupportActionBar().setTitle(getResources().getString(R.string.linear_sectioned_recyclerview_vertical))
 //            GRID -> getSupportActionBar().setTitle(getResources().getString(R.string.grid_sectioned_recyclerview))
 //        }
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            ProfilePaymentsFragment()
+        )?.commit()
     }
 }

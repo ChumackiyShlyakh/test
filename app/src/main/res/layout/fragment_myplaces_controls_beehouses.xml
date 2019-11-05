@@ -3,17 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/white_background"
+    android:background="@color/white"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/ll_fragment_myplaces_controls"
+        android:id="@+id/ll_fragment_myplaces_controls_beehouses"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="35dp"
         android:gravity="center"
         android:layout_marginTop="24dp"
         android:orientation="horizontal"
@@ -22,10 +21,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imgbtn_fragment_myplaces_controls_apiary_back"
+            android:id="@+id/imgbtn_fragment_myplaces_controls_beehouses_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:layout_marginStart="16dp"
             android:background="@color/transparent"
             android:src="@drawable/close"
             android:layout_weight="0.2" />
@@ -52,7 +51,7 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/rl_fragment_myplaces_controls_search_for_name"
+        android:id="@+id/rl_fragment_myplaces_controls_beehouses_search_for_name"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -60,7 +59,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_fragment_myplaces_controls">
+        app:layout_constraintTop_toBottomOf="@+id/ll_fragment_myplaces_controls_beehouses">
 
         <EditText
             android:layout_width="match_parent"
@@ -95,7 +94,7 @@
     </RelativeLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_fragment_myplaces_controls_date"
+        android:id="@+id/cl_fragment_myplaces_controls_beehouses_date"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -104,7 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_fragment_myplaces_controls_date">
+        app:layout_constraintTop_toBottomOf="@+id/tv_fragment_myplaces_controls_beehouses_date">
 
         <EditText
             android:layout_width="0dp"
@@ -148,7 +147,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_fragment_myplaces_controls_chb"
+        android:id="@+id/cl_fragment_myplaces_controls_beehouses_chb"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -157,7 +156,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rl_fragment_myplaces_controls_search_for_name">
+        app:layout_constraintTop_toBottomOf="@+id/rl_fragment_myplaces_controls_beehouses_search_for_name">
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -174,7 +173,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_fragment_myplaces_controls_status"
+        android:id="@+id/cl_fragment_myplaces_controls_beehouses_status"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -182,7 +181,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cl_fragment_myplaces_controls_chb">
+        app:layout_constraintTop_toBottomOf="@+id/cl_fragment_myplaces_controls_beehouses_chb">
 
         <Button
             android:layout_width="match_parent"
@@ -217,7 +216,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_fragment_myplaces_controls_made_date"
+        android:id="@+id/til_fragment_myplaces_controls_beehouses_made_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -229,7 +228,7 @@
         app:hintTextAppearance="@style/MyAppearance"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cl_fragment_myplaces_controls_status">
+        app:layout_constraintTop_toBottomOf="@+id/cl_fragment_myplaces_controls_beehouses_status">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="wrap_content"
@@ -247,7 +246,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/tv_fragment_myplaces_controls_date"
+        android:id="@+id/tv_fragment_myplaces_controls_beehouses_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -257,10 +256,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_fragment_myplaces_controls_made_date" />
+        app:layout_constraintTop_toBottomOf="@+id/til_fragment_myplaces_controls_beehouses_made_date" />
 
     <Button
-        android:id="@+id/btn_fragment_myplaces_controls_apiary_apply"
+        android:id="@+id/btn_fragment_myplaces_controls_beehouses_apply"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -271,7 +270,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline23"
         app:layout_constraintStart_toStartOf="@+id/guideline22"
-        app:layout_constraintTop_toBottomOf="@+id/cl_fragment_myplaces_controls_date"
+        app:layout_constraintTop_toBottomOf="@+id/cl_fragment_myplaces_controls_beehouses_date"
         app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline

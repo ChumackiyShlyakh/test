@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.fragment_profile_account_detail.*
 import kotlinx.android.synthetic.main.fragment_profile_settings_profile.*
 
-class ProfileAccountDetailFragment : Fragment() {
+class ProfileAccountDetailFragment : Fragment(), OnBackPressed {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,5 +29,12 @@ class ProfileAccountDetailFragment : Fragment() {
         })
 
         return view
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            ProfilePaymentsFragment()
+        )?.commit()
     }
 }

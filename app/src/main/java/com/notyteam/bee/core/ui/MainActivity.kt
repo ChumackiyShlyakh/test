@@ -4,12 +4,10 @@ import android.app.Activity
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.RelativeLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -28,6 +26,7 @@ import com.notyteam.bee.topics.feedback.FeedbackFragment
 import com.notyteam.bee.topics.google_map.fragment.GoogleMapsFragment
 import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsApiaryFragment
 import com.notyteam.bee.topics.my_places.MyPlacesFragment
+import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsBeehousesFragment
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
 import com.notyteam.bee.topics.settings.fragment.SettingsFragment
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
@@ -36,6 +35,8 @@ import com.notyteam.bee.utils.AppBarCustom
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.dialog_exit.*
+import com.notyteam.bee.utils.OnBackPressed
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-       AppBarCustom.makeStatusBarTransparent(MainActivity@this)
+        AppBarCustom.makeStatusBarTransparent(MainActivity@ this)
 
         bindingMainActivity = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewmodelDrawerItemsViewModel =
@@ -67,6 +68,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val ll_grandExpert_about_us = bindingMainActivity?.llGrandExpertAboutUs
         val ll_beehouses_online_gadgets_grafs = bindingMainActivity?.llBeehousesOnlineGadgetsGrafs
         val ll_beehouses_online_settings = bindingMainActivity?.llBeehousesOnlineSettings
+        val ll_beehouses_online_back_to_main = bindingMainActivity?.llBeehousesOnlineBackToMain
         val ll_grandExpert_exit = bindingMainActivity?.llGrandExpertExit
 
         ll_grandExpert_profile?.setOnClickListener(this)
@@ -80,6 +82,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ll_grandExpert_about_us?.setOnClickListener(this)
         ll_beehouses_online_gadgets_grafs?.setOnClickListener(this)
         ll_beehouses_online_settings?.setOnClickListener(this)
+        ll_beehouses_online_back_to_main?.setOnClickListener(this)
         ll_grandExpert_exit?.setOnClickListener(this)
 
         toolbar = bindingMainActivity?.appBarLayout?.toolbarMainDrawer
@@ -87,14 +90,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val imgbtn_download_google_maps =
             bindingMainActivity?.appBarLayout?.imgbtnDownloadGoogleMaps
-        val imgbtn_controls_my_places = bindingMainActivity?.appBarLayout?.imgbtnControlsMyPlaces
+        val imgbtn_controls_my_places_beehouses = bindingMainActivity?.appBarLayout?.imgbtnControlsMyPlaces
         val imgbtn_controls_google_maps =
             bindingMainActivity?.appBarLayout?.imgbtnControlsGoogleMaps
 
-        imgbtn_controls_my_places?.setOnClickListener({
+        imgbtn_controls_my_places_beehouses?.setOnClickListener({
             supportFragmentManager.beginTransaction().replace(
                 R.id.fragment_container_main_activity,
-                MyPlacesControlsApiaryFragment()
+                MyPlacesControlsBeehousesFragment()
             ).commit()
             toolbar?.visibility = View.GONE
         })
@@ -120,7 +123,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         replaceFragment(GoogleMapsFragment())
         imgbtn_controls_google_maps?.visibility = View.VISIBLE
         imgbtn_download_google_maps?.visibility = View.VISIBLE
-        imgbtn_controls_my_places?.visibility = View.GONE
+        imgbtn_controls_my_places_beehouses?.visibility = View.GONE
 
     }
 
@@ -166,11 +169,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.ll_grandExpert_beehouse_online -> {
                 supportActionBar?.title = getString(R.string.my_gadgets)
                 scrollView_main.visibility = View.GONE
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
                 scrollView_beehouses_online.visibility = View.VISIBLE
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
                 imgbtn_controls_my_places.visibility = View.GONE
                 replaceFragment(GadgetsGrafsFragment())
+            }
+            R.id.ll_grandExpert_beekeepers_ukraine -> {
+            }
+            R.id.ll_grandExpert_about_us -> {
+                supportActionBar?.title = getString(R.string.about_us)
+                replaceFragment(AboutUsFragment())
+                imgbtn_controls_google_maps.visibility = View.GONE
+                imgbtn_download_google_maps.visibility = View.GONE
+                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_beehouses_online_gadgets_grafs -> {
                 supportActionBar?.title = getString(R.string.my_gadgets)
@@ -181,14 +196,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 supportActionBar?.title = getString(R.string.settings)
                 replaceFragment(BeehousesOnlineSettingsFragment())
             }
-            R.id.ll_grandExpert_beekeepers_ukraine -> {
-            }
-            R.id.ll_grandExpert_about_us -> {
-                supportActionBar?.title = getString(R.string.about_us)
-                replaceFragment(AboutUsFragment())
-                imgbtn_controls_google_maps.visibility = View.GONE
-                imgbtn_download_google_maps.visibility = View.GONE
+            R.id.ll_beehouses_online_back_to_main -> {
+                supportActionBar?.title = getString(R.string.google_map)
+                imgbtn_controls_google_maps.visibility = View.VISIBLE
+                imgbtn_download_google_maps.visibility = View.VISIBLE
                 imgbtn_controls_my_places.visibility = View.GONE
+                scrollView_main.visibility = View.VISIBLE
+                scrollView_beehouses_online.visibility = View.GONE
+                replaceFragment(GoogleMapsFragment())
             }
             R.id.ll_grandExpert_exit -> {
                 showDialog(this)
@@ -202,7 +217,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         if (fragment != null) {
             val fragmentManager = supportFragmentManager
-            fragmentManager.beginTransaction().replace(R.id.fragment_container_main_activity, fragment).commitAllowingStateLoss()
+            fragmentManager.beginTransaction()
+                .replace(R.id.fragment_container_main_activity, fragment).commitAllowingStateLoss()
         } else {
             // error in creating fragment
             Log.e("ActivityMain", "Error in creating fragment")
@@ -232,11 +248,26 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onBackPressed() {
+
         drawer = bindingMainActivity?.drawerLayoutMain
+        val fm = supportFragmentManager
+        var backPressedListener: OnBackPressed? = null
+
+        for (fragment in fm.fragments) {
+            if (fragment is OnBackPressed) {
+                backPressedListener = fragment
+                break
+            }
+        }
+
         if (drawer!!.isDrawerOpen(GravityCompat.START)) {
             drawer!!.closeDrawer(GravityCompat.START)
         } else {
-            super.onBackPressed()
+            if (backPressedListener != null) {
+                backPressedListener.onBackPressed()
+            } else {
+                super.onBackPressed()
+            }
         }
     }
 }

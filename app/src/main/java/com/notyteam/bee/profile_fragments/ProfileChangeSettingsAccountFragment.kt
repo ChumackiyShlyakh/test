@@ -10,10 +10,11 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.fragment_profile_change_settings_account.*
 
-class ProfileChangeSettingsAccountFragment : Fragment() {
+class ProfileChangeSettingsAccountFragment : Fragment(), OnBackPressed {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,6 +27,7 @@ class ProfileChangeSettingsAccountFragment : Fragment() {
         val btn_fragment_profile_change_settings_account_save = view.findViewById<Button>(R.id.btn_fragment_profile_change_settings_account_save)
 
         imgbtn_profile_change_settings_account_back?.setOnClickListener( {
+
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 ProfileSettingsAccountFragment()
@@ -38,6 +40,7 @@ class ProfileChangeSettingsAccountFragment : Fragment() {
             )?.commit()
         })
         btn_fragment_profile_change_settings_account_save?.setOnClickListener( {
+
             fragmentManager?.beginTransaction()?.replace(
                 R.id.fragment_container_main_activity,
                 ProfileSettingsAccountFragment()
@@ -45,5 +48,12 @@ class ProfileChangeSettingsAccountFragment : Fragment() {
         })
 
         return view
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            ProfileSettingsAccountFragment()
+        )?.commit()
     }
 }
