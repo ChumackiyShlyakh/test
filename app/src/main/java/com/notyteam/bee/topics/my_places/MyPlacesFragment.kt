@@ -5,36 +5,29 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-<<<<<<< HEAD
 import android.widget.ImageButton
-=======
 import androidx.core.app.ActivityCompat.invalidateOptionsMenu
->>>>>>> sasha-beta_master
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.notyteam.bee.R
-<<<<<<< HEAD
 import com.notyteam.bee.core.ui.MainActivity
-import com.notyteam.bee.topics.my_places.adapter.MyFragmentPagerAdapter
 import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsBeehousesFragment
-=======
 import com.notyteam.bee.topics.my_places.adapter.FragmentWithViewPager
 import com.notyteam.bee.topics.my_places.adapter.MyFragmentPagerAdapter
 import com.notyteam.bee.topics.my_places.adapter.PagerAdapter
->>>>>>> sasha-beta_master
 import com.notyteam.bee.topics.my_places.viewpager_fragments.*
 
 class MyPlacesFragment : Fragment(), View.OnClickListener {
 
     private lateinit var viewpager: ViewPager
     private lateinit var tabs: TabLayout
-<<<<<<< HEAD
+
     var imgbtn_fragment_myplaces: ImageButton? = null
     var adapter: MyFragmentPagerAdapter? = null
-=======
+
     private lateinit var pagerAdapter: PagerAdapter
->>>>>>> sasha-beta_master
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,7 +36,7 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_myplaces, container, false)
 
-<<<<<<< HEAD
+
         tabs = view.findViewById(R.id.tabs_fragment_myplaces)
         viewpager = view.findViewById(R.id.viewpager)
         adapter = MyFragmentPagerAdapter(childFragmentManager)
@@ -83,7 +76,6 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
 //            }
             Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 5: " + adapter?.getItem(1) + " ItemId " + adapter?.getItemId(id))
         })
-=======
         val fragments = arrayOf(
             instantiate(context!!, VPBeehousesFragment::class.java.getName()),
             instantiate(context!!, VPApiaryFragment::class.java.getName()),
@@ -92,10 +84,8 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
             instantiate(context!!, VPArchiveFragment::class.java.getName())
         )
 
-        tabs = view.findViewById(R.id.tabs)
-        viewpager = view.findViewById(R.id.viewpager)
+
         pagerAdapter = PagerAdapter(childFragmentManager, fragments)
->>>>>>> sasha-beta_master
 
         setupViewPager()
 
@@ -118,8 +108,6 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
     private fun setupViewPager() {
 
 //        val adapter = MyFragmentPagerAdapter(childFragmentManager)
-<<<<<<< HEAD
-=======
 //
 //        var firstFragmet: VPBeehousesFragment = VPBeehousesFragment()
 //        var secondFragmet: VPApiaryFragment = VPApiaryFragment()
@@ -134,20 +122,12 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
 //        adapter.addFragment(fiveFragmet, "Archive")
 
         viewpager.adapter = pagerAdapter
->>>>>>> sasha-beta_master
 
 //        viewpager.offscreenPageLimit
         viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
 
-<<<<<<< HEAD
-        adapter?.addFragment(firstFragmet, "Beehouse")
-        adapter?.addFragment(secondFragmet,"Apiary")
-        adapter?.addFragment(thirdFragmet, "Objects")
-        adapter?.addFragment(foreFragmet, "Events")
-        adapter?.addFragment(fiveFragmet, "Archive")
-=======
+
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
->>>>>>> sasha-beta_master
 
             override fun onPageSelected(position: Int) {
                 invalidateOptionsMenu(position)
