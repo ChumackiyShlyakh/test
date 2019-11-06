@@ -36,10 +36,6 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
         tabs = view.findViewById(R.id.tabs_fragment_myplaces)
         viewpager = view.findViewById(R.id.viewpager)
         adapter = MyFragmentPagerAdapter(childFragmentManager)
-//        imgbtn_fragment_myplaces = view.findViewById(R.id.imgbtn_fragment_myplaces)
-//        imgbtn_fragment_myplaces?.setOnClickListener({
-//                    Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 1: ")
-//        })
 
         MainActivity.imgbtn_controls_my_places_beehouses?.setOnClickListener({
 
@@ -73,20 +69,6 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
                     MainActivity.imgbtn_controls_my_places_beehouses?.visibility = View.GONE
                 }
             }
-
-
-//            if (adapter?.getItemId(1) == 1L){
-//                Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 1: ")
-//            }
-//            else{
-//                Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 3: ")
-//            }
-            Log.d(
-                "imgbtn_fragment",
-                "imgbtn_fragment_myplaces 5: " + adapter?.getItem(1) + " ItemId " + adapter?.getItemId(
-                    id
-                )
-            )
         })
 
         setupViewPager()
@@ -97,14 +79,6 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
     override fun onClick(view: View?) {
 //        when (adapter?.count) {
         Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 2: ")
-//            1 -> {
-//                Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 2: ")
-//                childFragmentManager.beginTransaction().replace(
-//                    R.id.fragment_container_main_activity,
-//                    MyPlacesControlsBeehousesFragment()
-//                ).commit()
-
-//            }
     }
 
     private fun setupViewPager() {
