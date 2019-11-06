@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import androidx.core.app.ActivityCompat.invalidateOptionsMenu
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
@@ -15,8 +15,11 @@ import com.notyteam.bee.core.ui.MainActivity
 import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsBeehousesFragment
 import com.notyteam.bee.topics.my_places.adapter.FragmentWithViewPager
 import com.notyteam.bee.topics.my_places.adapter.MyFragmentPagerAdapter
-import com.notyteam.bee.topics.my_places.adapter.PagerAdapter
+import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsBeehousesFragment
+import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsEventsFragment
+import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsObjectFragment
 import com.notyteam.bee.topics.my_places.viewpager_fragments.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MyPlacesFragment : Fragment(), View.OnClickListener {
 
@@ -49,23 +52,34 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
 
             when (viewpager.currentItem) {
                 0 -> {
-                    Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 1: ")
+                    fragmentManager?.beginTransaction()?.replace(
+                        R.id.fragment_container_main_activity,
+                        MyPlacesControlsBeehousesFragment()
+                    )?.commit()
+                    (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
                 }
                 1 -> {
                     Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 2: ")
+//                    (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
                 }
                 2 -> {
-                    Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 3: ")
+                    fragmentManager?.beginTransaction()?.replace(
+                        R.id.fragment_container_main_activity,
+                        MyPlacesControlsObjectFragment()
+                    )?.commit()
+                    (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
                 }
                 3 -> {
-                    Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 4: ")
+                    fragmentManager?.beginTransaction()?.replace(
+                        R.id.fragment_container_main_activity,
+                        MyPlacesControlsEventsFragment()
+                    )?.commit()
+                    (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
                 }
                 4 -> {
-                    Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 5: ")
+                    MainActivity.imgbtn_controls_my_places_beehouses?.visibility = View.GONE
                 }
             }
-
-
 
 
 //            if (adapter?.getItemId(1) == 1L){
@@ -74,7 +88,12 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
 //            else{
 //                Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 3: ")
 //            }
-            Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 5: " + adapter?.getItem(1) + " ItemId " + adapter?.getItemId(id))
+            Log.d(
+                "imgbtn_fragment",
+                "imgbtn_fragment_myplaces 5: " + adapter?.getItem(1) + " ItemId " + adapter?.getItemId(
+                    id
+                )
+            )
         })
         val fragments = arrayOf(
             instantiate(context!!, VPBeehousesFragment::class.java.getName()),
@@ -94,7 +113,7 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(view: View?) {
 //        when (adapter?.count) {
-            Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 2: ")
+        Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 2: ")
 //            1 -> {
 //                Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 2: ")
 //                childFragmentManager.beginTransaction().replace(
@@ -123,8 +142,11 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
 
         viewpager.adapter = pagerAdapter
 
-//        viewpager.offscreenPageLimit
-        viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        adapter?.addFragment(firstFragmet, "Beehouse")
+        adapter?.addFragment(secondFragmet, "Apiary")
+        adapter?.addFragment(thirdFragmet, "Objects")
+        adapter?.addFragment(foreFragmet, "Events")
+        adapter?.addFragment(fiveFragmet, "Archive")
 
 
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
