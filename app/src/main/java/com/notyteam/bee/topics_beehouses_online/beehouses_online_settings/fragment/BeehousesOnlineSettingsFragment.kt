@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
@@ -20,8 +22,9 @@ import java.util.*
 
 class BeehousesOnlineSettingsFragment : Fragment() {
 
-    var btn_fragment_beehouses_online_settings_choose_time: Button? = null
+    var rl_fragment_beehouses_online_settings_choose_time: RelativeLayout? = null
     var ll_fragment_gadgets_grafs_settings_exit_from_account: LinearLayout? = null
+    var txt_fragment_beehouses_online_settings_choose_time: TextView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,15 +33,16 @@ class BeehousesOnlineSettingsFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_beehouses_online_settings, container, false)
 
-        btn_fragment_beehouses_online_settings_choose_time = view.findViewById(R.id.btn_fragment_beehouses_online_settings_choose_time)
+        rl_fragment_beehouses_online_settings_choose_time = view.findViewById(R.id.rl_fragment_beehouses_online_settings_choose_time)
         ll_fragment_gadgets_grafs_settings_exit_from_account = view.findViewById(R.id.ll_fragment_gadgets_grafs_settings_exit_from_account)
+        txt_fragment_beehouses_online_settings_choose_time = view.findViewById(R.id.btn_fragment_beehouses_online_settings_choose_time)
 
-        btn_fragment_beehouses_online_settings_choose_time?.setOnClickListener( {
+        rl_fragment_beehouses_online_settings_choose_time?.setOnClickListener( {
             val cal = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
                 cal.set(Calendar.HOUR_OF_DAY, hour)
                 cal.set(Calendar.MINUTE, minute)
-                btn_fragment_beehouses_online_settings_choose_time?.text = SimpleDateFormat("HH:mm").format(cal.time)
+                txt_fragment_beehouses_online_settings_choose_time?.text = SimpleDateFormat("HH:mm").format(cal.time)
             }
             TimePickerDialog(context, R.style.DialogTheme, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(
                 Calendar.MINUTE), true).show()

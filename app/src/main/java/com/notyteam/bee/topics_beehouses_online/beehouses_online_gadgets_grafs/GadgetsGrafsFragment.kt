@@ -48,14 +48,16 @@ class GadgetsGrafsFragment : Fragment() {
             text_btn_gadgets_grafs_choose_gadget = arguments?.getString("message_gadget")
         }
 
-        val rdgrp_fragment_gadgets_grafs =
-            view.findViewById(R.id.rdgrp_fragment_gadgets_grafs) as RadioGroup
+        val rdgrp_fragment_gadgets_grafs = view.findViewById(R.id.rdgrp_fragment_gadgets_grafs) as RadioGroup
 
         rb_fragment_gadgets_grafs_table = view.findViewById(R.id.rb_fragment_gadgets_grafs_table)
         rb_fragment_gadgets_grafs_graf = view.findViewById(R.id.rb_fragment_gadgets_grafs_graf)
 
         btn_fragment_gadgets_grafs_choose_meaning = view.findViewById(R.id.rl_fragment_gadgets_grafs_choose_meaning)
         btn_gadgets_grafs_choose_gadget = view.findViewById(R.id.rl_gadgets_grafs_choose_gadget)
+
+        txt_fragment_gadgets_grafs_choose_meaning = view.findViewById(R.id.txt_fragment_gadgets_grafs_choose_meaning)
+        txt_gadgets_grafs_choose_gadget = view.findViewById(R.id.txt_gadgets_grafs_choose_gadget)
 
         btn_fragment_gadgets_grafs_build = view.findViewById(R.id.btn_fragment_gadgets_grafs_build)
 
@@ -87,8 +89,6 @@ class GadgetsGrafsFragment : Fragment() {
             var id: Int = rdgrp_fragment_gadgets_grafs.checkedRadioButtonId
             if (id != -1) {
                 val radio: RadioButton = view.findViewById(id)
-
-                Log.d("btn_fragment", "btn_fragment_gadgets_grafs_build " + id + " radio: " + radio)
 
                 if (radio.equals(rb_fragment_gadgets_grafs_table)){
                     fragmentManager?.beginTransaction()?.replace(

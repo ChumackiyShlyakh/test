@@ -6,8 +6,8 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
-8-->C:\Users\PC\Downloads\grandexpert\expansionpanel\src\main\AndroidManifest.xml
+8-->C:\Users\User\Desktop\grandexpert\expansionpanel\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="27" />
-9-->C:\Users\PC\Downloads\grandexpert\expansionpanel\src\main\AndroidManifest.xml
+9-->C:\Users\User\Desktop\grandexpert\expansionpanel\src\main\AndroidManifest.xml
 10
 11</manifest>
