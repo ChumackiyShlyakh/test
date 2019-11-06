@@ -6,6 +6,7 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.notyteam.bee.R
 import com.notyteam.bee.registration.RegistrationActivity
+import com.notyteam.bee.utils.AppBarCustom
 
 
 class SplashActivity : AppCompatActivity() {
@@ -16,15 +17,11 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        AppBarCustom.makeStatusBarTransparent(SplashActivity@ this)
+
         Handler().postDelayed({
-//            if (!ApiGrantExpertApplication.getSharedPrefInstance().isAuth()) {
-//                startActivity(Intent(this@SplashActivity, RegistrationActivity::class.java))
-//                finish()
-//            } else {
-//                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
             startActivity(Intent(this@SplashActivity, RegistrationActivity::class.java))
-                finish()
-//            }
+        this.finish()
         }, SPLASH_TIME_OUT)
     }
 }

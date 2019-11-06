@@ -3,7 +3,6 @@
     android:thickness="0dp"
     android:shape="rectangle">
 
-
     <corners
         android:bottomRightRadius="30dp"
         android:bottomLeftRadius="30dp"

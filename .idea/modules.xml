@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GrandExpert.iml" filepath="$PROJECT_DIR$/GrandExpert.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/grandexpert-app.iml" filepath="$PROJECT_DIR$/app/grandexpert-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/expansionpanel/expansionpanel.iml" filepath="$PROJECT_DIR$/expansionpanel/expansionpanel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/grandexpert.iml" filepath="$PROJECT_DIR$/.idea/grandexpert.iml" />
+      <module fileurl="file://$PROJECT_DIR$/expansionpanel/grandexpert-expansionpanel.iml" filepath="$PROJECT_DIR$/expansionpanel/grandexpert-expansionpanel.iml" />
     </modules>
   </component>
 </project>

@@ -4,14 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/white_background"
     android:orientation="vertical">
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs"
+        android:id="@+id/tabs_fragment_myplaces"
+        android:layout_marginTop="80dp"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:tabGravity="fill"
-        app:tabMode="fixed" />
+        app:tabMode="fixed"
+        app:tabTextAppearance="@android:style/TextAppearance.Small"
+        app:tabTextColor="@color/black">
+
+    </com.google.android.material.tabs.TabLayout>
 
     <View
         android:layout_width="match_parent"

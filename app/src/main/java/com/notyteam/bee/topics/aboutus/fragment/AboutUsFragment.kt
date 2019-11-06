@@ -27,6 +27,7 @@ class AboutUsFragment : Fragment() {
 //                GoogleMapsFragment()
 //            )?.commit()
 //        }
+
         return view
     }
 }

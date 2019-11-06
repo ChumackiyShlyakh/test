@@ -1,12 +1,12 @@
 <resources>
-    <string name="test">Hello bee</string>
+    <string name="test">Greyhound divisively hello coldlywonderfully marginally farа... reyhound divisively hello... coldly wonderfully marginally far</string>
 
     <string name="app_name">Grand Expert</string>
     <string name="enter">Enter</string>
     <string name="registration">Registration</string>
     <string name="enter_without_registration">Enter without registration</string>
     <string name="enter_to_you_account">Sign in to your account</string>
-    <string name="forget_password">Forget password</string>
+    <string name="forget_password">Forget password?</string>
     <string name="code_from_sms">Code from sms</string>
     <string name="forward">Forward</string>
     <string name="send_again">Send again</string>
@@ -23,20 +23,57 @@
     <string name="profile">Profile</string>
     <string name="my_places">My places</string>
     <string name="google_map">Map</string>
-    <string name="instructions">Instructions</string>
+    <string name="instructions">Instruction</string>
     <string name="feedback">Feedback</string>
     <string name="settings">Settings</string>
+    <string name="back_to_main">Back to main</string>
     <string name="exit">Exit</string>
     <string name="beehouses_online">Beehouses online</string>
-    <string name="about_us">About us</string>
+    <string name="about_us">Lorem ipsum dolor sit ameconsectetur adipisicing elit, sed do eiusmod tempor </string>
+    <string name="about_us_drawer">About Us</string>
     <string name="beekeepers">Beekeepers of Ukraine</string>
     <string name="grand_expert">GRAND EXPERT</string>
     <string name="exit_from_application">Exit from application</string>
     <string name="exit_from_account">Exit from account</string>
     <string name="correctly_marker">Did you specify the marker correctly?</string>
     <string name="yes">Yes</string>
+    <string name="device_data_big">Device data</string>
     <string name="no">No</string>
-    <string name="about_us_text">Мы - некоммерческая общественная организация "Гранд Эксперт". Цель нашей деятельности - способствовать уменьшению вредного влияния химических веществ, которые используются людьми в процессе защиты растений, на окружающую среду, на людей, животных, растения, продукты животноводства и растениеводства. Не ставя перед собой задачи непосредственной борьбы с использованием химических веществ в растениеводстве, что, как мы понимаем, на сегодняшний день нереально, мы надеемся найти различные пути минимизации их вредоносного влияния на человека.
+    <string name="instruction">1. Общие положения\n
+1.1. Настоящая инструкция составлена на основе примерной инструкции по делопроизводству
+в высшем учебном заведении, утвержденной приказом Минобразования РФ от 24 июля 2000 г. N 2286,
+Государственного стандарта РФ ГОСТ Р 6.30-2003 "Унифицированные системы документации.
+Унифицированная система организационно-распорядительной документации. Требования к оформлению
+документов" (принят и введен в действие постановлением Госстандарта РФ от 3 марта 2003 г. N 65-ст),
+инструкции по делопроизводству в Министерстве образования и науки Российской Федерации,
+утвержденной приказом Минобрнауки от 30 декабря 2010 г. № 2232, в соответствии с требованиями
+Гражданского кодекса РФ, Федерального закона «О бухгалтерском учете» и других нормативных актов.
+Инструкция по делопроизводству (далее - Инструкция) устанавливает единую систему
+делопроизводства в Федеральном государственном бюджетном образовательном учреждении высшего
+образования «Белгородский государственный аграрный университет имени В.Я. Горина» (далее -
+Университет, вуз, ФГБОУ ВО Белгородский ГАУ), порядок подготовки, оформления, прохождения,
+контроля за исполнением, учетом, хранением, печатанием, копированием и тиражированием служебных
+документов.
+Инструкция разработана в целях совершенствования документационного обеспечения управления
+и повышения его эффективности путем унификации состава и форм управленческих документов,
+технологий работы с ними и обеспечения контроля исполнения документов.
+Положения Инструкции распространяются на организацию работы с документами независимо от
+вида носителя, в том числе с электронными документами, включая их подготовку, регистрацию, учет и
+контроль исполнения, осуществляемые с помощью автоматизированных (компьютерных) технологий.
+Системы автоматизированной обработки документов, применяемые в Университете, должны
+обеспечивать выполнение требований настоящей Инструкции.
+1.2. Организация, ведение и совершенствование системы документационного обеспечения
+управления на основе единой технической политики и применения современных технических средств при
+работе с документами, методическое руководство и контроль соблюдения установленного порядка
+работы с документами в структурных подразделениях Университета осуществляется управлением
+организационно-правовой работы.
+Управление организационно-правовой работы дает указания по вопросам организации ведения
+делопроизводства, обязательные для исполнения структурными подразделениями вуза. Управление
+3
+организационно-правовой работы организует регулярные проверки состояния делопроизводства и
+соблюдения требований Инструкции в структурных подразделениях Университета. О результатах
+проверок докладывается руководству Университета</string>
+    <string name="about_us_abtext">Мы - некоммерческая общественная организация "Гранд Эксперт". Цель нашей деятельности - способствовать уменьшению вредного влияния химических веществ, которые используются людьми в процессе защиты растений, на окружающую среду, на людей, животных, растения, продукты животноводства и растениеводства. Не ставя перед собой задачи непосредственной борьбы с использованием химических веществ в растениеводстве, что, как мы понимаем, на сегодняшний день нереально, мы надеемся найти различные пути минимизации их вредоносного влияния на человека.
 Одна из проблем, которую мы хотим решить в рамках данного проекта заключается в следующем:
 Производители сельскохозяйственной продукции, в частности фермеры, не всегда информируют общественность о месте и времени обработки своих полей и садов средствами защиты растений - пестицидами, другими вредными химическими веществами.
 Более подробную информацию о принципах работы предоставленной на этом сайте Системы Мониторинга процесса химической обработки растений Вы сможете прочитать разделе справочника "Инструкция / правила".</string>
@@ -56,6 +93,7 @@
     <string name="hryvnya">₴</string>
     <string name="profile_settings">Profile settings</string>
     <string name="account_settings">Account settings</string>
+    <string name="account_detail">Account detail</string>
     <string name="edit">Edit</string>
     <string name="change_password">Change password</string>
     <string name="old_password">Old password</string>
@@ -64,20 +102,23 @@
     <string name="payments">Payments</string>
     <string name="replenish_account">Replenish account</string>
     <string name="details">details</string>
-    <string name="number_of_sms_sent">Number of sms sent: </string>
+    <string name="number_of_sms_send">Number of sms send: </string>
     <string name="sms_number_left">1000</string>
     <string name="account">account</string>
+    <string name="archive_big">Archive</string>
+    <string name="archive">archive</string>
     <string name="refill_big">Refill</string>
-    <string name="id">ID:</string>
+    <string name="id">ID:4567</string>
+    <string name="hyphen">-</string>
     <string name="value">Value:</string>
     <string name="rest">Rest:</string>
     <string name="theme">Theme</string>
     <string name="message">Message</string>
     <string name="send">Send</string>
     <string name="feedback_text">Если у вас есть бизнес-запросы или другие вопросы, пожалуйста заполните
-        следующую форму для связи  нами. <n>Спасибо!</n> <b>World</b>!  </string>
+        следующую форму для связи  нами.\nСпасибо!</string>
     <string name="ticket_number">Ticket number</string>
-<!--    ![CDATA[Foo Bar <a href="foo?id=%s">baz</a> is cool]]-->
+    <!--    ![CDATA[Foo Bar <a href="foo?id=%s">baz</a> is cool]]-->
     <string name="choose_time">Choose time</string>
     <string name="cellular_operator">Cellular operator</string>
     <string name="beehouse_online">Beehouse online</string>
@@ -87,13 +128,53 @@
     <string name="sms_times_sending">SMS times sending</string>
     <string name="one_time_per_day">1 time per day</string>
     <string name="two_times_per_day">2 times per day</string>
-
-
+    <string name="status">Status</string>
+    <string name="event_type">Event type</string>
+    <string name="latitude">50.1234</string>
+    <string name="longitude">51.4321</string>
+    <string name="sh">Ш:</string>
+    <string name="d">Д:</string>
+    <string name="gadgets_grafs">My gadgets</string>
+    <string name="table">Table</string>
+    <string name="graf">Graf</string>
+    <string name="choose_gadget">Choose gadget</string>
+    <string name="build">Build</string>
+    <string name="gadget">Gadget</string>
+    <string name="choose">Choose</string>
+    <string name="weight_big">Weight</string>
+    <string name="temperature_big">Temperature</string>
+    <string name="humidity_big">Humidity</string>
+    <string name="weight_difference_big">Weight difference</string>
+    <string name="humidity">humidity</string>
+    <string name="setting_big">Setting:</string>
+    <string name="meaning_big">Meaning:</string>
+    <string name="number">№</string>
+    <string name="number_setting">1234567890</string>
+    <string name="period">Period</string>
+    <string name="meaning_big2">Meaning</string>
+    <string name="coma">,</string>
+    <string name="chemical_treatment">Chemical treatment</string>
     <string name="filtr">Filtr</string>
     <string name="clean">Clean</string>
     <string name="objects">Objects</string>
+    <string name="new_event">New event</string>
     <string name="events">Events</string>
     <string name="search_for_name">Search for name</string>
+    <string name="flowering_of_honey_plants">Flowering of honey plants</string>
+    <string name="apiary_type">Apiary type</string>
+    <string name="circle">Circle</string>
+    <string name="rectangle">Rectangle</string>
+    <string name="arbitrarily">Arbitrarily</string>
+    <string name="actually">Actually</string>
+    <string name="date_of_creation">Date of creation</string>
+    <string name="my_gadgets">My gadgets</string>
+
+    <string name="twelve_hours">12 hours</string>
+    <string name="day">Day</string>
+    <string name="month">Month</string>
+    <string name="week">Week</string>
+    <string name="time">Time</string>
+    <string name="time_number">19.30</string>
 
     <string name="beehouse">Beehouse</string>
     <string name="people">People</string>
@@ -105,9 +186,12 @@
     <string name="plants_health">Health plants</string>
     <string name="object_type">Object type</string>
     <string name="date">Date</string>
+    <string name="date_colon">Date:</string>
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="apply">Apply</string>
+    <string name="date_number">20.09.2019</string>
+    <string name="date_day">yesterday</string>
 
     <string name="new_object">New object</string>
     <string name="delete">Delete</string>
@@ -123,10 +207,12 @@
     <string name="empty_password">Password is empty!</string>
     <string name="password_length_error">Password is to small!</string>
 
-    <string name="enter_email">Enter your email</string>
-    <string name="enter_password">Enter your password</string>
+    <string name="enter_login">+8 095 678 67 54</string>
+    <string name="enter_password">•••••••</string>
+<!--    <string name="enter_password">Enter your password</string>-->
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
 
 </resources>

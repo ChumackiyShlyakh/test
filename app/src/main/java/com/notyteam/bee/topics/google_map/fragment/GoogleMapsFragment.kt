@@ -12,16 +12,20 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.RelativeLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
-import com.notyteam.bee.room.PointsRepository
-import com.notyteam.bee.room.RoomPointData
 import com.google.android.gms.maps.model.CircleOptions
 import com.notyteam.bee.R
+import com.notyteam.bee.google_map_controls.GoogleMapNewEventFragment
+import com.notyteam.bee.google_map_controls.GoogleMapNewObjectFragment
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.app_bar_main.view.*
 import kotlinx.android.synthetic.main.dialog_confirm.*
 
 
@@ -66,8 +70,19 @@ class GoogleMapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickL
 
         img_btn_map_point = view.findViewById(R.id.img_btn_map_point) as ImageButton
         img_btn_map_point.setOnClickListener { showDialog(this) }
+
         img_btn_map_circle = view.findViewById(R.id.img_btn_map_circle) as ImageButton
-        img_btn_map_circle.setOnClickListener { drawCircle(coordinates) }
+        img_btn_map_circle.setOnClickListener {
+            fragmentManager?.beginTransaction()?.replace(
+                R.id.fragment_container_main_activity,
+                GoogleMapNewEventFragment()
+            )?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
+//            drawCircle(coordinates)
+        }
+
+//        window.statusBarColor = getResources().getColor(R.color.orange_light_transparent)
+//        (activity as AppCompatActivity).setSupportActionBar(toolbar_main_drawer)
 
         Log.d(LOG_TAG, "onCreate latitude longitude: " + latitude + ", " + longitude);
 
@@ -96,19 +111,11 @@ class GoogleMapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickL
 
         // Adding the circle to the GoogleMap
         googleMap.addCircle(circleOptions)
-
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-
         this.googleMap = googleMap
-//        googleMap.uiSettings.isZoomControlsEnabled = true
-
         googleMap.setOnMapClickListener(this)
-//        googleMap.addMarker(MarkerOptions().position(coordinates).draggable(true).title("My Favorite City"))
-//        googleMap.moveCamera(CameraUpdateFactory.newLatLng(coordinates))
-
-//        setUpMap()
     }
 
     fun setUpMap() {
@@ -141,50 +148,17 @@ class GoogleMapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickL
             dialog.btn_correctly_marker_yes.findViewById<Button>(R.id.btn_correctly_marker_yes)
 
         btn_correctly_marker_no.setOnClickListener {
-            var list: List<RoomPointData>? = null
-//            Observable.fromCallable {
-//            }
-            Thread(Runnable {
-                this.run {this@GoogleMapsFragment
-                list = PointsRepository(getActivity()!!.application).getAllRepos()
-            Log.d(LOG_TAG, "btn_correctly_marker_no: " + list?.size);
-                }
-            }).start()
-
             dialog.dismiss()
         }
         btn_correctly_marker_yes.setOnClickListener {
 
-            val destination = RoomPointData(coordinates.latitude, coordinates.longitude)
+            fragmentManager?.beginTransaction()?.replace(
+                R.id.fragment_container_main_activity,
+                GoogleMapNewObjectFragment()
+            )?.commit()
 
-            Thread(Runnable {
-                this.run {this@GoogleMapsFragment
-
-                PointsRepository(getActivity()!!.application).insert(destination)
-                }
-            }).start()
-
-//            Observable.fromCallable {
-//            }
-//            PointsRepository(getActivity()!!.application).insert(destination)
-
-            dialog.dismiss() }
+//            activity.app_bar_layout?.toolbar_main_drawer?.visibility = View.GONE
+            dialog.dismiss()
+        }
     }
-
-//    map.setOnMapClickListener { latLng ->
-//        val destination = Destination(System.nanoTime(), lat = latLng.latitude, long = latLng.longitude)
-//
-//        Log.d(TAG, destination.toString())
-//        AppDatabase.getInstance(this).destinationDao().insertPoint(destination)
-//        Log.d(TAG, AppDatabase.getInstance(this).destinationDao().getDestination().toString())
-//    }
-
-//    private val locationCallback = object : LocationCallback() {
-//        override fun onLocationResult(userLocation: LocationResult?) {
-//            val array = FloatArray(1)
-//            val destination = AppDatabase.getInstance(appContext).destinationDao().getDestination()
-//
-//            Log.d(TAG, "Distance: ${array[0]} m\nlat: ${destination!!.latitude}, long: ${destination.longitude}")
-//        }
-//    }
 }

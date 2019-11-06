@@ -11,8 +11,10 @@ import androidx.lifecycle.ViewModelProviders
 import com.notyteam.bee.R
 import com.notyteam.bee.core.model.response.LoginResponse
 import com.notyteam.bee.databinding.FragmentLoginBinding
+import com.notyteam.bee.registration.RegistrationFragment
 import com.notyteam.bee.registration.login.viewmodel.LoginViewModel
 import com.notyteam.bee.registration.smscode.fragment.SMSCodeFragment
+import com.notyteam.bee.utils.OnBackPressed
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,7 +43,7 @@ class LoginFragment : Fragment(), Callback<LoginResponse> {
 //                        activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container_login,
 //                SMSCodeFragment())?.commit()
             fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_registration,
-                SMSCodeFragment())?.commit()
+                SMSCodeFragment())?.addToBackStack(null)?.commit()
         }
 
         viewModel.getLoginModelRequest().observe(this, Observer { it?.let {
@@ -49,7 +51,7 @@ class LoginFragment : Fragment(), Callback<LoginResponse> {
 //                SMSCodeFragment()).commit()
 
             fragmentManager!!.beginTransaction().replace(R.id.fragment_container_registration,
-                SMSCodeFragment()).commit()
+                SMSCodeFragment()).addToBackStack(null).commit()
 //            if (Utils.isNetworkConnected(getContext())) run {
 //
 //            }
@@ -64,13 +66,12 @@ class LoginFragment : Fragment(), Callback<LoginResponse> {
 //        activity!!.supportFragmentManager.beginTransaction().replace(R.id.fragment_container_login,
 //            SMSCodeFragment()).commit()
         fragmentManager!!.beginTransaction().replace(R.id.fragment_container_registration,
-            SMSCodeFragment()).commit()
+            SMSCodeFragment()).addToBackStack(null).commit()
     }
 
     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
 
         fragmentManager!!.beginTransaction().replace(R.id.fragment_container_registration,
-            SMSCodeFragment()).commit()
+            SMSCodeFragment()).addToBackStack(null).commit()
     }
-
 }

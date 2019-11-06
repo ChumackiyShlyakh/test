@@ -13,6 +13,7 @@
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerLayoutMain"
         android:layout_width="match_parent"
+        android:fitsSystemWindows="false"
         android:layout_height="match_parent">
 
         <include
@@ -49,7 +50,7 @@
             <LinearLayout
                 android:id="@+id/header"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_centerHorizontal="true"
                 android:background="@color/orange"
                 android:orientation="horizontal">
@@ -82,6 +83,8 @@
             </LinearLayout>
 
             <ScrollView
+                android:id="@+id/scrollView_main"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_above="@id/ll_grandExpert_exit"
@@ -108,10 +111,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_profile" />
 
                             <TextView
@@ -129,14 +133,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_my_places" />
 
                             <TextView
@@ -154,14 +159,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_map" />
 
                             <TextView
@@ -179,14 +185,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_instructions" />
 
                             <TextView
@@ -204,14 +211,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_feedback" />
 
                             <TextView
@@ -229,14 +237,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_gravity="center"
-                                android:layout_margin="10dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
                                 android:src="@drawable/item_image_settings" />
 
                             <TextView
@@ -272,6 +281,7 @@
                             android:id="@+id/ll_grandExpert_beekeepers_ukraine"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:visibility="gone"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="10dp"
                             android:orientation="horizontal">
@@ -302,7 +312,7 @@
                                 android:layout_gravity="center_vertical"
                                 android:layout_marginLeft="20dp"
                                 android:layout_marginTop="10dp"
-                                android:text="@string/about_us"
+                                android:text="@string/about_us_drawer"
                                 android:textColor="#33353A"
                                 android:textSize="20sp" />
                         </LinearLayout>
@@ -310,6 +320,104 @@
                 </RelativeLayout>
 
             </ScrollView>
+
+
+            <ScrollView
+                android:id="@+id/scrollView_beehouses_online"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/ll_grandExpert_exit"
+                android:layout_below="@id/header"
+                android:fillViewport="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ll_beehouses_online_gadgets_grafs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/item_image_gadgets_grafs" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="20dp"
+                                android:text="@string/gadgets_grafs"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_beehouses_online_settings"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/item_image_gadgets_grafs_setting" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="20dp"
+                                android:text="@string/settings"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_beehouses_online_back_to_main"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="25dp"
+                                android:text="@string/back_to_main"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </ScrollView>
+
 
             <View
                 android:layout_width="match_parent"
@@ -320,18 +428,18 @@
             <LinearLayout
                 android:id="@+id/ll_grandExpert_exit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="center_horizontal"
                 android:onClick="clickExit"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/item_logout" />
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_logout" />
 
                 <TextView
                     android:layout_width="wrap_content"

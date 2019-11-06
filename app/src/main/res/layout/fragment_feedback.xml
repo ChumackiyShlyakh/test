@@ -3,24 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/white_background"
     android:layout_height="match_parent">
-
-     <TextView
+    <TextView
         android:id="@+id/tv_feedback_fragment_head_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:text="@string/feedback_text"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/black"
-        android:text="@string/feedback_text"
+        android:layout_marginTop="90dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toTopOf="@+id/guideline43" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@id/guideline18"
         app:layout_constraintEnd_toEndOf="parent"
@@ -242,18 +243,11 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline43"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.13" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
@@ -266,7 +260,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/user_urgent" />
+            app:srcCompat="@drawable/item_user_urgent" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -288,7 +282,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline44"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/phone" />
+            app:srcCompat="@drawable/item_phone" />
 
         <TextView
             android:layout_width="wrap_content"

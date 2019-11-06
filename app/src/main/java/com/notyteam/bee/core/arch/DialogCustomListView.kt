@@ -18,16 +18,16 @@ class DialogCustomListView(var activity: Activity, internal var adapter: Recycle
     var dialog: Dialog? = null
 
     internal var recyclerView: RecyclerView? = null
-    private var mLayoutManager: RecyclerView.LayoutManager? = null
+    private var layoutManager: RecyclerView.LayoutManager? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dialog_custom_layout)
 
-        recyclerView = findViewById(R.id.recycler_view)
-        mLayoutManager = LinearLayoutManager(activity)
-        recyclerView?.layoutManager = mLayoutManager
+        recyclerView = findViewById(R.id.recycler_view_custom_dialog)
+        layoutManager = LinearLayoutManager(activity)
+        recyclerView?.layoutManager = layoutManager
         recyclerView?.adapter = adapter
 
 //        radiobtn_item_bees?.setOnClickListener(this)

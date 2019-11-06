@@ -12,27 +12,32 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="@color/white"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
 
         <ImageView
-            android:background="@drawable/background_enter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/background_enter"
+            app:layout_constraintBottom_toTopOf="@+id/guideline13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_layout_email"
             android:layout_width="0dp"
-            android:layout_height="52dp"
+            android:layout_height="50dp"
             android:background="@drawable/ed_border_blue"
             android:ems="10"
-            android:hint="@string/enter_email"
+            app:boxBackgroundMode="none"
             app:errorEnabled="true"
             app:errorText="@{model.errorEmailMessage}"
             app:errorTextAppearance="@style/ErrorText"
-            app:hintTextAppearance="@style/MyAppearance"
+            app:hintEnabled="false"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
@@ -41,44 +46,48 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_email"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:maxLines="1"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:afterTextChanged="@{model::onEmailChanged}"
                 android:background="@null"
-                android:inputType="textEmailAddress"
+                android:hint="@string/enter_login"
+                android:inputType="phone"
+                android:maxLines="1"
                 android:text="@={model.email}"
+                android:textColorHint="@color/black"
                 app:onFocus="@{model.getEmailOnFocusChangeListener()}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_layout_password"
             android:layout_width="0dp"
-            android:layout_height="52dp"
+            android:layout_height="50dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/ed_border_blue"
             android:ems="10"
-            android:hint="@string/enter_password"
             app:errorEnabled="true"
-            app:passwordToggleEnabled="true"
             app:errorText="@{model.errorPasswordMessage}"
+            app:hintEnabled="false"
             app:hintTextAppearance="@style/MyAppearance"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
-            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_email">
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_email"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_password"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:maxLines="1"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:background="@null"
                 android:afterTextChanged="@{model::onPasswordChanged}"
-                 android:inputType="textPassword"
+                android:background="@null"
+                android:hint="@string/enter_password"
+                android:inputType="textPassword"
+                android:maxLines="1"
                 android:text="@={model.password}"
+                android:textColorHint="@color/black"
                 app:onFocus="@{model.getPasswordOnFocusChangeListener()}" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -90,11 +99,10 @@
             android:background="@drawable/button_drop_orange"
             android:text="@string/enter"
             android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/guideline8"
             app:layout_constraintEnd_toStartOf="@+id/guideline7"
-            app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toBottomOf="@+id/tv_login_forget_password"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintStart_toStartOf="@+id/guideline6" />
 
         <TextView
             android:id="@+id/tv_login_forget_password"
@@ -103,9 +111,11 @@
             android:layout_marginTop="24dp"
             android:text="@string/forget_password"
             android:textAppearance="?android:attr/textAppearanceSmall"
+            app:layout_constraintBottom_toTopOf="@+id/guideline29"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_password" />
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_password"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tv_login_enter_to_you_account"
@@ -173,6 +183,13 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.37" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.78" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
