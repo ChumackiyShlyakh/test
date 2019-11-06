@@ -9,8 +9,9 @@ import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.gadgets_grafs.tables.fragment.MeaningTablesFragment
+import com.notyteam.bee.utils.OnBackPressed
 
-class MeaningTableFiltrFragment : Fragment() {
+class MeaningTableFiltrFragment : Fragment(), OnBackPressed {
 
     var imgbtn_fragment_meaning_table_filtr_back: ImageButton? = null
     var fragment_meaning_table_filtr_period_build: Button? = null
@@ -106,5 +107,12 @@ class MeaningTableFiltrFragment : Fragment() {
             btn_fragment_meaning_tables_filtr_month?.setBackgroundResource(R.drawable.button_orange)
             btn_fragment_meaning_tables_filtr_month?.setTextColor(getResources().getColor(R.color.white))
         }
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            MeaningTablesFragment()
+        )?.commit()
     }
 }

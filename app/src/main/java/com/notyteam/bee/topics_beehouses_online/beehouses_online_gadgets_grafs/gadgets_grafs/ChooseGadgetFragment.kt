@@ -1,7 +1,6 @@
 package com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.gadgets_grafs
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,11 +8,12 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
-import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
+import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.GadgetsGrafsFragment
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_gadgets_grafs.*
 
-class ChooseGadgetFragment : Fragment() {
+class ChooseGadgetFragment : Fragment(), OnBackPressed {
 
     var imgbtn_fragment_choose_gadget_back: ImageButton? = null
     var btn_fragment_choose_gadget_choose: Button? = null
@@ -55,7 +55,8 @@ class ChooseGadgetFragment : Fragment() {
                 val bundle = Bundle()
                 bundle.putString("message_gadget", radio.text.toString())
                 //set Fragmentclass Arguments
-                val gadgetsGrafsFragment = GadgetsGrafsFragment()
+                val gadgetsGrafsFragment =
+                    GadgetsGrafsFragment()
                 gadgetsGrafsFragment.setArguments(bundle)
 
                 fragmentManager?.beginTransaction()?.replace(
@@ -74,13 +75,11 @@ class ChooseGadgetFragment : Fragment() {
         return view
     }
 
-//    fun radio_button_click(view: View) {
-//        // Get the clicked radio button instance
-//        val radio: RadioButton =
-//            view.findViewById(rdgrp_fragment_choose_gadget.checkedRadioButtonId)
-//        Toast.makeText(
-//            context, "On click : ${radio.text}",
-//            Toast.LENGTH_SHORT
-//        ).show()
-//    }
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            GadgetsGrafsFragment()
+        )?.commit()
+        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
+    }
 }

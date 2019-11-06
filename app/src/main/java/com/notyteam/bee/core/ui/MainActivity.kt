@@ -25,13 +25,10 @@ import com.notyteam.bee.google_map_controls.GoogleMapControlsFragment
 import com.notyteam.bee.topics.aboutus.fragment.AboutUsFragment
 import com.notyteam.bee.topics.feedback.FeedbackFragment
 import com.notyteam.bee.topics.google_map.fragment.GoogleMapsFragment
-import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsApiaryFragment
 import com.notyteam.bee.topics.my_places.MyPlacesFragment
-import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsBeehousesFragment
-import com.notyteam.bee.topics.my_places.viewpager_fragments.VPBeehousesFragment
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
 import com.notyteam.bee.topics.settings.fragment.SettingsFragment
-import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
+import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.GadgetsGrafsFragment
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_settings.fragment.BeehousesOnlineSettingsFragment
 import com.notyteam.bee.utils.AppBarCustom
 import kotlinx.android.synthetic.main.activity_main.*

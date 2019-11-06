@@ -14,11 +14,12 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.notyteam.bee.R
-import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
+import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.GadgetsGrafsFragment
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_meaning_grafs.*
 
-class MeaningGrafsFragment : Fragment() {
+class MeaningGrafsFragment : Fragment(), OnBackPressed {
 
     var imgbtn_fragment_meaning_grafs_back: ImageButton? = null
     var imgbtn_fragment_meaning_grafs_controls: ImageButton? = null
@@ -103,5 +104,13 @@ class MeaningGrafsFragment : Fragment() {
         //lineChart.setDrawGridBackground()
         lineChart?.xAxis?.labelCount = 11
         lineChart?.xAxis?.position = XAxis.XAxisPosition.BOTTOM
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            GadgetsGrafsFragment()
+        )?.commit()
+        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
     }
 }

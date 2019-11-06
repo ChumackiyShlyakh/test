@@ -8,12 +8,11 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
-import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
+import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.GadgetsGrafsFragment
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.app_bar_main.*
-import kotlinx.android.synthetic.main.fragment_choose_meaning.*
-import kotlinx.android.synthetic.main.fragment_gadgets_grafs.*
 
-class ChooseMeaningFragment : Fragment() {
+class ChooseMeaningFragment : Fragment(), OnBackPressed {
 
     //  val rdgrp_fragment_choose_meaning: RadioGroup? = null
     var imgbtn_fragment_choose_meaning_back: ImageButton? = null
@@ -44,10 +43,6 @@ class ChooseMeaningFragment : Fragment() {
         rdgrp_fragment_choose_meaning.setOnCheckedChangeListener({ group, checkedId ->
             val radio: RadioButton = view.findViewById(checkedId)
             meanning = radio.text as String?
-//                Toast.makeText(
-//                    context, " On checked change : ${radio.text}",
-//                    Toast.LENGTH_SHORT
-//                ).show()
         })
 
         btn_fragment_choose_meaning_choose?.setOnClickListener({
@@ -57,7 +52,8 @@ class ChooseMeaningFragment : Fragment() {
 
                 val bundle = Bundle()
                 bundle.putString("message_meaning", radio.text.toString())
-                val gadgetsGrafsFragment = GadgetsGrafsFragment()
+                val gadgetsGrafsFragment =
+                    GadgetsGrafsFragment()
                 gadgetsGrafsFragment.setArguments(bundle)
 
                 fragmentManager?.beginTransaction()?.replace(
@@ -76,13 +72,11 @@ class ChooseMeaningFragment : Fragment() {
         return view
     }
 
-//    fun radio_button_click(view: View) {
-//        // Get the clicked radio button instance
-//        val radio: RadioButton =
-//            view.findViewById(rdgrp_fragment_choose_meaning.checkedRadioButtonId)
-//        Toast.makeText(
-//            context, "On click : ${radio.text}",
-//            Toast.LENGTH_SHORT
-//        ).show()
-//    }
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            GadgetsGrafsFragment()
+        )?.commit()
+        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
+    }
 }

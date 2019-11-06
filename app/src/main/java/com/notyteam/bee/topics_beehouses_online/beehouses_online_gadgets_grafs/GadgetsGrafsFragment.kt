@@ -1,4 +1,4 @@
-package com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment
+package com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs
 
 import android.os.Bundle
 import android.util.Log
