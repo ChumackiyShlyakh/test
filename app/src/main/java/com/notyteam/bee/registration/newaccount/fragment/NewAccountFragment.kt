@@ -83,7 +83,7 @@ class NewAccountFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickLi
             RelativeLayout.LayoutParams.MATCH_PARENT,
             RelativeLayout.LayoutParams.MATCH_PARENT
         )
-        customDialog?.setCanceledOnTouchOutside(false)
+        customDialog?.setCanceledOnTouchOutside(true)
     }
 
     fun showItems(view: NewAccountFragment) {
@@ -96,7 +96,7 @@ class NewAccountFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickLi
             RelativeLayout.LayoutParams.MATCH_PARENT,
             RelativeLayout.LayoutParams.MATCH_PARENT
         )
-        customDialog?.setCanceledOnTouchOutside(false)
+        customDialog?.setCanceledOnTouchOutside(true)
     }
 
     override fun clickOnItem(data: String) {
