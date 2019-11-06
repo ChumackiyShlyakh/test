@@ -143,9 +143,8 @@ class MeaningGrafsFragment : Fragment() {
         data = LineChartData(lines)
 
 
-        data!!.axisXBottom = Axis(axisValues).setHasLines(false).setHasTiltedLabels(true)
-            .setTextColor(R.color.black).setTextSize(10).setName("Time")
-        data!!.axisYLeft = Axis().setHasLines(false).setHasTiltedLabels(true).setTextSize(10).setName("%").setTextColor(R.color.black)
+        data!!.axisXBottom = Axis(axisValues).setHasLines(true).setHasTiltedLabels(true).setTextColor(R.color.black).setTextSize(10).setName("Time")
+        data!!.axisYLeft = Axis().setHasLines(true).setHasTiltedLabels(true).setTextSize(10).setName("%").setTextColor(R.color.black)
 
         data!!.baseValue = java.lang.Float.NEGATIVE_INFINITY
         chart!!.lineChartData = data
