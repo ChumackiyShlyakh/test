@@ -75,14 +75,15 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
         })
 
         chart = view.findViewById<View>(R.id.chart) as LineChartView
+        chart!!.onValueTouchListener = ValueTouchListener()
 
+        generateValues()
         generateData()
 
         // Disable viewport recalculations, see toggleCubic() method for more info.
         chart!!.isViewportCalculationEnabled = true
         chart!!.setZoomType(ZoomType.HORIZONTAL)
         chart!!.setContainerScrollEnabled(true,ContainerScrollType.HORIZONTAL)
-
 
         return view
     }
