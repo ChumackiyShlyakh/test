@@ -1,11 +1,17 @@
 package com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.gadgets_grafs.grafs.fragment
 
+import android.app.Activity
+import android.app.Dialog
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.components.XAxis
@@ -17,6 +23,7 @@ import com.notyteam.bee.R
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.GadgetsGrafsFragment
 import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.dialog_exit.*
 import kotlinx.android.synthetic.main.fragment_meaning_grafs.*
 
 class MeaningGrafsFragment : Fragment(), OnBackPressed {
@@ -51,9 +58,32 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
         return view
     }
 
+    fun showDialog(activity: Activity) {
+        val dialog = Dialog(activity)
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.setCancelable(true)
+        dialog.setContentView(R.layout.dialog_graf_point_information)
+        dialog.show()
+
+        val window = dialog.getWindow()
+        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        window?.setLayout(
+            RelativeLayout.LayoutParams.MATCH_PARENT,
+            RelativeLayout.LayoutParams.WRAP_CONTENT
+        )
+        window?.setGravity(Gravity.CENTER)
+
+        var btn_dialog_exit_application =
+            dialog.btn_dialog_exit_application.findViewById<Button>(R.id.btn_dialog_exit_application)
+        var btn_dialog_exit_account =
+            dialog.btn_dialog_exit_account.findViewById<Button>(R.id.btn_dialog_exit_account)
+
+        btn_dialog_exit_application.setOnClickListener { dialog.dismiss() }
+        btn_dialog_exit_account.setOnClickListener { dialog.dismiss() }
+    }
+
     override fun onStart() {
         super.onStart()
-
         setupLineChartData()
     }
 

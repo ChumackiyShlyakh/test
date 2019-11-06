@@ -36,6 +36,7 @@
     <string name="exit_from_account">Exit from account</string>
     <string name="correctly_marker">Did you specify the marker correctly?</string>
     <string name="yes">Yes</string>
+    <string name="device_data_big">Device data</string>
     <string name="no">No</string>
     <string name="about_us_text">Мы - некоммерческая общественная организация "Гранд Эксперт". Цель нашей деятельности - способствовать уменьшению вредного влияния химических веществ, которые используются людьми в процессе защиты растений, на окружающую среду, на людей, животных, растения, продукты животноводства и растениеводства. Не ставя перед собой задачи непосредственной борьбы с использованием химических веществ в растениеводстве, что, как мы понимаем, на сегодняшний день нереально, мы надеемся найти различные пути минимизации их вредоносного влияния на человека.
 Одна из проблем, которую мы хотим решить в рамках данного проекта заключается в следующем:
@@ -150,6 +151,7 @@
     <string name="plants_health">Health plants</string>
     <string name="object_type">Object type</string>
     <string name="date">Date</string>
+    <string name="date_colon">Date:</string>
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="apply">Apply</string>

@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
@@ -226,7 +227,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     fun showDialog(activity: Activity) {
         val dialog = Dialog(activity)
-        dialog.setCancelable(false)
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.setCancelable(true)
         dialog.setContentView(R.layout.dialog_exit)
         dialog.show()
 
@@ -234,8 +236,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         window?.setLayout(
             RelativeLayout.LayoutParams.MATCH_PARENT,
-            RelativeLayout.LayoutParams.MATCH_PARENT
+            RelativeLayout.LayoutParams.WRAP_CONTENT
         )
+        window?.setGravity(Gravity.CENTER)
 
         var btn_dialog_exit_application =
             dialog.btn_dialog_exit_application.findViewById<Button>(R.id.btn_dialog_exit_application)
