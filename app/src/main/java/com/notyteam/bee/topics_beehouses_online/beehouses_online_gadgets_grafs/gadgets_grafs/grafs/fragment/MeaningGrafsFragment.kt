@@ -82,11 +82,8 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
         })
 
         chart = view.findViewById<View>(R.id.chart) as LineChartView
-<<<<<<< HEAD
         chart!!.onValueTouchListener = ValueTouchListener()
-=======
         chart!!.setOnValueTouchListener(ValueTouchListener())
->>>>>>> test-master
 
         generateValues()
         generateData()
