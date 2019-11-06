@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <LinearLayout
         android:id="@+id/ll_fragment_my_places_controls_events_back"
         android:layout_width="0dp"

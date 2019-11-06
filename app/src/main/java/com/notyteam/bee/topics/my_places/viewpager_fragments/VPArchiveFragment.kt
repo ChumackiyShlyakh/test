@@ -28,7 +28,7 @@ class VPArchiveFragment : Fragment() {
     ): View? {
         var view: View? = inflater.inflate(R.layout.fragment_vp_archive, container, false);
 
-        btnVPObjectTrueEventFalseClick = false
+        btnVPObjectTrueEventFalseClick = true
         isButtonVPObjectsTrueEventFalsClick()
 
         btn_fragment_vp_archive_choose_objects =
