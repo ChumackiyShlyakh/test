@@ -32,13 +32,13 @@ class MyPlacesControlsObjectFragment : Fragment(), OnBackPressed {
 
         imgbtn_fragment_myplaces_controls_object_back?.setOnClickListener({
             fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_main_activity,
-                VPObjectsFragment())?.commit()
+                MyPlacesFragment())?.commit()
             (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
         })
 
         btn_fragment_myplaces_controls_object_applay?.setOnClickListener({
             fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_main_activity,
-                VPObjectsFragment())?.commit()
+                MyPlacesFragment())?.commit()
             (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
         })
 

@@ -33,7 +33,7 @@ class VPApiaryFragment : Fragment() {
 
         addText()
         rv_fragment_vp_apiary?.adapter = adapter
-        adapter.notifyDataSetChanged()
+
 
         return view
     }

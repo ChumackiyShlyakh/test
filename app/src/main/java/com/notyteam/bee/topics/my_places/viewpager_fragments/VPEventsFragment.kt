@@ -1,16 +1,13 @@
 package com.notyteam.bee.topics.my_places.viewpager_fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.notyteam.bee.R
-import com.notyteam.bee.topics.my_places.adapter.ExpandableLayout
 import com.notyteam.bee.topics.my_places.adapter.VPEventsRecycleViewAdapter
 
 class VPEventsFragment : Fragment(), View.OnClickListener {
@@ -42,7 +39,6 @@ class VPEventsFragment : Fragment(), View.OnClickListener {
 
         addText();
         recycler_view_vp_events?.adapter = adapter
-        adapter.notifyDataSetChanged()
 
 
 //        expandableLayout0 = view?.findViewById(R.id.expandable_layout_0)

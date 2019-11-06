@@ -5,16 +5,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.notyteam.bee.R
-import com.notyteam.bee.topics.my_places.adapter.ExpandableLayout
 import com.notyteam.bee.topics.my_places.adapter.VPObjectsRecycleViewAdapter
-import kotlinx.android.synthetic.main.fragment_vp_objects.*
-import net.cachapa.expandablelayout.ExpandableLinearLayout
 
 class VPObjectsFragment : Fragment() {
 
@@ -41,7 +36,6 @@ class VPObjectsFragment : Fragment() {
 
         addText();
         recycler_view_vp_objects?.adapter = adapter
-        adapter.notifyDataSetChanged()
 
         return view
     }

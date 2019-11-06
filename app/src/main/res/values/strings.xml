@@ -1,5 +1,5 @@
 <resources>
-    <string name="test">Hello bee</string>
+    <string name="test">Greyhound divisively hello coldlywonderfully marginally farа... reyhound divisively hello... coldly wonderfully marginally far</string>
 
     <string name="app_name">Grand Expert</string>
     <string name="enter">Enter</string>
@@ -105,7 +105,7 @@
     <string name="sms_number_left">1000</string>
     <string name="account">account</string>
     <string name="refill_big">Refill</string>
-    <string name="id">ID:</string>
+    <string name="id">ID:4567</string>
     <string name="hyphen">-</string>
     <string name="value">Value:</string>
     <string name="rest">Rest:</string>
