@@ -23,6 +23,7 @@ import com.notyteam.bee.R
 import com.notyteam.bee.core.ui.drawer.DrawerItemsViewModel
 import com.notyteam.bee.databinding.ActivityMainBinding
 import com.notyteam.bee.google_map_controls.GoogleMapControlsFragment
+import com.notyteam.bee.topics.aboutus.fragment.AboutUsFragment
 import com.notyteam.bee.topics.aboutus.fragment.InstructionFragment
 import com.notyteam.bee.topics.feedback.FeedbackFragment
 import com.notyteam.bee.topics.google_map.fragment.GoogleMapsFragment
@@ -194,7 +195,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.ll_grandExpert_about_us -> {
                 supportActionBar?.title = getString(R.string.about_us_drawer)
-                replaceFragment(InstructionFragment())
+                replaceFragment(AboutUsFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
             }
