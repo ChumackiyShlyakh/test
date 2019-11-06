@@ -85,10 +85,6 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
         })
 
         chart = view.findViewById<View>(R.id.chart) as LineChartView
-        chart!!.onValueTouchListener = ValueTouchListener()
-
-        // Generate some random values.
-        generateValues()
 
         generateData()
 
@@ -96,7 +92,7 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
         chart!!.isViewportCalculationEnabled = true
         chart!!.setZoomType(ZoomType.HORIZONTAL)
         chart!!.setContainerScrollEnabled(true,ContainerScrollType.HORIZONTAL)
-        resetViewport()
+
 
         return view
     }
@@ -125,10 +121,6 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
         btn_dialog_exit_account.setOnClickListener { dialog.dismiss() }
     }
 
-    override fun onStart() {
-        super.onStart()
-        setupLineChartData()
-    }
 
     private fun generateData() {
 

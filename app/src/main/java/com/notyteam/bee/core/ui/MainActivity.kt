@@ -27,6 +27,7 @@ import com.notyteam.bee.topics.aboutus.fragment.InstructionFragment
 import com.notyteam.bee.topics.feedback.FeedbackFragment
 import com.notyteam.bee.topics.google_map.fragment.GoogleMapsFragment
 import com.notyteam.bee.topics.my_places.MyPlacesFragment
+import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsBeehousesFragment
 import com.notyteam.bee.topics.profile.fragment.ProfileFragment
 import com.notyteam.bee.topics.settings.fragment.SettingsFragment
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.GadgetsGrafsFragment
@@ -55,8 +56,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         AppBarCustom.makeStatusBarTransparent(MainActivity@ this)
 
         bindingMainActivity = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        viewmodelDrawerItemsViewModel =
-            ViewModelProviders.of(this).get(DrawerItemsViewModel::class.java)
+        viewmodelDrawerItemsViewModel = ViewModelProviders.of(this).get(DrawerItemsViewModel::class.java)
 
         val scrollView_beehouses_online = bindingMainActivity?.scrollViewBeehousesOnline
 
@@ -91,11 +91,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         toolbar = bindingMainActivity?.appBarLayout?.toolbarMainDrawer
         setSupportActionBar(toolbar)
 
-        val imgbtn_download_google_maps =
-            bindingMainActivity?.appBarLayout?.imgbtnDownloadGoogleMaps
+        val imgbtn_download_google_maps = bindingMainActivity?.appBarLayout?.imgbtnDownloadGoogleMaps
         imgbtn_controls_my_places_beehouses = bindingMainActivity?.appBarLayout?.imgbtnControlsMyPlaces
-        val imgbtn_controls_google_maps =
-            bindingMainActivity?.appBarLayout?.imgbtnControlsGoogleMaps
+        val imgbtn_controls_google_maps = bindingMainActivity?.appBarLayout?.imgbtnControlsGoogleMaps
 
         imgbtn_controls_my_places_beehouses?.setOnClickListener({
             supportFragmentManager.beginTransaction().replace(

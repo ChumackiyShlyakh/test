@@ -112,7 +112,7 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
         adapter?.addFragment(VPArchiveFragment(), "Archive")
 
         viewpager.adapter = adapter
-
+        viewpager.offscreenPageLimit = 5
         tabs.setupWithViewPager(viewpager)
     }
 }
