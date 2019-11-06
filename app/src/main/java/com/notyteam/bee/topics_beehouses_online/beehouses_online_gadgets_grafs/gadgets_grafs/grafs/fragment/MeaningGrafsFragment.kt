@@ -1,12 +1,17 @@
 package com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.gadgets_grafs.grafs.fragment
 
+import android.app.Activity
+import android.app.Dialog
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.components.XAxis
@@ -15,8 +20,10 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.notyteam.bee.R
-import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
+import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.GadgetsGrafsFragment
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.dialog_exit.*
 import kotlinx.android.synthetic.main.fragment_meaning_grafs.*
 import lecho.lib.hellocharts.animation.ChartAnimationListener
 import lecho.lib.hellocharts.gesture.ContainerScrollType
@@ -28,7 +35,7 @@ import lecho.lib.hellocharts.view.Chart
 import lecho.lib.hellocharts.view.LineChartView
 import java.util.ArrayList
 
-class MeaningGrafsFragment : Fragment() {
+class MeaningGrafsFragment : Fragment(), OnBackPressed {
 
     var imgbtn_fragment_meaning_grafs_back: ImageButton? = null
     var imgbtn_fragment_meaning_grafs_controls: ImageButton? = null
@@ -94,24 +101,33 @@ class MeaningGrafsFragment : Fragment() {
         return view
     }
 
-    private fun generateValues() {
-        for (i in 0 until maxNumberOfLines) {
-            for (j in 0 until time.size) {
-                randomNumbersTab[i][j] = Math.random().toFloat() * 100f
-            }
-        }
+    fun showDialog(activity: Activity) {
+        val dialog = Dialog(activity)
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.setCancelable(true)
+        dialog.setContentView(R.layout.dialog_graf_point_information)
+        dialog.show()
+
+        val window = dialog.getWindow()
+        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        window?.setLayout(
+            RelativeLayout.LayoutParams.MATCH_PARENT,
+            RelativeLayout.LayoutParams.WRAP_CONTENT
+        )
+        window?.setGravity(Gravity.CENTER)
+
+        var btn_dialog_exit_application =
+            dialog.btn_dialog_exit_application.findViewById<Button>(R.id.btn_dialog_exit_application)
+        var btn_dialog_exit_account =
+            dialog.btn_dialog_exit_account.findViewById<Button>(R.id.btn_dialog_exit_account)
+
+        btn_dialog_exit_application.setOnClickListener { dialog.dismiss() }
+        btn_dialog_exit_account.setOnClickListener { dialog.dismiss() }
     }
 
-
-    private fun resetViewport() {
-        // Reset viewport height range to (0,100)
-        val v = Viewport(chart!!.maximumViewport)
-        v.bottom = 0f
-        v.top = 100f
-        v.left = 0f
-        v.right = time.size.toFloat()
-        chart!!.maximumViewport = v
-        chart!!.currentViewport = v
+    override fun onStart() {
+        super.onStart()
+        setupLineChartData()
     }
 
     private fun generateData() {
@@ -151,18 +167,11 @@ class MeaningGrafsFragment : Fragment() {
 
     }
 
-
-
-    private inner class ValueTouchListener : LineChartOnValueSelectListener {
-
-        override fun onValueSelected(lineIndex: Int, pointIndex: Int, value: PointValue) {
-            Toast.makeText(activity, "Selected: $value", Toast.LENGTH_SHORT).show()
-        }
-
-        override fun onValueDeselected() {
-            // TODO Auto-generated method stub
-
-        }
-
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            GadgetsGrafsFragment()
+        )?.commit()
+        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
     }
 }

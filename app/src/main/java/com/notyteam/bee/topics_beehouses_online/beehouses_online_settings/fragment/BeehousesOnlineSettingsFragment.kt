@@ -7,8 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
+import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.GadgetsGrafsFragment
+import com.notyteam.bee.utils.OnBackPressed
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_beehouses_online_settings.*
 import kotlinx.android.synthetic.main.fragment_settings.*
 import java.text.SimpleDateFormat
@@ -41,7 +45,7 @@ class BeehousesOnlineSettingsFragment : Fragment() {
         })
 
         ll_fragment_gadgets_grafs_settings_exit_from_account?.setOnClickListener( {
-//            this.activity?.finish()
+            this.activity?.finish()
         })
 
         return view

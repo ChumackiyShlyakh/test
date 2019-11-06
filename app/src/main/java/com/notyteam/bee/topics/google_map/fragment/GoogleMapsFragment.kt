@@ -148,16 +148,6 @@ class GoogleMapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickL
             dialog.btn_correctly_marker_yes.findViewById<Button>(R.id.btn_correctly_marker_yes)
 
         btn_correctly_marker_no.setOnClickListener {
-            //            var list: List<RoomPointData>? = null
-//            Observable.fromCallable {
-//            }
-//            Thread(Runnable {
-//                this.run {this@GoogleMapsFragment
-//                list = PointsRepository(getActivity()!!.application).getAllRepos()
-//            Log.d(LOG_TAG, "btn_correctly_marker_no: " + list?.size);
-//                }
-//            }).start()
-
             dialog.dismiss()
         }
         btn_correctly_marker_yes.setOnClickListener {
@@ -167,38 +157,8 @@ class GoogleMapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMapClickL
                 GoogleMapNewObjectFragment()
             )?.commit()
 
-//            val destination = RoomPointData(coordinates.latitude, coordinates.longitude)
-//
-//            Thread(Runnable {
-//                this.run {this@GoogleMapsFragment
-//
-//                PointsRepository(getActivity()!!.application).insert(destination)
-//                }
-//            }).start()
-//
-//            Observable.fromCallable {
-//            }
-//            PointsRepository(getActivity()!!.application).insert(destination)
-
-            activity.app_bar_layout?.toolbar_main_drawer?.visibility = View.GONE
+//            activity.app_bar_layout?.toolbar_main_drawer?.visibility = View.GONE
             dialog.dismiss()
         }
     }
-
-//    map.setOnMapClickListener { latLng ->
-//        val destination = Destination(System.nanoTime(), lat = latLng.latitude, long = latLng.longitude)
-//
-//        Log.d(TAG, destination.toString())
-//        AppDatabase.getInstance(this).destinationDao().insertPoint(destination)
-//        Log.d(TAG, AppDatabase.getInstance(this).destinationDao().getDestination().toString())
-//    }
-
-//    private val locationCallback = object : LocationCallback() {
-//        override fun onLocationResult(userLocation: LocationResult?) {
-//            val array = FloatArray(1)
-//            val destination = AppDatabase.getInstance(appContext).destinationDao().getDestination()
-//
-//            Log.d(TAG, "Distance: ${array[0]} m\nlat: ${destination!!.latitude}, long: ${destination.longitude}")
-//        }
-//    }
 }
