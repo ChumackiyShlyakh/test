@@ -69,6 +69,8 @@
     <string name="number_of_sms_send">Number of sms send: </string>
     <string name="sms_number_left">1000</string>
     <string name="account">account</string>
+    <string name="archive_big">Archive</string>
+    <string name="archive">archive</string>
     <string name="refill_big">Refill</string>
     <string name="id">ID:</string>
     <string name="hyphen">-</string>

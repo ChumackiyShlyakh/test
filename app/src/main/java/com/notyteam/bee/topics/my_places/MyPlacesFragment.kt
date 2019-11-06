@@ -77,13 +77,10 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(view: View?) {
-//        when (adapter?.count) {
         Log.d("imgbtn_fragment", "imgbtn_fragment_myplaces 2: ")
     }
 
     private fun setupViewPager() {
-
-//        val adapter = MyFragmentPagerAdapter(childFragmentManager)
 
         var firstFragmet: VPBeehousesFragment = VPBeehousesFragment()
         var secondFragmet: VPApiaryFragment = VPApiaryFragment()

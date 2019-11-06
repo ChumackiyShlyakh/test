@@ -63,11 +63,11 @@
                 android:background="@color/transparent"
                 android:src="@drawable/maps_flags"
                 cardview_parent:layout_constraintBottom_toBottomOf="parent"
-                cardview_parent:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                cardview_parent:layout_constraintEnd_toStartOf="@+id/imgbtn_cardview_vp_beehouses_controls"
                 cardview_parent:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/imgbtn_cardview_vp_beehouses_controls"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
