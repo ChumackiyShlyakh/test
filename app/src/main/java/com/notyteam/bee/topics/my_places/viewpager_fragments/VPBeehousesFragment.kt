@@ -32,7 +32,7 @@ class VPBeehousesFragment() : Fragment() {
 
         addAnimals();
         recyclerView?.adapter = adapter
-        adapter.notifyDataSetChanged()
+
 
         return view
     }

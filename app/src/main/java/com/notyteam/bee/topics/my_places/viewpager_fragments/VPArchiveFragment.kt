@@ -56,7 +56,7 @@ class VPArchiveFragment : Fragment() {
 
         addText();
         recycler_view_vp_archive?.adapter = adapter
-        adapter.notifyDataSetChanged()
+
 
         return view
     }

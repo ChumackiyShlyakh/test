@@ -230,14 +230,14 @@
                 cardview_parent:layout_constraintGuide_percent="0.5" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <View
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:layout_width="match_parent"
             android:background="@color/grey"
-            android:layout_height="2dp">
+            android:layout_height="1dp">
 
-        </LinearLayout>
+        </View>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -249,7 +249,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:gravity="start"
-                    android:text="@string/date"
+                    android:text="@string/date_number"
                     cardview_parent:layout_constraintBottom_toBottomOf="parent"
                     cardview_parent:layout_constraintStart_toStartOf="parent"
                     cardview_parent:layout_constraintTop_toTopOf="parent" />
@@ -258,23 +258,14 @@
                     android:id="@+id/tv_cardview_vp_apiary_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:gravity="end"
                     android:text="@string/id"
+                    cardview_parent:layout_constraintEnd_toEndOf="parent"
                     cardview_parent:layout_constraintBottom_toBottomOf="parent"
-                    cardview_parent:layout_constraintStart_toStartOf="@+id/guideline50"
                     cardview_parent:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:gravity="start"
-                    android:text="@string/user_id"
-                    cardview_parent:layout_constraintBottom_toBottomOf="parent"
-                    cardview_parent:layout_constraintStart_toEndOf="@+id/tv_cardview_vp_apiary_id"
-                    cardview_parent:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline50"
