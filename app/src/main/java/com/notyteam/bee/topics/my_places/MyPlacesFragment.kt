@@ -78,26 +78,38 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
 
             override fun onPageScrollStateChanged(state: Int) {}
 
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-                if(position==4){
-                    (activity as AppCompatActivity).imgbtn_controls_my_places?.visibility = View.GONE
-                }else{
-                    (activity as AppCompatActivity).imgbtn_controls_my_places?.visibility = View.VISIBLE
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+                if (position == 4) {
+                    (activity as AppCompatActivity).imgbtn_controls_my_places?.visibility =
+                        View.GONE
+                } else {
+                    (activity as AppCompatActivity).imgbtn_controls_my_places?.visibility =
+                        View.VISIBLE
                 }
             }
+
             override fun onPageSelected(position: Int) {
-                  if(position==4){
-                      (activity as AppCompatActivity).imgbtn_controls_my_places?.visibility = View.GONE
-                  }else{
-                      (activity as AppCompatActivity).imgbtn_controls_my_places?.visibility = View.VISIBLE
-                  }
-
-
+                if (position == 4) {
+                    (activity as AppCompatActivity).imgbtn_controls_my_places?.visibility =
+                        View.GONE
+                } else {
+                    (activity as AppCompatActivity).imgbtn_controls_my_places?.visibility =
+                        View.VISIBLE
+                }
             }
 
         })
 
         return view
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (activity as AppCompatActivity).imgbtn_controls_my_places?.visibility = View.GONE
     }
 
     override fun onClick(view: View?) {}

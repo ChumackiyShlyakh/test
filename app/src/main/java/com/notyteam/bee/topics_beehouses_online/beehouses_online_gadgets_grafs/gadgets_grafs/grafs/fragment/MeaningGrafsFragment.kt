@@ -82,7 +82,11 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
         })
 
         chart = view.findViewById<View>(R.id.chart) as LineChartView
+<<<<<<< HEAD
+        chart!!.onValueTouchListener = ValueTouchListener()
+=======
         chart!!.setOnValueTouchListener(ValueTouchListener())
+>>>>>>> test-master
 
         generateValues()
         generateData()
@@ -92,7 +96,6 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
         chart!!.isViewportCalculationEnabled = true
         chart!!.setZoomType(ZoomType.HORIZONTAL)
         chart!!.setContainerScrollEnabled(true,ContainerScrollType.HORIZONTAL)
-
 
         return view
     }
