@@ -20,6 +20,7 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_meaning_grafs.*
 import lecho.lib.hellocharts.animation.ChartAnimationListener
 import lecho.lib.hellocharts.gesture.ContainerScrollType
+import lecho.lib.hellocharts.gesture.ZoomType
 import lecho.lib.hellocharts.listener.LineChartOnValueSelectListener
 import lecho.lib.hellocharts.model.*
 import lecho.lib.hellocharts.util.ChartUtils
@@ -38,7 +39,7 @@ class MeaningGrafsFragment : Fragment() {
     private var numberOfLines = 1
     private val maxNumberOfLines = 4
 
-    var time = arrayListOf("08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00")
+    var time = arrayListOf("08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00")
 
     internal var randomNumbersTab = Array(maxNumberOfLines) { FloatArray(time.size) }
 
@@ -86,6 +87,7 @@ class MeaningGrafsFragment : Fragment() {
 
         // Disable viewport recalculations, see toggleCubic() method for more info.
         chart!!.isViewportCalculationEnabled = true
+        chart!!.setZoomType(ZoomType.HORIZONTAL)
         chart!!.setContainerScrollEnabled(true,ContainerScrollType.HORIZONTAL)
         resetViewport()
 
@@ -125,7 +127,6 @@ class MeaningGrafsFragment : Fragment() {
                 axisValues.add(AxisValue(j.toFloat()).setLabel(time[j]))
             }
 
-
             val line = Line(values)
             line.color = ChartUtils.COLORS[3]
             line.shape = shape
@@ -137,15 +138,13 @@ class MeaningGrafsFragment : Fragment() {
             line.setHasPoints(hasPoints)
             lines.add(line)
 
-
         }
 
         data = LineChartData(lines)
 
 
-        data!!.axisXBottom = Axis(axisValues).setHasLines(false).setHasTiltedLabels(true)
-            .setTextColor(R.color.black).setTextSize(10).setName("Time")
-        data!!.axisYLeft = Axis().setHasLines(false).setHasTiltedLabels(true).setName("%").setTextColor(R.color.black)
+        data!!.axisXBottom = Axis(axisValues).setHasLines(true).setHasTiltedLabels(true).setTextColor(R.color.black).setTextSize(10).setName("Time")
+        data!!.axisYLeft = Axis().setHasLines(true).setHasTiltedLabels(true).setTextSize(10).setName("%").setTextColor(R.color.black)
 
         data!!.baseValue = java.lang.Float.NEGATIVE_INFINITY
         chart!!.lineChartData = data
