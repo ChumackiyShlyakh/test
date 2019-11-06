@@ -26,6 +26,13 @@ import lecho.lib.hellocharts.model.*
 import lecho.lib.hellocharts.util.ChartUtils
 import lecho.lib.hellocharts.view.LineChartView
 import java.util.ArrayList
+import android.R.attr.right
+import android.R.attr.left
+import android.R.attr.top
+import android.R.attr.bottom
+import lecho.lib.hellocharts.model.Viewport
+
+
 
 class MeaningGrafsFragment : Fragment(), OnBackPressed {
 
@@ -38,7 +45,7 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
     private var numberOfLines = 1
     private val maxNumberOfLines = 4
 
-    var time = arrayListOf("08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00")
+    var time = arrayListOf("08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00")
 
     internal var randomNumbersTab = Array(maxNumberOfLines) { FloatArray(time.size) }
 
@@ -75,10 +82,15 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
         })
 
         chart = view.findViewById<View>(R.id.chart) as LineChartView
+<<<<<<< HEAD
         chart!!.onValueTouchListener = ValueTouchListener()
+=======
+        chart!!.setOnValueTouchListener(ValueTouchListener())
+>>>>>>> test-master
 
         generateValues()
         generateData()
+        resetViewport()
 
         // Disable viewport recalculations, see toggleCubic() method for more info.
         chart!!.isViewportCalculationEnabled = true
@@ -86,6 +98,17 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
         chart!!.setContainerScrollEnabled(true,ContainerScrollType.HORIZONTAL)
 
         return view
+    }
+
+    private fun resetViewport() {
+        // Reset viewport height range to (0,100)
+        val v = Viewport(chart!!.getMaximumViewport())
+        v.bottom = 0f
+        v.top = 100f
+        v.left = 0f
+        v.right = time.size.toFloat()
+        chart!!.setMaximumViewport(v)
+        chart!!.setCurrentViewport(v)
     }
 
     private fun generateValues() {
@@ -152,6 +175,7 @@ class MeaningGrafsFragment : Fragment(), OnBackPressed {
         data!!.baseValue = java.lang.Float.NEGATIVE_INFINITY
         chart!!.lineChartData = data
 
+        chart!!.startDataAnimation();
     }
 
     private inner class ValueTouchListener : LineChartOnValueSelectListener {
