@@ -15,12 +15,13 @@ import com.notyteam.bee.R
 import com.notyteam.bee.core.arch.DialogCustomListView
 import com.notyteam.bee.core.arch.DialogDataAdapter
 import com.notyteam.bee.topics.google_map.fragment.GoogleMapsFragment
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.dialog_custom_layout.*
 import kotlinx.android.synthetic.main.fragment_google_maps_new_event.*
 import kotlinx.android.synthetic.main.fragment_google_maps_new_object.*
 
-class GoogleMapNewEventFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickListener {
+class GoogleMapNewEventFragment : Fragment(), DialogDataAdapter.RecyclerViewItemClickListener, OnBackPressed {
 
     internal var customDialog: DialogCustomListView? = null
     var meaning: String = "meaning"
@@ -91,5 +92,13 @@ class GoogleMapNewEventFragment : Fragment(), DialogDataAdapter.RecyclerViewItem
     }
 
     override fun clickOnItemLanguage(data: String) {
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            GoogleMapsFragment()
+        )?.commit()
+        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
     }
 }

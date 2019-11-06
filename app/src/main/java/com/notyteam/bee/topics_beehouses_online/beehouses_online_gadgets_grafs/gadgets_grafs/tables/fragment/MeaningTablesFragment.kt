@@ -10,13 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.notyteam.bee.R
-import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.fragment.GadgetsGrafsFragment
+import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.GadgetsGrafsFragment
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_grafs.gadgets_grafs.tables.fragment.adapter.MeaningTablesRecycleViewAdapter
 import com.notyteam.bee.topics_beehouses_online.beehouses_online_gadgets_table.gadgets_table.tables.fragment.MeaningTableFiltrFragment
+import com.notyteam.bee.utils.OnBackPressed
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 
-class MeaningTablesFragment : Fragment() {
+class MeaningTablesFragment : Fragment(), OnBackPressed {
 
     private var recycler_view_fragment_meaning_tables: RecyclerView? = null
     lateinit var adapter: MeaningTablesRecycleViewAdapter
@@ -85,5 +86,13 @@ class MeaningTablesFragment : Fragment() {
         dataList.add("Ant")
         dataList.add("Tiger")
         dataList.add("Lizard")
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            GadgetsGrafsFragment()
+        )?.commit()
+        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
     }
 }

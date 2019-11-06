@@ -13,12 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:tabGravity="fill"
-        app:tabMode="scrollable"
+        app:tabMode="fixed"
         app:tabTextAppearance="@android:style/TextAppearance.Small"
         app:tabTextColor="@color/black">
 
     </com.google.android.material.tabs.TabLayout>
-
 
     <View
         android:layout_width="match_parent"

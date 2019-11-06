@@ -37,6 +37,7 @@
     <string name="exit_from_account">Exit from account</string>
     <string name="correctly_marker">Did you specify the marker correctly?</string>
     <string name="yes">Yes</string>
+    <string name="device_data_big">Device data</string>
     <string name="no">No</string>
     <string name="instruction">1. Общие положения\n
 1.1. Настоящая инструкция составлена на основе примерной инструкции по делопроизводству
@@ -104,6 +105,8 @@
     <string name="number_of_sms_send">Number of sms send: </string>
     <string name="sms_number_left">1000</string>
     <string name="account">account</string>
+    <string name="archive_big">Archive</string>
+    <string name="archive">archive</string>
     <string name="refill_big">Refill</string>
     <string name="id">ID:4567</string>
     <string name="hyphen">-</string>
@@ -183,6 +186,7 @@
     <string name="plants_health">Health plants</string>
     <string name="object_type">Object type</string>
     <string name="date">Date</string>
+    <string name="date_colon">Date:</string>
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="apply">Apply</string>

@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
+import com.notyteam.bee.utils.OnBackPressed
+import kotlinx.android.synthetic.main.app_bar_main.*
 
-class MeaningGrafsFiltrFragment : Fragment() {
+class MeaningGrafsFiltrFragment : Fragment(), OnBackPressed {
 
     var imgbtn_fragment_meaning_grafs_filtr_back: ImageButton? = null
     var fragment_meaning_grafs_filtr_period_build: Button? = null
@@ -105,5 +108,12 @@ class MeaningGrafsFiltrFragment : Fragment() {
             btn_fragment_meaning_grafs_filtr_month?.setBackgroundResource(R.drawable.button_orange)
             btn_fragment_meaning_grafs_filtr_month?.setTextColor(getResources().getColor(R.color.white))
         }
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            MeaningGrafsFragment()
+        )?.commit()
     }
 }

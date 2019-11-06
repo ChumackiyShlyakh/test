@@ -58,7 +58,7 @@ class ProfileSettingsProfileFragment : Fragment(), View.OnClickListener,
                 R.id.fragment_container_main_activity,
                 ProfileFragment()
             )?.commit()
-            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
         })
 
         btn_fragment_profile_settings_profile_save.setOnClickListener(this)
@@ -76,7 +76,7 @@ class ProfileSettingsProfileFragment : Fragment(), View.OnClickListener,
                     R.id.fragment_container_main_activity,
                     ProfileFragment()
                 )?.commit()
-                (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
+                (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
             }
 //            R.id.imgbtn_fragment_profile_settings_profile_back -> {
 //                fragmentManager?.beginTransaction()?.replace(
@@ -116,6 +116,6 @@ class ProfileSettingsProfileFragment : Fragment(), View.OnClickListener,
             R.id.fragment_container_main_activity,
             ProfileFragment()
         )?.commit()
-        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
+        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
     }
 }
