@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.notyteam.bee.R
 import com.notyteam.bee.topics.my_places.MyPlacesFragment
 import com.notyteam.bee.topics.my_places.viewpager_fragments.VPApiaryFragment
+import com.notyteam.bee.utils.OnBackPressed
+import kotlinx.android.synthetic.main.app_bar_main.*
 
-class MyPlacesControlsBeehousesFragment : Fragment() {
+class MyPlacesControlsBeehousesFragment : Fragment(), OnBackPressed {
 
     var imgbtn_fragment_myplaces_controls_beehouses_back: ImageButton? = null
     var btn_fragment_myplaces_controls_beehouses_apply: Button? = null
@@ -25,13 +28,23 @@ class MyPlacesControlsBeehousesFragment : Fragment() {
         imgbtn_fragment_myplaces_controls_beehouses_back?.setOnClickListener({
             fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_main_activity,
                 MyPlacesFragment())?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
         })
 
         btn_fragment_myplaces_controls_beehouses_apply?.setOnClickListener({
             fragmentManager?.beginTransaction()?.replace(R.id.fragment_container_main_activity,
                 MyPlacesFragment())?.commit()
+            (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
         })
 
         return view
+    }
+
+    override fun onBackPressed() {
+        fragmentManager?.beginTransaction()?.replace(
+            R.id.fragment_container_main_activity,
+            MyPlacesFragment()
+        )?.commit()
+        (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.VISIBLE
     }
 }

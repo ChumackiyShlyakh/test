@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     companion object {
         @JvmStatic
         var imgbtn_controls_my_places_beehouses: ImageButton? = null
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -180,11 +179,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 scrollView_main.visibility = View.GONE
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
-//                imgbtn_controls_my_places.visibility = View.GONE
                 scrollView_beehouses_online.visibility = View.VISIBLE
-                imgbtn_controls_google_maps.visibility = View.GONE
-                imgbtn_download_google_maps.visibility = View.GONE
-//                imgbtn_controls_my_places.visibility = View.GONE
                 replaceFragment(GadgetsGrafsFragment())
             }
             R.id.ll_grandExpert_beekeepers_ukraine -> {
@@ -194,7 +189,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 replaceFragment(AboutUsFragment())
                 imgbtn_controls_google_maps.visibility = View.GONE
                 imgbtn_download_google_maps.visibility = View.GONE
-//                imgbtn_controls_my_places.visibility = View.GONE
             }
             R.id.ll_beehouses_online_gadgets_grafs -> {
                 supportActionBar?.title = getString(R.string.my_gadgets)
@@ -209,7 +203,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 supportActionBar?.title = getString(R.string.google_map)
                 imgbtn_controls_google_maps.visibility = View.VISIBLE
                 imgbtn_download_google_maps.visibility = View.VISIBLE
-//                imgbtn_controls_my_places.visibility = View.GONE
                 scrollView_main.visibility = View.VISIBLE
                 scrollView_beehouses_online.visibility = View.GONE
                 replaceFragment(GoogleMapsFragment())
