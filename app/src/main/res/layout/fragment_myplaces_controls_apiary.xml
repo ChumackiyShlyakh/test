@@ -300,6 +300,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/ed_border_grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline24">
 
@@ -308,9 +311,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/ed_border_grey"
+            android:background="@color/transparent"
             android:gravity="left|center"
             android:paddingLeft="16dp"
             android:text="@string/status"
@@ -323,43 +324,30 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="16dp"
             android:src="@drawable/arrow_down">
 
         </ImageView>
 
     </RelativeLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_fragment_myplaces_controls_apiary_date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/ed_border_grey"
-        android:ems="10"
+    <Button
+        android:id="@+id/btn_fragment_myplaces_controls_apiary_date_creation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:errorEnabled="true"
-        app:hintTextAppearance="@style/MyAppearance"
+        android:background="@drawable/ed_border_grey"
+        android:gravity="start|center"
+        android:hint="@string/date_of_creation"
+        android:paddingStart="16dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rl_fragment_myplaces_controls_apiary_status">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:background="@null"
-            android:ems="10"
-            android:hint="@string/date_of_creation"
-            android:inputType="date"
-            app:layout_constraintEnd_toStartOf="@+id/guideline7"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/rl_fragment_myplaces_controls_apiary_status" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -374,18 +362,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_cl_google_maps_controls_date">
 
-        <EditText
+        <Button
+            android:id="@+id/btn_fragment_myplaces_controls_apiary_date_from"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/ed_border_grey"
+            android:gravity="start|center"
             android:hint="@string/from"
-            android:inputType="date"
             android:paddingStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline21"
@@ -393,18 +382,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <Button
+            android:id="@+id/btn_fragment_myplaces_controls_apiary_date_to"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/ed_border_grey"
+            android:gravity="start|center"
             android:hint="@string/to"
-            android:inputType="date"
             android:paddingLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -430,7 +420,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_fragment_myplaces_controls_apiary_date"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_fragment_myplaces_controls_apiary_date_creation"/>
 
     <Button
         android:id="@+id/btn_fragment_myplaces_controls_apiary_apply"

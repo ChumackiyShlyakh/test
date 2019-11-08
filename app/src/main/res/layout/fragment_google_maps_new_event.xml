@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/white_background"
     android:layout_height="match_parent"
+    android:background="@drawable/white_background"
     android:orientation="vertical">
 
     <LinearLayout
@@ -23,10 +23,10 @@
             android:id="@+id/imgbtn_google_maps_new_event_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.01"
-            android:padding="15dp"
             android:layout_marginStart="10dp"
+            android:layout_weight="0.01"
             android:background="@color/transparent"
+            android:padding="15dp"
             app:srcCompat="@drawable/arrow_left" />
 
         <TextView
@@ -76,6 +76,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/ed_border_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_google_maps_new_event_name">
@@ -90,7 +91,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="0dp"
             android:layout_marginBottom="0dp"
-            android:background="@drawable/ed_border_grey"
+            android:background="@color/transparent"
             android:gravity="center|left"
             android:hint="@string/event_type"
             android:paddingLeft="16dp"
@@ -181,24 +182,26 @@
         android:id="@+id/cl_google_maps_new_event_date"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_google_maps_new_event_date">
 
-        <EditText
+        <Button
+            android:id="@+id/btn_fragment_google_maps_new_event_date_from"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/ed_border_grey"
+            android:gravity="start|center"
             android:hint="@string/from"
-            android:inputType="date"
-            android:paddingLeft="16dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:paddingStart="16dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline21"
@@ -206,16 +209,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <Button
+            android:id="@+id/btn_fragment_google_maps_new_event_date_to"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/ed_border_grey"
+            android:gravity="start|center"
             android:hint="@string/to"
-            android:inputType="date"
             android:paddingLeft="16dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

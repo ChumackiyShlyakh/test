@@ -13,6 +13,7 @@ import com.google.android.material.tabs.TabLayout
 import com.notyteam.bee.R
 import com.notyteam.bee.core.ui.MainActivity
 import com.notyteam.bee.topics.my_places.adapter.DefaultStateViewPagerAdapter
+import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsApiaryFragment
 import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsBeehousesFragment
 import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsEventsFragment
 import com.notyteam.bee.topics.my_places.controls.MyPlacesControlsObjectFragment
@@ -51,7 +52,7 @@ class MyPlacesFragment : Fragment(), View.OnClickListener {
                 1 -> {
                     fragmentManager?.beginTransaction()?.replace(
                         R.id.fragment_container_main_activity,
-                        MyPlacesControlsBeehousesFragment()
+                        MyPlacesControlsApiaryFragment()
                     )?.commit()
                     (activity as AppCompatActivity).toolbar_main_drawer?.visibility = View.GONE
                 }
